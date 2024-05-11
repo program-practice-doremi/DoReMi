@@ -3,7 +3,6 @@
 
 #include <QObject>
 #include "channal.h"
-#include <QTimer>
 #include <string>
 #include "pitch.h"
 
@@ -57,8 +56,19 @@ public:
      * Channal_0: {C4}, {C5}, r, {C4}, {C5}
      */
     void RepeatSingleChannal(int channalNum, int copyStart, int copyEnd, int targetStart);
-
     void RepeatAllChannals(int copyStart, int copyEnd, int targetStart);
+
+    /**
+     * @brief CopyNote: copy all notes in sourceChannalNum, from copyStart to copyEnd, to targetStart in targetChannalNum.
+     * @note Same as RepeatSingleChannal when sourceChannalNum is equal to targetChannalNum.
+     */
+    void CopyNote(int sourceChannalNum, int copyStart, int copyEnd, int targetChannalNum, int targetStart);
+
+    /**
+     * @brief ChangeTune: change the tune in channalNum, from start to end.
+     * @note changeNum can be either positive or negative. After changing if some note is beyond the scope 21-108, then change it to _REST.
+    */
+    void ChangeTune(int channalNum, int start, int end, int changeNum);
 };
 
 #endif // MUSIC_H

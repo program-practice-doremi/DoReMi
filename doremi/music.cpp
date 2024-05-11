@@ -37,6 +37,9 @@ void Music::setAdditionalStrength(int channalNum, int additionalStrength) {
 
 void Music::RepeatSingleChannal(int channalNum, int copyStart, int copyEnd, int targetStart) {
     for (int i = 0; i < copyEnd - copyStart; ++i) {
+        if (this->allChannals[channalNum]->notes[i + targetStart]) {
+            delete this->allChannals[channalNum]->notes[i + targetStart];
+        }
         this->allChannals[channalNum]->notes[i + targetStart] = new v_spo(*this->allChannals[channalNum]->notes[i + copyStart]);
     }
 }
@@ -44,5 +47,21 @@ void Music::RepeatSingleChannal(int channalNum, int copyStart, int copyEnd, int 
 void Music::RepeatAllChannals(int copyStart, int copyEnd, int targetStart) {
     for (int i = 0; i < this->channal_num; ++i) {
         this->RepeatSingleChannal(i, copyStart, copyEnd, targetStart);
+    }
+}
+
+void Music::CopyNote(int sourceChannalNum, int copyStart, int copyEnd, int targetChannalNum, int targetStart) {
+    assert(sourceChannalNum < this->channal_num && targetChannalNum < this->channal_num);
+    for (int i = 0; i < copyEnd - copyStart; ++i) {
+        if (this->allChannals[targetChannalNum]->notes[i + targetStart]) {
+            delete this->allChannals[targetChannalNum]->notes[i + targetStart];
+        }
+        this->allChannals[targetChannalNum]->notes[i + targetStart] = new v_spo(*this->allChannals[sourceChannalNum]->notes[i + copyStart]);
+    }
+}
+
+void Music::ChangeTune(int channalNum, int start, int end, int changeNum) {
+    for (int i = 0; i < end - start; ++i) {
+        this->allChannals[channalNum]->notes[i + start]->addTune(changeNum);
     }
 }

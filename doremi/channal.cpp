@@ -9,6 +9,33 @@ v_spo::v_spo(Pitch v1, Pitch v2, Pitch v3, Pitch v4, int volume) {
     _volume = volume;
 }
 
+void v_spo::addTune(int tune) {
+    if (_v1 >= 21 && _v1 <= 108) {
+        _v1 += tune;
+        if (!(_v1 >= 21 && _v1 <= 108)) {
+            _v1 = _REST;
+        }
+    }
+    if (_v2 >= 21 && _v2 <= 108) {
+        _v2 += tune;
+        if (!(_v2 >= 21 && _v2 <= 108)) {
+            _v2 = _REST;
+        }
+    }
+    if (_v3 >= 21 && _v3 <= 108) {
+        _v3 += tune;
+        if (!(_v3 >= 21 && _v3 <= 108)) {
+            _v3 = _REST;
+        }
+    }
+    if (_v4 >= 21 && _v4 <= 108) {
+        _v4 += tune;
+        if (!(_v4 >= 21 && _v4 <= 108)) {
+            _v4 = _REST;
+        }
+    }
+}
+
 Channal::Channal(int _number, int _length, int musicType, int _strength, QObject *parent)
     : QObject{parent}
 {

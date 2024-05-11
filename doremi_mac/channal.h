@@ -11,7 +11,7 @@
  */
 class v_spo {
 public:
-    Pitch _v1 = _REST, _v2 = _REST, _v3 = _REST, _v4 = _REST;
+    int _v1 = _REST, _v2 = _REST, _v3 = _REST, _v4 = _REST;
     int _volume = 0;
 public:
     v_spo(Pitch v1 = _REST, Pitch v2 = _REST, Pitch v3 = _REST, Pitch v4 = _REST, int volume = 0);
