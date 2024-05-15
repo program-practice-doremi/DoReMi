@@ -648,7 +648,6 @@ MediaPlayer::MediaPlayer(QObject *parent)
     t = new QTimer(this);
     connect(t, &QTimer::timeout, this, &MediaPlayer::PlayNext);
     connect(this, &MediaPlayer::StopPlaying, t, &QTimer::stop);
-    // Music(); // TODO: Now the music plays only when the MediaPlayer is constructed. We can change it.
 }
 
 void MediaPlayer::init () { // private, only used in constructor
@@ -731,8 +730,45 @@ void MediaPlayer::PlayNext() {
     this->currentPlaying += 1;
 }
 
+void CycleMediaPlayer::PlayNext() {
+    if (currentPlaying == this->song->length) {
+        this->currentPlaying = 0;
+    }
+    for (int i = 0; i < this->song->channal_num; ++i) {
+        if (this->song->allChannals[i]->notes[currentPlaying]->_v1 != _REST) {
+            this->MakeSound(this->song->allChannals[i]->notes[currentPlaying], i, this->song->allChannals[i]->strength);
+        }
+    }
+    this->currentPlaying += 1;
+}
+
+void MediaPlayer::pause() {
+    emit this->StopPlaying();
+}
+
+void MediaPlayer::restart() {
+    this->t->start(1000 * 15 / this->song->speed);
+}
+
+void MediaPlayer::stop() {
+    emit this->StopPlaying();
+    this->currentPlaying = 0;
+    midiOutClose (handle);
+}
+
 MediaPlayer::~MediaPlayer() {
     delete t;
+}
+
+Metronome::Metronome(int speed) {
+    Music *dadada = new Music("节拍器", 2, speed, 16);
+    dadada->setType(0, Tinkle_Bell);
+    dadada->setType(1, Agogo);
+    dadada->addNote(0, 0, C5);
+    dadada->addNote(0, 4, C5);
+    dadada->addNote(0, 8, C5);
+    dadada->addNote(0, 12, C5);
+    this->SetMusic(dadada);
 }
 
 /* old version ...

@@ -53,12 +53,36 @@ public slots:
      */
     void PlayMusic(int start = 0);
 
+    /**
+     * @brief Pause the mediaplayer. You can restart the mediaplayer later.
+     */
+    void pause();
+
+    void restart();
+
+    /**
+     * @brief Stop playing, and CLOSE the midi.
+     */
+    void stop();
+
 private:
     void init();
-    void PlayNext();
+    virtual void PlayNext();
 
 signals:
     void StopPlaying();
+};
+
+class CycleMediaPlayer: public MediaPlayer
+{
+public:
+    virtual void PlayNext();
+};
+
+class Metronome: public CycleMediaPlayer
+{
+public:
+    Metronome(int speed);
 };
 
 #endif // MEDIAPLAYER_H
