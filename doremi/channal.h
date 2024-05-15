@@ -4,7 +4,7 @@
 #include <QObject>
 #include "pitch.h"
 
-#define MAX_HOLD_OF_NOTES 3000
+#define MAX_HOLD_OF_NOTES 5000
 
 /**
  * @brief A channal is composed of a lot of v_spo("voice_sample"), like notes, which can only hold 4 pitches.
