@@ -25,7 +25,7 @@ public:
     HMIDIOUT handle;
     int currentPlaying = 0;
 
-private:
+protected:
     QTimer *t = 0;
 
 public:

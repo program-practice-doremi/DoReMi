@@ -1,9 +1,10 @@
 #include "songs.h"
+#include "instruments.h"
 
 Twinkle::Twinkle(): Music("TwinkleTwinkleLittleStar", 2, 60, 102) {
     this->setType(0, Music_Box);
     this->setType(1, Acoustic_Grand_Piano);
-    this->setAdditionalStrength(0, 4);
+    this->setAdditionalStrength(0, 2);
     this->setAdditionalStrength(1, -2);
 
     // Music Box
@@ -25,7 +26,8 @@ Twinkle::Twinkle(): Music("TwinkleTwinkleLittleStar", 2, 60, 102) {
 
     // TODO: Test if this is OK!
     this->RepeatSingleChannal(0, 16, 32, 32);
-    this->ChangeTune(0, 32, 48, 2)
+    this->ChangeTune(0, 32, 48, 2);
+    this->ChangeTune(0, 36, 40, -1);
     this->RepeatSingleChannal(0, 32, 48, 48);
     this->RepeatSingleChannal(0, 0, 32, 64);
 
@@ -68,7 +70,7 @@ Twinkle::Twinkle(): Music("TwinkleTwinkleLittleStar", 2, 60, 102) {
 
     this->RepeatSingleChannal(1, 0, 28, 64);
 
-    this->addNote(1, 92, C3, E3, G3, C4);
+    this->addNote(1, 92, 6, C3, E3, G3, C4);
 }
 
 Ocean::Ocean(): Music("我们都拥有海洋", 5, 70, 300) {
@@ -80,13 +82,13 @@ Ocean::Ocean(): Music("我们都拥有海洋", 5, 70, 300) {
     this->setType(3, Music_Box); // simulate chores
 
     /**** Additional Strength ****/
-    this->setAdditionalStrength(1, 0);
+    this->setAdditionalStrength(2, 2);
 
     /**** Music ****/
     // part 1
 
-    this->addNote(0, 0, 6, D3S, A3S, D4S);
-    this->addNote(1, 0, 7, F4S, A4S);
+    this->addNote(0, 0, 4, D3S, A3S, D4S);
+    this->addNote(1, 0, 5, F4S, A4S);
 
     this->addNote(0, 8, 4, B2, F4S, B3);
     this->addNote(1, 8, 6, D4S, F4S);
@@ -95,8 +97,8 @@ Ocean::Ocean(): Music("我们都拥有海洋", 5, 70, 300) {
     this->addNote(1, 16, 6, C4S, G4S);
 
     this->addNote(0, 24, 3, C3S, G3S);
-    this->addNote(1, 24, 4, C4S, G4S);
-
+    this->addNote(1, 24, 4, C4S, F4);
+    this->ChangeTune(0, 0, 32, -12);
     this->RepeatAllChannals(0, 32, 32);
     this->RepeatAllChannals(0, 64, 64);
     this->RepeatAllChannals(0, 32, 128);
@@ -108,19 +110,19 @@ Ocean::Ocean(): Music("我们都拥有海洋", 5, 70, 300) {
     this->addNote(2, 39, 7, A4S);
     this->addNote(2, 40, 10, A4S);
     this->addNote(2, 42, 8, G4S);
-    this->addNote(2, 44, 7, F4S);
-    this->addNote(2, 46, 8, G4S);
-    this->addNote(2, 48, 8, G4S);
-    this->addNote(2, 50, 9, A4S);
-    this->addNote(2, 51, 7, A4S);
+    this->addNote(2, 44, 5, F4S);
+    this->addNote(2, 46, 6, G4S);
+    this->addNote(2, 48, 6, G4S);
+    this->addNote(2, 50, 7, A4S);
+    this->addNote(2, 51, 5, A4S);
 
     // 好好的告别 和重要的人说再见
-    this->addNote(2, 60, 7, G4S);
+    this->addNote(2, 60, 6, G4S);
     this->addNote(2, 61, 8, C5S);
     this->addNote(2, 62, 6, F4);
     this->addNote(2, 63, 6, F4S);
     this->addNote(2, 66, 5, D4S);
-    this->addNote(2, 76, 8, G4S);
+    this->addNote(2, 76, 8, F4S);
     this->addNote(2, 77, 8, C5S);
     this->addNote(2, 78, 7, F4S);
     this->addNote(2, 79, 8, F4S);

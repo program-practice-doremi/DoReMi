@@ -1,5 +1,6 @@
 #include "mediaplayer.h"
 #include "pitch.h"
+#include "instruments.h"
 
 enum Voice
 {
@@ -764,9 +765,12 @@ Metronome::Metronome(int speed) {
     Music *dadada = new Music("节拍器", 16, speed, 16);
     dadada->setType(15, Tinkle_Bell);
     dadada->addNote(15, 0, 8, C5);
-    dadada->addNote(15, 4, 6, C3);
-    dadada->addNote(15, 8, 6, C3);
-    dadada->addNote(15, 12, 6, C3);
+    dadada->addNote(15, 4, 5, C4);
+    dadada->addNote(15, 5, new stop_spo());
+    dadada->addNote(15, 8, 5, C4);
+    dadada->addNote(15, 9, new stop_spo());
+    dadada->addNote(15, 12, 5, C4);
+    dadada->addNote(15, 13, new stop_spo());
     this->SetMusic(dadada);
 }
 
@@ -777,7 +781,7 @@ void Metronome::PlayMusic(int start)
     }
     this->currentPlaying = start;
     midiOutOpen (&handle, 0, 0, 0, CALLBACK_NULL) ; //打开MIDI设备
-    midiOutShortMsg (handle, this->song->allChannals[i]->type << 8 | (0xC0 + 15));
+    midiOutShortMsg (handle, this->song->allChannals[15]->type << 8 | (0xC0 + 15));
     this->t->start(1000 * 15 / this->song->speed);
 }
 

@@ -10,23 +10,31 @@ CONFIG += c++17
 
 SOURCES += \
     channal.cpp \
+    create.cpp \
     main.cpp \
     mainwindow.cpp \
     mediaplayer.cpp \
+    menu.cpp \
     music.cpp \
+    songs.cpp \
     test.cpp
 
 HEADERS += \
     channal.h \
+    create.h \
     instruments.h \
     mainwindow.h \
     mediaplayer.h \
+    menu.h \
     music.h \
     pitch.h \
+    songs.h \
     test.h
 
 FORMS += \
-    mainwindow.ui
+    create.ui \
+    mainwindow.ui \
+    menu.ui
 
 LIBS += \
     -lwinmm

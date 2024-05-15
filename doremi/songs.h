@@ -24,6 +24,6 @@ public:
 class Ocean: public Music {
 public:
     explicit Ocean();
-}
+};
 
 #endif // SONGS_H

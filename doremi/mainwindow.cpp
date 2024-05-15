@@ -22,6 +22,6 @@ void MainWindow::on_pushButton_clicked()
 {
     play();
     Test *t = new Test();
-    t->Test2();
+    t->Test4();
 }
 

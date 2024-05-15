@@ -1,4 +1,5 @@
 #include "test.h"
+#include "songs.h"
 
 Test::Test(QObject *parent)
     : QObject{parent}
@@ -67,5 +68,16 @@ void Test::Test2() {
 
     MediaPlayer *player = new MediaPlayer();
     player->SetMusic(TwinkleTwinkleLittleStar);
+    player->PlayMusic();
+}
+
+void Test::Test3() {
+    MediaPlayer *player = new Metronome(60);
+    player->PlayMusic();
+}
+
+void Test::Test4() {
+    MediaPlayer *player = new CycleMediaPlayer();
+    player->SetMusic(new Ocean());
     player->PlayMusic();
 }
