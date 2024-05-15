@@ -761,15 +761,26 @@ MediaPlayer::~MediaPlayer() {
 }
 
 Metronome::Metronome(int speed) {
-    Music *dadada = new Music("节拍器", 2, speed, 16);
-    dadada->setType(0, Tinkle_Bell);
-    dadada->setType(1, Agogo);
-    dadada->addNote(0, 0, C5);
-    dadada->addNote(0, 4, C5);
-    dadada->addNote(0, 8, C5);
-    dadada->addNote(0, 12, C5);
+    Music *dadada = new Music("节拍器", 16, speed, 16);
+    dadada->setType(15, Tinkle_Bell);
+    dadada->addNote(15, 0, 8, C5);
+    dadada->addNote(15, 4, 6, C3);
+    dadada->addNote(15, 8, 6, C3);
+    dadada->addNote(15, 12, 6, C3);
     this->SetMusic(dadada);
 }
+
+void Metronome::PlayMusic(int start)
+{
+    if (!this->song) {
+        return;
+    }
+    this->currentPlaying = start;
+    midiOutOpen (&handle, 0, 0, 0, CALLBACK_NULL) ; //打开MIDI设备
+    midiOutShortMsg (handle, this->song->allChannals[i]->type << 8 | (0xC0 + 15));
+    this->t->start(1000 * 15 / this->song->speed);
+}
+
 
 /* old version ...
     //遍历乐谱

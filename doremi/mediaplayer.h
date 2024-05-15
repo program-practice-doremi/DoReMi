@@ -51,7 +51,7 @@ public slots:
     /**
      * @brief Play the music from start position "start". If this->music is NULL, do nothing.
      */
-    void PlayMusic(int start = 0);
+    virtual void PlayMusic(int start = 0);
 
     /**
      * @brief Pause the mediaplayer. You can restart the mediaplayer later.
@@ -83,6 +83,7 @@ class Metronome: public CycleMediaPlayer
 {
 public:
     Metronome(int speed);
+    virtual void PlayMusic(int start = 0);
 };
 
 #endif // MEDIAPLAYER_H

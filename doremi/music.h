@@ -18,7 +18,7 @@ public:
     std::string name;
     int speed = 80;
     int channal_num = 0;
-    Channal* allChannals[10] = {};
+    Channal* allChannals[16] = {};
     int length = 0;
 
 public:
