@@ -29,7 +29,7 @@ Twinkle::Twinkle(): Music("TwinkleTwinkleLittleStar", 2, 60, 102) {
     this->RepeatSingleChannal(0, 32, 48, 48);
     this->RepeatSingleChannal(0, 0, 32, 64);
 
-    // Acoustic_Grand_Piano
+    // TODO: Acoustic_Grand_Piano
     this->addNote(1, 0, 6, C4);
     this->addNote(1, 1, 6, G4);
     this->addNote(1, 2, 6, E4);
@@ -54,6 +54,19 @@ Twinkle::Twinkle(): Music("TwinkleTwinkleLittleStar", 2, 60, 102) {
     this->addNote(1, 23, 6, E4);
     this->addNote(1, 27, 6, B3);
 
-    this->addNote(1, 28, 6, C3, E3, G3, C4);
+    this->addNote(1, 28, 7, C4);
+    this->addNote(1, 29, 5, G3);
+    this->addNote(1, 30, 6, C4);
+    this->addNote(1, 31, 7, D4);
 
+    this->RepeatSingleChannal(1, 0, 4, 32);
+    this->RepeatSingleChannal(1, 8, 12, 36);
+    this->RepeatSingleChannal(1, 0, 4, 40);
+    this->RepeatSingleChannal(1, 16, 20, 44);
+
+    this->RepeatSingleChannal(1, 32, 48, 48);
+
+    this->RepeatSingleChannal(1, 0, 28, 64);
+
+    this->addNote(1, 92, C3, E3, G3, C4);
 }
