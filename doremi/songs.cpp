@@ -73,7 +73,7 @@ Twinkle::Twinkle(): Music("TwinkleTwinkleLittleStar", 2, 60, 102) {
     this->addNote(1, 92, 6, C3, E3, G3, C4);
 }
 
-Ocean::Ocean(): Music("我们都拥有海洋", 5, 70, 300) {
+Ocean::Ocean(): Music("我们都拥有海洋", 5, 70, 400) {
 
     /**********************/
     /**** 我们都拥有海洋 ****/
@@ -206,6 +206,69 @@ Ocean::Ocean(): Music("我们都拥有海洋", 5, 70, 300) {
 
     // Part C
     int c_start = 64 + 96 + 64;
-    this->addNote()
+    this->addNote(0, c_start, 8, C3);
+    this->addNote(1, c_start + 1, 5, G3);
+    this->addNote(1, c_start + 2, 6, C4);
+    this->addNote(1, c_start + 3, 4, D4);
+    this->addNote(1, c_start + 4, 5, D4S);
+    this->addNote(0, c_start + 8, 8, G2S);
+    this->addNote(1, c_start + 9, 5, D3S);
+    this->addNote(1, c_start + 10, 6, G3S);
+    this->addNote(1, c_start + 11, 4, A3S);
+    this->addNote(1, c_start + 12, 5, C4);
+
+    this->addNote(0, c_start + 16, 8, D3S);
+    this->addNote(1, c_start + 17, 5, A3S);
+    this->addNote(1, c_start + 18, 6, D4S);
+    this->addNote(1, c_start + 19, 4, F4);
+    this->addNote(1, c_start + 20, 5, G4);
+    this->addNote(0, c_start + 24, 8, A2S, F3);
+    this->addNote(1, c_start + 28, 6, B2, G3);
+
+    this->RepeatAllChannals(c_start, c_start + 32, c_start + 32);
+    this->RepeatAllChannals(c_start, c_start + 32, c_start + 64);
+
+    // 为剧烈的心动
+    this->addNote(2, c_start, 8, D5S);
+    this->addNote(2, c_start + 6, 7, D5);
+    this->addNote(2, c_start + 8, 6, C5);
+    this->addNote(2, c_start + 10, 5, A4S);
+    this->addNote(2, c_start + 11, 7, A4S);
+    this->addNote(2, c_start + 13, 6, G4S);
+
+    // 跑起来去见 喜欢的我
+    this->addNote(2, c_start + 16, 7, G4);
+    this->addNote(2, c_start + 17, 6, G4);
+    this->addNote(2, c_start + 18, 5, G4);
+    this->addNote(2, c_start + 19, 7, G4);
+    this->addNote(2, c_start + 20, 9, G4);
+    this->addNote(2, c_start + 24, 7, D4, F4);
+    this->addNote(2, c_start + 26, 8, A4S);
+    this->addNote(2, c_start + 27, 6, A4S);
+    this->addNote(2, c_start + 29, 7, D4, F4);
+
+    // 兴趣使然的
+    this->addNote(2, c_start + 32, 8, C5, D5S);
+    this->addNote(2, c_start + 38, 7, A4S, D5);
+    this->addNote(2, c_start + 40, 6, G4S, C5);
+    this->addNote(2, c_start + 42, 7, A4S, D5);
+    this->addNote(2, c_start, 43, C5S, D5S);
+
+    // 怎么判断有用 谁来规定无用
+    this->addNote(2, c_start + 48, 5, G4, A4S);
+    this->addNote(2, c_start + 49, 6, G4, A4S);
+    this->addNote(2, c_start + 50, 7, G4, A4S);
+    this->addNote(2, c_start + 51, 8, G4, A4S);
+    this->addNote(2, c_start + 52, 9, G4, A4S);
+    this->addNote(2, c_start + 53, 9, A4S, D5S);
+
+    this->addNote(2, c_start + 55, 9, A4S, D5);
+    this->addNote(2, c_start + 57, 5, A4S, D5);
+    this->addNote(2, c_start + 58, 6, A4S, D5);
+    this->addNote(2, c_start + 59, 7, A4S, D5);
+    this->addNote(2, c_start + 60, 9, C5, D5S);
+    this->addNote(2, c_start + 61, 9, D5, F5);
+
+    // 完美的旅程
 
 }
