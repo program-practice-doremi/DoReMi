@@ -270,5 +270,7 @@ Ocean::Ocean(): Music("我们都拥有海洋", 5, 70, 400) {
     this->addNote(2, c_start + 61, 9, D5, F5);
 
     // 完美的旅程
+    this->RepeatSingleChannal(2, c_start, c_start + 12, c_start + 64);
 
+    // 为何每一站 是一样的路牌
 }
