@@ -2,11 +2,13 @@
 #include "ui_mainwindow.h"
 #include "test.h"
 
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    connect(ui->pushButton_2,SIGNAL(clicked(bool)),this,SLOT(on_pushButton_2_clicked()) );
 }
 
 void MainWindow::play() {
@@ -20,8 +22,18 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
-    play();
+    /*play();
     Test *t = new Test();
     t->Test4();
+    */
+    this->close();
+    menu *pic=new menu();
+    pic->show();
+}
+
+
+void MainWindow::on_pushButton_2_clicked()
+{
+    this->close();
 }
 
