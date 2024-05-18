@@ -26,7 +26,6 @@ void MainWindow::on_pushButton_clicked()
     Test *t = new Test();
     t->Test4();
     */
-    this->close();
     menu *pic=new menu();
     pic->show();
 }

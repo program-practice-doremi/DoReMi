@@ -6,6 +6,7 @@ piano::piano(QWidget *parent)
     , ui(new Ui::piano)
 {
     ui->setupUi(this);
+    piano_keys= new QButtonGroup();
 }
 
 piano::~piano()

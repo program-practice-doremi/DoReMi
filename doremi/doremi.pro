@@ -11,7 +11,7 @@ CONFIG += c++17
 SOURCES += \
     channal.cpp \
     chooseinstruments.cpp \
-    create.cpp \
+    createpage.cpp \
     main.cpp \
     mainwindow.cpp \
     mediaplayer.cpp \
@@ -24,7 +24,7 @@ SOURCES += \
 HEADERS += \
     channal.h \
     chooseinstruments.h \
-    create.h \
+    createpage.h \
     instruments.h \
     mainwindow.h \
     mediaplayer.h \
@@ -37,7 +37,7 @@ HEADERS += \
 
 FORMS += \
     chooseinstruments.ui \
-    create.ui \
+    createpage.ui \
     mainwindow.ui \
     menu.ui \
     piano.ui

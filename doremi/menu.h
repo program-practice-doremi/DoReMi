@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include "mainwindow.h"
+#include "music.h"
 
 namespace Ui {
 class menu;
@@ -16,10 +17,15 @@ public:
     explicit menu(QWidget *parent = nullptr);
     ~menu();
 
+signals:
+    void songcopy(Music *song);
+
 private slots:
     void on_create_clicked();
 
     void on_back_clicked();
+
+    void on_queren_clicked();
 
 private:
     Ui::menu *ui;

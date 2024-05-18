@@ -193,7 +193,7 @@ Ocean::Ocean(): Music("我们都拥有海洋", 5, 70, 400) {
     this->addNote(3, b_start + 47, 9, G5S);
     this->addNote(3, b_start + 48, 11, G5S);
     this->CopyNote(3, b_start + 45, b_start + 49, 2, b_start + 45);
-    this->changeTune(2, b_start + 45, b_start + 49, -12);
+    this->ChangeTune(2, b_start + 45, b_start + 49, -12);
     this->addNote(3, b_start + 54, 11, D5S, G5);
     this->addNote(2, b_start + 54, 8, A4S, D5S);
     this->addNote(3, b_start + 55, 12, G5, A5S);
