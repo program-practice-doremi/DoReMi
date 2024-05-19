@@ -41,7 +41,8 @@ void menu::on_queren_clicked()
     int channalNum = this->ui->spinBox->value();
     std::string name = this->ui->lineEdit->text().toStdString();
     //把名字和音轨数传进music
-    Music *song = new Music(name, channalNum);
+    // Music *song = new Music(name, channalNum);
+    Music *song = new Ocean();
     CreatePage *c = new CreatePage();
     this->close();
     c->show();
