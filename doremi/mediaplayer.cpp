@@ -712,6 +712,7 @@ void MediaPlayer::PlayMusic(int start)
         //midiOut短消息C类 //声明乐器、通道
         midiOutShortMsg (handle, this->song->allChannals[i]->type << 8 | (0xC0 + i));
     }
+    midiOutShortMsg (handle, Tinkle_Bell << 8 | (0xC0 + 15));
 
     this->t->start(1000 * 15 / this->song->speed);
 }
@@ -723,24 +724,30 @@ void MediaPlayer::PlayNext() {
         midiOutClose (handle) ;
         return;
     }
-    for (int i = 0; i < this->song->channal_num; ++i) {
-        if (this->song->allChannals[i]->notes[currentPlaying]->_v1 != _REST) {
+    emit this->sendCurrentPlaying(this->currentPlaying);
+    for (int i = 0; i < this->song->channal_num; ++i)
+    {
+        if ((!this->channal_closed[i]) && this->song->allChannals[i]->notes[currentPlaying]->_v1 != _REST) {
             this->MakeSound(this->song->allChannals[i]->notes[currentPlaying], i, this->song->allChannals[i]->strength);
+        }
+    }
+    if (this->metronome_playing) {
+        if (currentPlaying % 16 == 0) {
+            this->MakeSound(new v_spo(C5, _REST, _REST, _REST, 8), 15, metronome_additional_strength);
+        }
+        else if (currentPlaying % 4 == 0) {
+            this->MakeSound(new v_spo(C4, _REST, _REST, _REST, 6), 15, metronome_additional_strength);
         }
     }
     this->currentPlaying += 1;
 }
 
-void CycleMediaPlayer::PlayNext() {
-    if (currentPlaying == this->song->length) {
-        this->currentPlaying = 0;
-    }
-    for (int i = 0; i < this->song->channal_num; ++i) {
-        if (this->song->allChannals[i]->notes[currentPlaying]->_v1 != _REST) {
-            this->MakeSound(this->song->allChannals[i]->notes[currentPlaying], i, this->song->allChannals[i]->strength);
-        }
-    }
-    this->currentPlaying += 1;
+void MediaPlayer::setHearable(int channalNum) {
+    this->channal_closed[channalNum] = false;
+}
+
+void MediaPlayer::setMute(int channalNum) {
+    this->channal_closed[channalNum] = true;
 }
 
 void MediaPlayer::pause() {
@@ -751,64 +758,55 @@ void MediaPlayer::restart() {
     this->t->start(1000 * 15 / this->song->speed);
 }
 
+void MediaPlayer::openMetronome() {
+    this->metronome_playing = true;
+}
+
+void MediaPlayer::closeMetronome() {
+    this->metronome_playing = false;
+}
+
+void MediaPlayer::changeMetronomeStrength(int strength) {
+    this->metronome_additional_strength = strength;
+}
+
+int MediaPlayer::getCurrentPlaying() {
+    return this->currentPlaying;
+}
+
+void MediaPlayer::setCurrentPlaying(int po) {
+    if (po >= 0 && po < this->song->length) {
+        this->currentPlaying = po;
+    }
+}
+
 void MediaPlayer::stop() {
     emit this->StopPlaying();
     this->currentPlaying = 0;
     midiOutClose (handle);
 }
 
+void MediaPlayer::startRecording() {
+    this->recording_mode = true;
+}
+
+void MediaPlayer::stopRecording() {
+    this->recording_mode = false;
+}
+
+void MediaPlayer::setCurrentEditing(int channalNum) {
+    this->current_editing = channalNum;
+}
+
+void MediaPlayer::receiveNote(v_spo *note) {
+    if (note->_v1 != _REST) {
+        this->MakeSound(note, current_editing, this->song->allChannals[i]->strength);
+    }
+    if (recording_mode) {
+        this->song->addNote(current_editing, currentPlaying, note);
+    }
+}
+
 MediaPlayer::~MediaPlayer() {
     delete t;
 }
-
-Metronome::Metronome(int speed) {
-    Music *dadada = new Music("节拍器", 16, speed, 16);
-    dadada->setType(15, Tinkle_Bell);
-    dadada->addNote(15, 0, 8, C5);
-    dadada->addNote(15, 4, 5, C4);
-    dadada->addNote(15, 5, new stop_spo());
-    dadada->addNote(15, 8, 5, C4);
-    dadada->addNote(15, 9, new stop_spo());
-    dadada->addNote(15, 12, 5, C4);
-    dadada->addNote(15, 13, new stop_spo());
-    this->SetMusic(dadada);
-}
-
-void Metronome::PlayMusic(int start)
-{
-    if (!this->song) {
-        return;
-    }
-    this->currentPlaying = start;
-    midiOutOpen (&handle, 0, 0, 0, CALLBACK_NULL) ; //打开MIDI设备
-    midiOutShortMsg (handle, this->song->allChannals[15]->type << 8 | (0xC0 + 15));
-    this->t->start(1000 * 15 / this->song->speed);
-}
-
-
-/* old version ...
-    //遍历乐谱
-    for (auto i : music) {
-
-        //处理指令
-        if ( _mp[m.C] != PA ){
-            volume = _mp[ m.C ] ; //调节音量
-        }
-
-        bool pedal = m.C == P;
-        // 处理小节结束
-        if ( cnt == 0 ) {
-            cnt = 16 ;
-            // printf("One Bar Has Passed ...\n") ; // 一小节过去了
-        }
-
-
-        if ( pedal ) { // 处理踏板
-            midiOutShortMsg ( handle, 0X7BB0 ) ; // 0X7B是结束指令,B0是通道
-            midiOutShortMsg ( handle, 0X7BB1 ) ;
-            midiOutShortMsg ( handle, 0X7BB2 ) ;
-        }
-    }
-    midiOutClose (handle) ; //关闭MIDI
-}
-*/

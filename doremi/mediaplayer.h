@@ -25,6 +25,14 @@ public:
     HMIDIOUT handle;
     int currentPlaying = 0;
 
+    // Used when editing music
+    bool metronome_playing = false;
+    int metronome_additional_strength = 0;
+    bool channal_closed[20] = {};
+
+    bool recording_mode = false;
+    int current_editing = 0;
+
 protected:
     QTimer *t = 0;
 
@@ -39,6 +47,12 @@ public:
      */
     void MakeSound(v_spo *note, int channalNum, int additionalStrength = 0);
 
+    /**
+     * @brief Get or set the current playing position.
+     */
+    int getCurrentPlaying();
+    
+
 public slots:
     /**
      * @brief Set or change the music.
@@ -49,6 +63,18 @@ public slots:
     void SetMusic(Music *m);
 
     /**
+     * @brief Set the current playing position to po.
+     */
+    void setCurrentPlaying(int po);
+
+    /**
+     * @brief Open or close metronome.
+     */
+    void openMetronome();
+    void closeMetronome();
+    void changeMetronomeStrength(int strength);
+
+    /**
      * @brief Play the music from start position "start". If this->music is NULL, do nothing.
      */
     virtual void PlayMusic(int start = 0);
@@ -57,7 +83,6 @@ public slots:
      * @brief Pause the mediaplayer. You can restart the mediaplayer later.
      */
     void pause();
-
     void restart();
 
     /**
@@ -65,25 +90,36 @@ public slots:
      */
     void stop();
 
+    // Below are used in music creation mode.
+
+    void setHearable(int channalNum);
+    void setMute(int channalNum);
+
+    /**
+     * @brief Open or close the recording mode.
+     */
+    void startRecording();
+    void stopRecording();
+
+    void setCurrentEditing(int channalNum);
+
+    void receiveNote(v_spo *note);
+
+    /**
+     * @brief 
+     */
+
 private:
     void init();
     virtual void PlayNext();
 
 signals:
     void StopPlaying();
-};
 
-class CycleMediaPlayer: public MediaPlayer
-{
-public:
-    virtual void PlayNext();
-};
-
-class Metronome: public CycleMediaPlayer
-{
-public:
-    Metronome(int speed);
-    virtual void PlayMusic(int start = 0);
+    /**
+     * @brief send the current playing position.
+     */
+    void sendCurrentPlaying(int po);
 };
 
 #endif // MEDIAPLAYER_H
