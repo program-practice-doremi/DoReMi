@@ -800,7 +800,7 @@ void MediaPlayer::setCurrentEditing(int channalNum) {
 
 void MediaPlayer::receiveNote(v_spo *note) {
     if (note->_v1 != _REST) {
-        this->MakeSound(note, current_editing, this->song->allChannals[i]->strength);
+        this->MakeSound(note, current_editing, this->song->allChannals[current_editing]->strength);
     }
     if (recording_mode) {
         this->song->addNote(current_editing, currentPlaying, note);

@@ -72,12 +72,7 @@ void Test::Test2() {
 }
 
 void Test::Test3() {
-    MediaPlayer *player = new Metronome(60);
-    player->PlayMusic();
-}
-
-void Test::Test4() {
-    MediaPlayer *player = new CycleMediaPlayer();
+    MediaPlayer *player = new MediaPlayer();
     player->SetMusic(new Ocean());
     player->PlayMusic();
 }

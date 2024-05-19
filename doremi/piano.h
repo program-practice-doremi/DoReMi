@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 #include <QButtonGroup>
+#include "mediaplayer.h"
+#include <QKeyEvent>
 
 namespace Ui {
 class piano;
@@ -11,11 +13,16 @@ class piano;
 class piano : public QMainWindow
 {
     Q_OBJECT
+public:
+    Mediaplayer *player = new MediaPlayer();
 
 public:
     explicit piano(QWidget *parent = nullptr);
     ~piano();
     QButtonGroup *piano_keys;
+
+protected:
+    void keyPressEvent(QKeyEvent *event);
 
 private:
     Ui::piano *ui;
