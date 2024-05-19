@@ -80,20 +80,29 @@ public slots:
      * @brief Pause the mediaplayer. You can restart the mediaplayer later.
      */
     void pause();
-
     void restart();
 
     /**
      * @brief Stop playing, and CLOSE the midi.
      */
     void stop();
-    
+
+    // Below are used in music creation mode.
+
+    void setHearable(int channalNum);
+
+    void setMute(int channalNum);
+
 private:
     void init();
     virtual void PlayNext();
 
 signals:
     void StopPlaying();
+
+    /**
+     * @brief send the current playing position.
+     */
     void sendCurrentPlaying(int po);
 };
 
