@@ -786,33 +786,27 @@ void MediaPlayer::stop() {
     midiOutClose (handle);
 }
 
+void MediaPlayer::startRecording() {
+    this->recording_mode = true;
+}
+
+void MediaPlayer::stopRecording() {
+    this->recording_mode = false;
+}
+
+void MediaPlayer::setCurrentEditing(int channalNum) {
+    this->current_editing = channalNum;
+}
+
+void MediaPlayer::receiveNote(v_spo *note) {
+    if (note->_v1 != _REST) {
+        this->MakeSound(note, current_editing, this->song->allChannals[i]->strength);
+    }
+    if (recording_mode) {
+        this->song->addNote(current_editing, currentPlaying, note);
+    }
+}
+
 MediaPlayer::~MediaPlayer() {
     delete t;
 }
-
-/* old version ...
-    //遍历乐谱
-    for (auto i : music) {
-
-        //处理指令
-        if ( _mp[m.C] != PA ){
-            volume = _mp[ m.C ] ; //调节音量
-        }
-
-        bool pedal = m.C == P;
-        // 处理小节结束
-        if ( cnt == 0 ) {
-            cnt = 16 ;
-            // printf("One Bar Has Passed ...\n") ; // 一小节过去了
-        }
-
-
-        if ( pedal ) { // 处理踏板
-            midiOutShortMsg ( handle, 0X7BB0 ) ; // 0X7B是结束指令,B0是通道
-            midiOutShortMsg ( handle, 0X7BB1 ) ;
-            midiOutShortMsg ( handle, 0X7BB2 ) ;
-        }
-    }
-    midiOutClose (handle) ; //关闭MIDI
-}
-*/

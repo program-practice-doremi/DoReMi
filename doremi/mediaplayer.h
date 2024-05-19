@@ -30,6 +30,9 @@ public:
     int metronome_additional_strength = 0;
     bool channal_closed[20] = {};
 
+    bool recording_mode = false;
+    int current_editing = 0;
+
 protected:
     QTimer *t = 0;
 
@@ -90,8 +93,21 @@ public slots:
     // Below are used in music creation mode.
 
     void setHearable(int channalNum);
-
     void setMute(int channalNum);
+
+    /**
+     * @brief Open or close the recording mode.
+     */
+    void startRecording();
+    void stopRecording();
+
+    void setCurrentEditing(int channalNum);
+
+    void receiveNote(v_spo *note);
+
+    /**
+     * @brief 
+     */
 
 private:
     void init();
