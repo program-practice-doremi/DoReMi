@@ -25,6 +25,11 @@ public:
     HMIDIOUT handle;
     int currentPlaying = 0;
 
+    // Used when editing music
+    bool metronome_playing = false;
+    int metronome_additional_strength = 0;
+    bool channal_closed[20] = {};
+
 protected:
     QTimer *t = 0;
 
@@ -39,6 +44,12 @@ public:
      */
     void MakeSound(v_spo *note, int channalNum, int additionalStrength = 0);
 
+    /**
+     * @brief Get or set the current playing position.
+     */
+    int getCurrentPlaying();
+    
+
 public slots:
     /**
      * @brief Set or change the music.
@@ -47,6 +58,18 @@ public slots:
      * @note Assert music *m can not be NULL.
      */
     void SetMusic(Music *m);
+
+    /**
+     * @brief Set the current playing position to po.
+     */
+    void setCurrentPlaying(int po);
+
+    /**
+     * @brief Open or close metronome.
+     */
+    void openMetronome();
+    void closeMetronome();
+    void changeMetronomeStrength(int strength);
 
     /**
      * @brief Play the music from start position "start". If this->music is NULL, do nothing.
@@ -64,18 +87,14 @@ public slots:
      * @brief Stop playing, and CLOSE the midi.
      */
     void stop();
-    /**
-     * @brief Get or set the current playing position.
-     */
-    int getCurrentPlaying();
-    void setCurrentPlaying(int po);
-
+    
 private:
     void init();
     virtual void PlayNext();
 
 signals:
     void StopPlaying();
+    void sendCurrentPlaying(int po);
 };
 
 class CycleMediaPlayer: public MediaPlayer

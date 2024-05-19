@@ -712,6 +712,7 @@ void MediaPlayer::PlayMusic(int start)
         //midiOut短消息C类 //声明乐器、通道
         midiOutShortMsg (handle, this->song->allChannals[i]->type << 8 | (0xC0 + i));
     }
+    midiOutShortMsg (handle, Tinkle_Bell << 8 | (0xC0 + 15));
 
     this->t->start(1000 * 15 / this->song->speed);
 }
@@ -723,9 +724,19 @@ void MediaPlayer::PlayNext() {
         midiOutClose (handle) ;
         return;
     }
-    for (int i = 0; i < this->song->channal_num; ++i) {
+    emit this->sendCurrentPlaying(this->currentPlaying);
+    for (int i = 0; i < this->song->channal_num; ++i)
+    {
         if (this->song->allChannals[i]->notes[currentPlaying]->_v1 != _REST) {
             this->MakeSound(this->song->allChannals[i]->notes[currentPlaying], i, this->song->allChannals[i]->strength);
+        }
+    }
+    if (this->metronome_playing) {
+        if (currentPlaying % 16 == 0) {
+            this->MakeSound(new v_spo(C5, _REST, _REST, _REST, 8), 15, metronome_additional_strength);
+        }
+        else if (currentPlaying % 4 == 0) {
+            this->MakeSound(new v_spo(C4, _REST, _REST, _REST, 6), 15, metronome_additional_strength);
         }
     }
     this->currentPlaying += 1;
@@ -749,6 +760,18 @@ void MediaPlayer::pause() {
 
 void MediaPlayer::restart() {
     this->t->start(1000 * 15 / this->song->speed);
+}
+
+void MediaPlayer::openMetronome() {
+    this->metronome_playing = true;
+}
+
+void MediaPlayer::closeMetronome() {
+    this->metronome_playing = false;
+}
+
+void MediaPlayer::changeMetronomeStrength(int strength) {
+    this->metronome_additional_strength = strength;
 }
 
 int MediaPlayer::getCurrentPlaying() {
