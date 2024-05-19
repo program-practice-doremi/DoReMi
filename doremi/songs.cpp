@@ -73,7 +73,7 @@ Twinkle::Twinkle(): Music("TwinkleTwinkleLittleStar", 2, 60, 102) {
     this->addNote(1, 92, 6, C3, E3, G3, C4);
 }
 
-Ocean::Ocean(): Music("我们都拥有海洋", 5, 70, 400) {
+Ocean::Ocean(): Music("我们都拥有海洋", 5, 70, 600) {
 
     /**********************/
     /**** 我们都拥有海洋 ****/
@@ -204,7 +204,7 @@ Ocean::Ocean(): Music("我们都拥有海洋", 5, 70, 400) {
     this->addNote(2, b_start + 63, new stop_spo());
     this->addNote(3, b_start + 63, new stop_spo());
 
-    // Part C
+    // Part C 224
     int c_start = 64 + 96 + 64;
     this->addNote(0, c_start, 8, C3);
     this->addNote(1, c_start + 1, 5, G3);
@@ -273,4 +273,59 @@ Ocean::Ocean(): Music("我们都拥有海洋", 5, 70, 400) {
     this->RepeatSingleChannal(2, c_start, c_start + 12, c_start + 64);
 
     // 为何每一站 是一样的路牌
+    this->addNote(2, c_start + 64 + 16, 7, G4);
+    this->addNote(2, c_start + 64 + 17, 6, G4);
+    this->addNote(2, c_start + 64 + 18, 5, G4);
+    this->addNote(2, c_start + 64 + 19, 7, G4);
+    this->addNote(2, c_start + 64 + 20, 9, G4);
+    this->addNote(2, c_start + 64 + 23, 9, D4S, G4);
+    this->addNote(2, c_start + 64 + 24, 7, D4, F4);
+    this->addNote(2, c_start + 64 + 26, 8, F4, A4S);
+    this->addNote(2, c_start + 64 + 27, 6, F4, A4S);
+    this->addNote(2, c_start + 64 + 30, 4, D4);
+    this->addNote(2, c_start + 64 + 31, 5, D4S);
+
+    // 没有 石头 所以 所以 没有 悟空
+    this->addNote(0, c_start + 64 + 32, 6, G2S);
+    this->addNote(1, c_start + 64 + 32, 6, G3S);
+    this->addNote(3, c_start + 64 + 34, 3, D6);
+    this->addNote(3, c_start + 64 + 35, 4, D6S);
+    this->addNote(2, c_start + 64 + 38, 6, D4);
+    this->addNote(0, c_start + 64 + 38, 6, A2S);
+    this->addNote(1, c_start + 64 + 38, 6, A3S);
+    this->addNote(2, c_start + 64 + 39, 7, D4S);
+    this->addNote(0, c_start + 64 + 39, 6, G2S);
+    this->addNote(1, c_start + 64 + 39, 6, G3S);
+    this->addNote(3, c_start + 64 + 43, 4, D5, D6);
+    this->addNote(3, c_start + 64 + 44, 5, D5S, D6S);
+    this->addNote(2, c_start + 64 + 46, 7, D4, D5);
+    this->addNote(0, c_start + 64 + 46, 6, G2S);
+    this->addNote(1, c_start + 64 + 46, 6, G3S);
+    this->addNote(2, c_start + 64 + 47, 8, D4S, D5S);
+    this->addNote(0, c_start + 64 + 48, 8, A2S);
+    this->addNote(1, c_start + 64 + 48, 8, A3S);
+    this->addNote(2, c_start + 64 + 50, 9, F4, F5);
+    this->addNote(2, c_start + 64 + 51, 10, G4, G5);
+    this->addNote(2, c_start + 64 + 54, 12, G4S, G5S);
+    this->addNote(0, c_start + 64 + 54, 9, A2S);
+    this->addNote(1, c_start + 64 + 54, 9, A3S);
+    this->addNote(2, c_start + 64 + 55, 13, A4S, A5S);
+    this->addNote(0, c_start + 64 + 55, 13, A1S, A2S);
+
+    this->addNote(1, c_start + 64 + 56, new stop_spo());
+    this->addNote(2, c_start + 64 + 56, new stop_spo());
+    this->addNote(3, c_start + 64 + 56, new stop_spo());
+
+    // 就让我自己走吧！
+    this->addNote(2, c_start + 64 + 57, 10, A4S, A5S);
+    this->addNote(2, c_start + 64 + 58, 9, D5S, D6S);
+    this->addNote(2, c_start + 64 + 59, 11, G5, G6);
+    this->addNote(2, c_start + 64 + 60, 10, F5, F6);
+    this->addNote(2, c_start + 64 + 61, 9, D5S, D6S);
+    this->addNote(2, c_start + 64 + 62, 10, D5, D6);
+    this->addNote(2, c_start + 64 + 63, 11, D5S, D6S);
+
+    // Part D 352
+    int d_start = c_start + 128;
+    
 }

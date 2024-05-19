@@ -751,6 +751,16 @@ void MediaPlayer::restart() {
     this->t->start(1000 * 15 / this->song->speed);
 }
 
+int MediaPlayer::getCurrentPlaying() {
+    return this->currentPlaying;
+}
+
+void MediaPlayer::setCurrentPlaying(int po) {
+    if (po >= 0 && po < this->song->length) {
+        this->currentPlaying = po;
+    }
+}
+
 void MediaPlayer::stop() {
     emit this->StopPlaying();
     this->currentPlaying = 0;

@@ -64,6 +64,11 @@ public slots:
      * @brief Stop playing, and CLOSE the midi.
      */
     void stop();
+    /**
+     * @brief Get or set the current playing position.
+     */
+    int getCurrentPlaying();
+    void setCurrentPlaying(int po);
 
 private:
     void init();
