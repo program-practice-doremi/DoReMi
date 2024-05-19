@@ -103,11 +103,5 @@ public:
     virtual void PlayNext();
 };
 
-class Metronome: public CycleMediaPlayer
-{
-public:
-    Metronome(int speed);
-    virtual void PlayMusic(int start = 0);
-};
 
 #endif // MEDIAPLAYER_H
