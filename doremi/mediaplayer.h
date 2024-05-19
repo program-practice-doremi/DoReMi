@@ -106,11 +106,4 @@ signals:
     void sendCurrentPlaying(int po);
 };
 
-class CycleMediaPlayer: public MediaPlayer
-{
-public:
-    virtual void PlayNext();
-};
-
-
 #endif // MEDIAPLAYER_H

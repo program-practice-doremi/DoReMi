@@ -750,19 +750,6 @@ void MediaPlayer::setMute(int channalNum) {
     this->channal_closed[channalNum] = true;
 }
 
-
-void CycleMediaPlayer::PlayNext() {
-    if (currentPlaying == this->song->length) {
-        this->currentPlaying = 0;
-    }
-    for (int i = 0; i < this->song->channal_num; ++i) {
-        if (this->song->allChannals[i]->notes[currentPlaying]->_v1 != _REST) {
-            this->MakeSound(this->song->allChannals[i]->notes[currentPlaying], i, this->song->allChannals[i]->strength);
-        }
-    }
-    this->currentPlaying += 1;
-}
-
 void MediaPlayer::pause() {
     emit this->StopPlaying();
 }
