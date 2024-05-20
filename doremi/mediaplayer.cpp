@@ -807,6 +807,10 @@ void MediaPlayer::receiveNote(v_spo *note) {
     }
 }
 
+void MediaPlayer::changeLength(int length) {
+    this->song->changeLength(length);
+}
+
 MediaPlayer::~MediaPlayer() {
     delete t;
 }

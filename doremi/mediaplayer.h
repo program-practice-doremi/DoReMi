@@ -23,7 +23,7 @@ public:
     Music *song = 0;
     std::map <int,int> _mp;
     HMIDIOUT handle;
-    int currentPlaying = 0;
+    int currentPlaying = 0; // current playing place
 
     // Used when editing music
     bool metronome_playing = false;
@@ -31,7 +31,7 @@ public:
     bool channal_closed[20] = {};
 
     bool recording_mode = false;
-    int current_editing = 0;
+    int current_editing = 0; // current editing channal
 
 protected:
     QTimer *t = 0;
@@ -103,11 +103,15 @@ public slots:
 
     void setCurrentEditing(int channalNum);
 
+    /**
+     * @brief Receive a note and play it out. You should first declare the "currentEditing"!
+     */
     void receiveNote(v_spo *note);
 
     /**
-     * @brief 
+     * @brief Change the current length of the music.
      */
+    void changeLength(int length);
 
 private:
     void init();
