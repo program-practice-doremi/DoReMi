@@ -1,5 +1,7 @@
 #include "channal.h"
 #include "assert.h"
+#include<string>
+#include<stdio.h>
 
 v_spo::v_spo(Pitch v1, Pitch v2, Pitch v3, Pitch v4, int volume) {
     _v1 = v1;
@@ -20,6 +22,44 @@ Channal::Channal(int _number, int _length, int musicType, int _strength)
     this->length = _length;
     this->strength = _strength;
     this->type = musicType;
+}
+
+void Channal::save_file(FILE *f){
+    if(f){
+        fputc('#',f);
+        fwrite(&number,sizeof(int),1,f);
+        fwrite(&length,sizeof(int),1,f);
+        fwrite(&type,sizeof(int),1,f);
+        fwrite(&strength,sizeof(int),1,f);
+        for(int i = 0;i < length;++i){
+            int v1 = notes[i]->_v1;
+            int v2 = notes[i]->_v2;
+            int v3 = notes[i]->_v3;
+            int v4 = notes[i]->_v4;
+            int volume = notes[i]->_volume;
+            fwrite(&v1,sizeof(int),1,f);
+            fwrite(&v2,sizeof(int),1,f);
+            fwrite(&v3,sizeof(int),1,f);
+            fwrite(&v4,sizeof(int),1,f);
+            fwrite(&volume,sizeof(int),1,f);
+        }
+    }
+}
+
+Channal::Channal(FILE* f) {
+    fread(&number, sizeof(int), 1, f);
+    fread(&length, sizeof(int), 1, f);
+    fread(&type, sizeof(int), 1, f);
+    fread(&strength, sizeof(int), 1, f);
+    for (int i = 0; i < length; ++i) {
+        v_spo* note = new rest_spo();
+        fread(&note->_v1, sizeof(int), 1, f);
+        fread(&note->_v2, sizeof(int), 1, f);
+        fread(&note->_v3, sizeof(int), 1, f);
+        fread(&note->_v4, sizeof(int), 1, f);
+        fread(&note->_volume, sizeof(int), 1, f);
+        notes[i] = note;
+    }
 }
 
 void Channal::addNote(int addingPlace, v_spo* note) {

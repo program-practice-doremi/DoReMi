@@ -2,6 +2,7 @@
 #include "instruments.h"
 #include "assert.h"
 #include <iostream>
+#include<stdio.h>
 
 void testSavingFile() 
 {

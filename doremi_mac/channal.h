@@ -1,5 +1,6 @@
 #ifndef CHANNAL_H
 #define CHANNAL_H
+#include<stdio.h>
 
 #include "pitch.h"
 
@@ -65,9 +66,12 @@ public:
      * @param _type: 0-127, representing instruments.
      */
     void changeType(int _type);
-
+    
     void changeLength(int _length);
 
+    void save_file(FILE *f);
+
+    Channal(FILE *f);
 };
 
 #endif // CHANNAL_H
