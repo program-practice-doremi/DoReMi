@@ -2,6 +2,7 @@
 #define CHANNAL_H
 
 #include <QObject>
+#include <stdio.h>
 #include "pitch.h"
 
 #define MAX_HOLD_OF_NOTES 5000
@@ -32,7 +33,7 @@ public:
 
 /**
  * @brief The Channal class holds not only a vector of notes(v_spo), but its length and music_type.
- * @author Cao Yu
+ * @authors Cao Yu, Wang Ruiyan(file operations)
  */
 class Channal : public QObject
 {
@@ -55,6 +56,18 @@ public:
 
 public:
     explicit Channal(int _number, int _length = 8, int musicType = 0, int _strength = 0, QObject *parent = nullptr);
+
+    /**
+     * @brief Create a channal by reading files.
+     * @author Wang Ruiyan
+     */
+    explicit Channal(FILE* f, QObject *parent = nullptr);
+
+    /**
+     * @brief save the channal to a file.
+     * @author Wang Ruiyan
+     */
+    void save_file(FILE *f);
 
     /**
      * @brief Add or change a note at certain place.

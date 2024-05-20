@@ -9,7 +9,7 @@
 /**
  * @brief The Music class represents a piece of music, including at most 10 channals.
  * @note Directly using "allChannals[]" is not recommended (except for saving and loading files). If you are doing so, there is probably an alternative way.
- * @author Cao Yu
+ * @authors Cao Yu, Wang Ruiyan(file operations)
  */
 class Music : public QObject
 {
@@ -23,6 +23,19 @@ public:
 
 public:
     explicit Music(std::string _name = "", int _channal_num = 1, int _speed = 80, int _length = 32, QObject *parent = nullptr);
+
+    /**
+     * @brief Opening a music by reading files.
+     * @note adding an int parameter k avoids collision between two constructors.
+     * @author Wang Ruiyan
+     */
+    explicit Music(int k, std::string file_path, QObject *parent = nullptr);
+
+    /**
+     * @brief save the music to certain file.
+     * @author Wang Ruiyan
+     */
+    void save_file(std::string file_path);
 
     /**
      * @brief change the length of the music to newLength.

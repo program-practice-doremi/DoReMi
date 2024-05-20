@@ -1,4 +1,8 @@
 #include "music.h"
+#include<fstream>
+#include<iostream>
+#include<stdio.h>
+#include<string>
 
 Music::Music(std::string _name, int _channal_num, int _speed, int _length, QObject *parent)
     : QObject{parent}, name(_name)
@@ -9,6 +13,54 @@ Music::Music(std::string _name, int _channal_num, int _speed, int _length, QObje
     for (int i = 0; i < channal_num; ++i) {
         this->allChannals[i] = new Channal(i, length);
     }
+}
+
+Music::Music(int k, std::string file_path, QObject *parent) : QObject{parent} {
+    FILE* f = fopen(file_path.c_str(), "rb");
+    if (f) {
+        size_t name_length;
+        fread(&name_length, sizeof(name_length), 1, f);
+        char* name_buf = new char[name_length + 1];
+        fread(name_buf, sizeof(char), name_length, f);
+        name_buf[name_length] = '\0';
+        name = std::string(name_buf);
+        delete[] name_buf;
+
+        fread(&channal_num, sizeof(channal_num), 1, f);
+        fread(&speed, sizeof(speed), 1, f);
+        fread(&length, sizeof(length), 1, f);
+        
+        for (int i = 0; i < channal_num; ++i) {
+            char marker = fgetc(f);
+            if (marker == '#') {
+                Channal* channel = new Channal(f);
+                allChannals[i] = channel;
+            }
+        }
+        fclose(f);
+    } else {
+        std::cerr << "Could not open file for reading: " << file_path << std::endl;
+    }
+}
+
+void Music::save_file(std::string file_path) {
+    FILE *f;
+    f = fopen(file_path.c_str(),"w");
+    if(f){
+        size_t name_length = name.size();
+        fwrite(&name_length, sizeof(name_length), 1, f);
+        fwrite(name.c_str(), sizeof(char), name_length, f);
+        fwrite(&channal_num, sizeof(channal_num), 1, f);
+        fwrite(&speed, sizeof(speed), 1, f);
+        fwrite(&length, sizeof(length), 1, f);
+        for(int i = 0;i <= channal_num;++i){
+            if(allChannals[i]){
+                allChannals[i]->save_file(f);
+            }
+        }
+        fclose(f);
+    }
+    return;
 }
 
 void Music::changeLength(int newLength) {
