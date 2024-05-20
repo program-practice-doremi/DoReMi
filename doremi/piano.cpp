@@ -1,16 +1,22 @@
 #include "piano.h"
 #include "ui_piano.h"
 #include "pitch.h"
+#include "music.h"
+#include "channal.h"
 #include <map>
 
-int buttonidToTune[] = {A2, A2S}; // TODO
+int buttonidToTune[] =
+    {A2, A2S, B2,
+     C3, C3S, D3, D3S, E3, F3, F3S, G3, G3S, A3, A3S, B3,
+     C4, C4S, D4, D4S, E4, F4, F4S, G4, G4S, A4, A4S, B4,
+     C5, C5S, D5, D5S, E5, F5, F5S, G5, G5S, A5};
+
 std::map<int, int> keyIdToButton;
 
 piano::piano(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::piano)
 {
-     // [(D4) +(D4S) / " " "(A5)
     keyIdToButton[Qt::Key_Q] = 0;
     keyIdToButton[Qt::Key_2] = 1;
     keyIdToButton[Qt::Key_W] = 2;
@@ -26,28 +32,29 @@ piano::piano(QWidget *parent)
     keyIdToButton[Qt::Key_I] = 12;
     keyIdToButton[Qt::Key_9] = 13;
     keyIdToButton[Qt::Key_O] = 14;
-    keyIdToButton[Qt::Key_0] = 15;
-    keyIdToButton[Qt::Key] = 16;
-    keyIdToButton[Qt::Key_] = 17;
-    keyIdToButton[Qt::Key_] = 18;
-    keyIdToButton[Qt::Key_] = 19;
-    keyIdToButton[Qt::Key_] = 20;
-    keyIdToButton[Qt::Key_] = 21;
-    keyIdToButton[Qt::Key_] = 22;
-    keyIdToButton[Qt::Key_] = 23;
-    keyIdToButton[Qt::Key_] = 24;
-    keyIdToButton[Qt::Key_] = 25;
-    keyIdToButton[Qt::Key_] = 26;
-    keyIdToButton[Qt::Key_] = 27;
-    keyIdToButton[Qt::Key_] = 28;
-    keyIdToButton[Qt::Key_] = 29;
-    keyIdToButton[Qt::Key_] = 30;
-    keyIdToButton[Qt::Key_] = 31;
-    keyIdToButton[Qt::Key_] = 32;
-    keyIdToButton[Qt::Key_] = 33;
-    keyIdToButton[Qt::Key_] = 34;
-    keyIdToButton[Qt::Key_] = 35;
-    keyIdToButton[Qt::Key_] = 36;
+    keyIdToButton[Qt::Key_P] = 15;
+    keyIdToButton[Qt::Key_Minus] = 16;
+    keyIdToButton[Qt::Key_BracketLeft] = 17;
+    keyIdToButton[Qt::Key_Equal] = 18;
+    keyIdToButton[Qt::Key_Z] = 19;
+    keyIdToButton[Qt::Key_X] = 20;
+    keyIdToButton[Qt::Key_D] = 21;
+    keyIdToButton[Qt::Key_C] = 22;
+    keyIdToButton[Qt::Key_F] = 23;
+    keyIdToButton[Qt::Key_V] = 24;
+    keyIdToButton[Qt::Key_G] = 25;
+    keyIdToButton[Qt::Key_B] = 26;
+    keyIdToButton[Qt::Key_N] = 27;
+    keyIdToButton[Qt::Key_J] = 28;
+    keyIdToButton[Qt::Key_M] = 29;
+    keyIdToButton[Qt::Key_K] = 30;
+    keyIdToButton[Qt::Key_Comma] = 31;
+    keyIdToButton[Qt::Key_Period] = 32;
+    keyIdToButton[Qt::Key_Semicolon] = 33;
+    keyIdToButton[Qt::Key_Slash] = 34;
+    keyIdToButton[Qt::Key_Apostrophe] = 35;
+    keyIdToButton[Qt::Key_Space] = 36;
+
     ui->setupUi(this);
     piano_keys= new QButtonGroup();
     piano_keys->addButton(ui->pushButtona2,0);
@@ -93,7 +100,10 @@ piano::piano(QWidget *parent)
 
 void piano::keyPressEvent(QKeyEvent *event) {
     int current_pressed = event->key();
-
+    int id_button = keyIdToButton(current_pressed);
+    piano_keys->button(id_button); // TODO: change color.
+    v_spo *note = new v_spo();     // TODO: fill up this.
+    // emit somenote
 }
 
 piano::~piano()
