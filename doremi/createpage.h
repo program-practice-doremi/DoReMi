@@ -21,6 +21,9 @@ public:
     explicit CreatePage(QWidget *parent = nullptr);
     ~CreatePage();
 
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::CreatePage *ui;
 };

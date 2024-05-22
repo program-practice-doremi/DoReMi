@@ -100,7 +100,7 @@ piano::piano(QWidget *parent)
 
 void piano::keyPressEvent(QKeyEvent *event) {
     int current_pressed = event->key();
-    int id_button = keyIdToButton(current_pressed);
+    int id_button = keyIdToButton[current_pressed];
     piano_keys->button(id_button); // TODO: change color.
     v_spo *note = new v_spo();     // TODO: fill up this.
     // emit somenote

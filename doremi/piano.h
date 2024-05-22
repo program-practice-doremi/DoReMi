@@ -14,7 +14,7 @@ class piano : public QMainWindow
 {
     Q_OBJECT
 public:
-    Mediaplayer *player = new MediaPlayer();
+    MediaPlayer *player = new MediaPlayer();
 
 public:
     explicit piano(QWidget *parent = nullptr);

@@ -6,21 +6,67 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>721</width>
-    <height>413</height>
+    <width>1076</width>
+    <height>613</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QListWidget" name="listWidget">
+   <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>191</width>
-      <height>361</height>
+      <x>30</x>
+      <y>30</y>
+      <width>51</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>文件</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="musicNameEdit">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>30</y>
+      <width>221</width>
+      <height>25</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QScrollArea" name="scrollArea">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>90</y>
+      <width>241</width>
+      <height>451</height>
+     </rect>
+    </property>
+    <property name="widgetResizable">
+     <bool>true</bool>
+    </property>
+    <widget class="QWidget" name="scrollAreaWidgetContents">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>239</width>
+       <height>449</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
+   <widget class="FileOperatingWidget" name="widget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>190</y>
+      <width>711</width>
+      <height>331</height>
      </rect>
     </property>
    </widget>
@@ -30,13 +76,21 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>721</width>
+     <width>1076</width>
      <height>25</height>
     </rect>
    </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>FileOperatingWidget</class>
+   <extends>QWidget</extends>
+   <header location="global">fileoperatingwidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

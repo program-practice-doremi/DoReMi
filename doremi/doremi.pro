@@ -12,6 +12,7 @@ SOURCES += \
     channal.cpp \
     chooseinstruments.cpp \
     createpage.cpp \
+    fileoperatingwidget.cpp \
     main.cpp \
     mainwindow.cpp \
     mediaplayer.cpp \
@@ -25,6 +26,7 @@ HEADERS += \
     channal.h \
     chooseinstruments.h \
     createpage.h \
+    fileoperatingwidget.h \
     instruments.h \
     mainwindow.h \
     mediaplayer.h \
@@ -38,6 +40,7 @@ HEADERS += \
 FORMS += \
     chooseinstruments.ui \
     createpage.ui \
+    fileoperatingwidget.ui \
     mainwindow.ui \
     menu.ui \
     piano.ui
