@@ -752,6 +752,10 @@ void MediaPlayer::setMute(int channalNum) {
 
 void MediaPlayer::pause() {
     emit this->StopPlaying();
+    if (this->song)
+        for (int i = 0; i < song->channal_num; ++i) {
+            this->MakeSound(new stop_spo(), i);
+        }
 }
 
 void MediaPlayer::restart() {
@@ -768,6 +772,16 @@ void MediaPlayer::closeMetronome() {
 
 void MediaPlayer::changeMetronomeStrength(int strength) {
     this->metronome_additional_strength = strength;
+}
+
+void MediaPlayer::changeChannelStrength(int id, int strength){
+    if (id < this->song->channal_num && id >= 0)
+        this->song->allChannals[id]->strength = strength;
+}
+
+void MediaPlayer::changeMusicType(int id, int type) {
+    if (id < this->song->channal_num && id >= 0)
+        this->song->allChannals[id]->type = type;
 }
 
 int MediaPlayer::getCurrentPlaying() {

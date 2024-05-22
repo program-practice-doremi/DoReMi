@@ -148,7 +148,7 @@ Ocean::Ocean(): Music("我们都拥有海洋", 5, 70, 600) {
     this->addNote(1, b_start + 2, 6, F3S);
     this->addNote(1, b_start + 4, 6, B3);
 
-    this->addNote(0, b_start, 8, C2S);
+    this->addNote(0, b_start + 8, 8, C2S);
     this->addNote(1, b_start + 8, 6, C3S);
     this->addNote(1, b_start + 10, 6, G3S);
     this->addNote(1, b_start + 12, 6, C4S);
@@ -159,7 +159,7 @@ Ocean::Ocean(): Music("我们都拥有海洋", 5, 70, 600) {
     this->addNote(0, b_start + 48, 6, A2S, F3, A3S);
     this->addNote(0, b_start + 56, 6, D3S, A3S, D4S);
     this->addNote(1, b_start + 59, 4, F4);
-    this->addNote(1, b_start + 61, 4, F4S);
+    this->addNote(1, b_start + 61, 4, G4);
 
     // 去哪  --让我选择
     this->addNote(2, b_start - 2, 9, C5S);
@@ -171,7 +171,7 @@ Ocean::Ocean(): Music("我们都拥有海洋", 5, 70, 600) {
 
     // 如果  --只有岸没有海
     this->RepeatSingleChannal(2, b_start - 2, b_start + 14, b_start + 14);
-    this->RepeatSingleChannal(2, b_start - 2, b_start + 14, b_start + 26);
+    this->RepeatSingleChannal(2, b_start - 2, b_start + 14, b_start + 30);
     this->addNote(3, b_start + 18, 6, D5S);
     this->addNote(3, b_start + 19, 6, A5S);
     this->addNote(3, b_start + 22, 7, C6S);
@@ -194,9 +194,9 @@ Ocean::Ocean(): Music("我们都拥有海洋", 5, 70, 600) {
     this->addNote(3, b_start + 48, 11, G5S);
     this->CopyNote(3, b_start + 45, b_start + 49, 2, b_start + 45);
     this->ChangeTune(2, b_start + 45, b_start + 49, -12);
-    this->addNote(3, b_start + 54, 11, D5S, G5);
+    this->addNote(3, b_start + 54, 6, D5S, G5);
     this->addNote(2, b_start + 54, 8, A4S, D5S);
-    this->addNote(3, b_start + 55, 12, G5, A5S);
+    this->addNote(3, b_start + 55, 6, G5, A5S);
     this->addNote(2, b_start + 55, 8, A4S, D5S);
 
     this->addNote(0, b_start + 63, new stop_spo());
@@ -252,7 +252,7 @@ Ocean::Ocean(): Music("我们都拥有海洋", 5, 70, 600) {
     this->addNote(2, c_start + 38, 7, A4S, D5);
     this->addNote(2, c_start + 40, 6, G4S, C5);
     this->addNote(2, c_start + 42, 7, A4S, D5);
-    this->addNote(2, c_start, 43, C5S, D5S);
+    this->addNote(2, c_start + 43, 7, C5, D5S);
 
     // 怎么判断有用 谁来规定无用
     this->addNote(2, c_start + 48, 5, G4, A4S);
@@ -296,8 +296,8 @@ Ocean::Ocean(): Music("我们都拥有海洋", 5, 70, 600) {
     this->addNote(2, c_start + 64 + 39, 7, D4S);
     this->addNote(0, c_start + 64 + 39, 6, G2S);
     this->addNote(1, c_start + 64 + 39, 6, G3S);
-    this->addNote(3, c_start + 64 + 43, 4, D5, D6);
-    this->addNote(3, c_start + 64 + 44, 5, D5S, D6S);
+    this->addNote(3, c_start + 64 + 42, 4, D5, D6);
+    this->addNote(3, c_start + 64 + 43, 5, D5S, D6S);
     this->addNote(2, c_start + 64 + 46, 7, D4, D5);
     this->addNote(0, c_start + 64 + 46, 6, G2S);
     this->addNote(1, c_start + 64 + 46, 6, G3S);

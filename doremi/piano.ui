@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>805</width>
-    <height>423</height>
+    <width>809</width>
+    <height>418</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -30,7 +30,7 @@
    <widget class="QDial" name="volume_button">
     <property name="geometry">
      <rect>
-      <x>530</x>
+      <x>680</x>
       <y>10</y>
       <width>50</width>
       <height>64</height>
@@ -56,7 +56,7 @@
       <x>430</x>
       <y>20</y>
       <width>31</width>
-      <height>28</height>
+      <height>31</height>
      </rect>
     </property>
     <property name="text">
@@ -76,10 +76,10 @@
    <widget class="QPushButton" name="exitbutton">
     <property name="geometry">
      <rect>
-      <x>600</x>
-      <y>30</y>
+      <x>520</x>
+      <y>20</y>
       <width>31</width>
-      <height>28</height>
+      <height>31</height>
      </rect>
     </property>
     <property name="text">
@@ -554,13 +554,26 @@
      <string/>
     </property>
    </widget>
+   <widget class="QPushButton" name="stop_Button">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>20</y>
+      <width>31</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>805</width>
+     <width>809</width>
      <height>25</height>
     </rect>
    </property>

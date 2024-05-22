@@ -10,6 +10,7 @@ CONFIG += c++17
 
 SOURCES += \
     channal.cpp \
+    channeledit.cpp \
     chooseinstruments.cpp \
     createpage.cpp \
     fileoperatingwidget.cpp \
@@ -24,6 +25,7 @@ SOURCES += \
 
 HEADERS += \
     channal.h \
+    channeledit.h \
     chooseinstruments.h \
     createpage.h \
     fileoperatingwidget.h \
@@ -38,6 +40,7 @@ HEADERS += \
     test.h
 
 FORMS += \
+    channeledit.ui \
     chooseinstruments.ui \
     createpage.ui \
     fileoperatingwidget.ui \

@@ -104,6 +104,16 @@ public slots:
     void setCurrentEditing(int channalNum);
 
     /**
+     * @brief change the strength of certain channel.
+     */
+    void changeChannelStrength(int id, int strength);
+
+    /**
+     * @brief change the type of music.
+     */
+    void changeMusicType(int id, int type);
+
+    /**
      * @brief Receive a note and play it out. You should first declare the "currentEditing"!
      */
     void receiveNote(v_spo *note);

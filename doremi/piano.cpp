@@ -5,7 +5,7 @@
 #include "channal.h"
 #include <map>
 
-int buttonidToTune[] =
+Pitch buttonidToTune[] =
     {A2, A2S, B2,
      C3, C3S, D3, D3S, E3, F3, F3S, G3, G3S, A3, A3S, B3,
      C4, C4S, D4, D4S, E4, F4, F4S, G4, G4S, A4, A4S, B4,
@@ -95,15 +95,187 @@ piano::piano(QWidget *parent)
     piano_keys->addButton(ui->pushButtong5s,35);
     piano_keys->addButton(ui->pushButtona5,36);
     setFocusPolicy(Qt::StrongFocus);
+    ui->pushButtona2s->setStyleSheet("QAbstractButton {"
+                     "background-color:rgb(46,50,52);" // 按钮背景
+                      "border-radius: 4px;" // 按钮边框圆角半径
+                     "}");
+    ui->pushButtonc3s->setStyleSheet("QAbstractButton {"
+                                     "border-radius: 4px;" // 按钮边框圆角半径
+                                     "background-color: rgb(46,50,52);" // 按钮背景
+                                     "}");
+    ui->pushButtond3s->setStyleSheet("QAbstractButton {"
+                                     "border-radius: 4px;" // 按钮边框圆角半径
+                                     "background-color: rgb(46,50,52);" // 按钮背景
+                                     "}");
+    ui->pushButtonf3s->setStyleSheet("QAbstractButton {"
+                                     "border-radius: 4px;" // 按钮边框圆角半径
+                                     "background-color: rgb(46,50,52);" // 按钮背景
+                                     "}");
+    ui->pushButtong3s->setStyleSheet("QAbstractButton {"
+                                     "border-radius: 4px;" // 按钮边框圆角半径
+                                     "background-color:rgb(46,50,52);" // 按钮背景
+                                     "}");
+    ui->pushButtona3s->setStyleSheet("QAbstractButton {"
+                                     "border-radius: 4px;" // 按钮边框圆角半径
+                                     "background-color:rgb(46,50,52);" // 按钮背景
+                                     "}");
+    ui->pushButtonc4s->setStyleSheet("QAbstractButton {"
+                                     "border-radius: 4px;" // 按钮边框圆角半径
+                                     "background-color:rgb(46,50,52);" // 按钮背景
+                                     "}");
+    ui->pushButtond4s->setStyleSheet("QAbstractButton {"
+                                     "border-radius: 4px;" // 按钮边框圆角半径
+                                     "background-color:rgb(46,50,52);" // 按钮背景
+                                     "}");
+    ui->pushButtonf4s->setStyleSheet("QAbstractButton {"
+                                     "border-radius: 4px;" // 按钮边框圆角半径
+                                     "background-color:rgb(46,50,52);" // 按钮背景
+                                     "}");
+    ui->pushButtong4s->setStyleSheet("QAbstractButton {"
+                                     "border-radius: 4px;" // 按钮边框圆角半径
+                                     "background-color:rgb(46,50,52);" // 按钮背景
+                                     "}");
+    ui->pushButtona4s->setStyleSheet("QAbstractButton {"
+                                     "border-radius: 4px;" // 按钮边框圆角半径
+                                     "background-color: rgb(46,50,52);" // 按钮背景
+                                     "}");
+    ui->pushButtonc5s->setStyleSheet("QAbstractButton {"
+                                     "border-radius: 4px;" // 按钮边框圆角半径
+                                     "background-color: rgb(46,50,52);" // 按钮背景
+                                     "}");
+    ui->pushButtond5s->setStyleSheet("QAbstractButton {"
+                                     "border-radius: 4px;" // 按钮边框圆角半径
+                                     "background-color: rgb(46,50,52);" // 按钮背景
+                                     "}");
+    ui->pushButtonf5s->setStyleSheet("QAbstractButton {"
+                                     "border-radius: 4px;" // 按钮边框圆角半径
+                                     "background-color: rgb(46,50,52);" // 按钮背景
+                                     "}");
+    ui->pushButtong5s->setStyleSheet("QAbstractButton {"
+                                     "border-radius: 4px;" // 按钮边框圆角半径
+                                     "background-color: rgb(46,50,52);" // 按钮背景
+                                     "}");
+    ui->pushButtona2->setStyleSheet("QAbstractButton {"
+                                    "background-color: white;" // 按钮背景
+                                     "}");
+    ui->pushButtonb2->setStyleSheet("QAbstractButton {"
+                                    "background-color: white;" // 按钮背景
+                                  "}");
+    ui->pushButtonc3->setStyleSheet("QAbstractButton {"
+                                    "background-color: white;" // 按钮背景
+                                   "}");
+    ui->pushButtond3->setStyleSheet("QAbstractButton {"
+                                    "background-color: white;" // 按钮背景
+                                    "}");
+    ui->pushButtone3->setStyleSheet("QAbstractButton {"
+                                    "background-color: white;" // 按钮背景
+                                    "}");
+    ui->pushButtonf3->setStyleSheet("QAbstractButton {"
+                                    "background-color: white;" // 按钮背景
+                                   "}");
+    ui->pushButtong3->setStyleSheet("QAbstractButton {"
+                                    "background-color: white;" // 按钮背景
+                                   "}");
+    ui->pushButtona3->setStyleSheet("QAbstractButton {"
+                                    "background-color: white;" // 按钮背景
+                                   "}");
+    ui->pushButtonb3->setStyleSheet("QAbstractButton {"
+                                    "background-color: white;" // 按钮背景
+                                    "}");
+    ui->pushButtonc4->setStyleSheet("QAbstractButton {"
+                                    "background-color: white;" // 按钮背景
+                                    "}");
+    ui->pushButtond4->setStyleSheet("QAbstractButton {"
+                                    "background-color: white;" // 按钮背景
+                                    "}");
+    ui->pushButtone4->setStyleSheet("QAbstractButton {"
+                                    "background-color: white;" // 按钮背景
+                                   "}");
+    ui->pushButtonf4->setStyleSheet("QAbstractButton {"
+                                    "background-color: white;" // 按钮背景
+                                    "}");
+    ui->pushButtong4->setStyleSheet("QAbstractButton {"
+                                    "background-color: white;" // 按钮背景
+                                  "}");
+    ui->pushButtona4->setStyleSheet("QAbstractButton {"
+                                    "background-color: white;" // 按钮背景
+                                   "}");
+    ui->pushButtonb4->setStyleSheet("QAbstractButton {"
+                                    "background-color: white;" // 按钮背景
+                                    "}");
+    ui->pushButtonc5->setStyleSheet("QAbstractButton {"
+                                    "background-color: white;" // 按钮背景
+                                   "}");
+    ui->pushButtond5->setStyleSheet("QAbstractButton {"
+                                    "background-color: white;" // 按钮背景
+                                   "}");
+    ui->pushButtone5->setStyleSheet("QAbstractButton {"
+                                    "background-color: white;" // 按钮背景
+                                    "}");
+    ui->pushButtonf5->setStyleSheet("QAbstractButton {"
+                                   "background-color: white;" // 按钮背景
+                                    "}");
+
+    ui->pushButtong5->setStyleSheet("QAbstractButton {"
+                                   "background-color: white;" // 按钮背景
+                                    "}");
+    ui->pushButtona5->setStyleSheet("QAbstractButton {"
+                                    "background-color: white;" // 按钮背景
+                                    "}");
+    this->ui->volume_button->setRange(0, 13);
+    this->ui->volume_button->setValue(7);
+}
+
+void piano::change_color(int id){
+    if(id==1||id==4||id==6||id==9||id==11||id==13||id==16||id==18||id==21||id==23||id==25||id==28||id==30||id==33||id==35){
+        piano_keys->button(id)->setStyleSheet("QAbstractButton {"
+                                      "background-color: black;" // 按钮背景
+                                      "border-radius: 4px;" // 按钮边框圆角半径
+                                      "}");
+
+    }
+    else{
+        piano_keys->button(id)->setStyleSheet("QAbstractButton {"
+                        "background-color: grey;" // 按钮背景
+                        "}");
+    }
+
+}
+void piano::change_color_back(int id){
+    if(id==1||id==4||id==6||id==9||id==11||id==13||id==16||id==18||id==21||id==23||id==25||id==28||id==30||id==33||id==35){
+        piano_keys->button(id)->setStyleSheet("QAbstractButton {"
+                                              "background-color: rgb(46,50,52);" // 按钮背景
+                                              "border-radius: 4px;" // 按钮边框圆角半径
+                                              "}");
+
+    }
+    else{
+        piano_keys->button(id)->setStyleSheet("QAbstractButton {"
+                                              "background-color: white;" // 按钮背景
+                                              "}");
+    }
 
 }
 
+
+
 void piano::keyPressEvent(QKeyEvent *event) {
+    if (event->isAutoRepeat()) {
+        return;
+    }
     int current_pressed = event->key();
     int id_button = keyIdToButton[current_pressed];
-    piano_keys->button(id_button); // TODO: change color.
-    v_spo *note = new v_spo();     // TODO: fill up this.
-    // emit somenote
+    change_color(id_button); // TODO: change color.
+    v_spo *note = new v_spo(buttonidToTune[id_button], _REST, _REST, _REST, this->ui->volume_button->value());     // TODO: fill up this.
+    emit newnote(note);
+}
+
+void piano::keyReleaseEvent(QKeyEvent *event) {
+    int current_pressed = event->key();
+    int id_button = keyIdToButton[current_pressed];
+    change_color_back(id_button); // TODO: change color.
+    v_spo *note = new stop_spo();     // TODO: fill up this.
+    emit newnote(note);
 }
 
 piano::~piano()
