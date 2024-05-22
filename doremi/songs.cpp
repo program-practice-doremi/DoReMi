@@ -328,4 +328,87 @@ Ocean::Ocean(): Music("我们都拥有海洋", 5, 70, 600) {
     // Part D 352
     int d_start = c_start + 128;
     
+    this->addNote(4, d_start, 8, G1S);
+    this->addNote(0, d_start + 1, 8, G2S);
+    this->addNote(0, d_start + 2, 8, G2S);
+    this->addNote(0, d_start + 3, 8, G3S);
+    this->RepeatAllChannals(d_start, d_start + 4, d_start + 4);
+    this->RepeatAllChannals(d_start, d_start + 8, d_start + 8);
+    this->RepeatAllChannals(d_start, d_start + 16, d_start + 16);
+    this->ChangeTune(0, d_start + 8, d_start + 16, 2);
+    this->ChangeTune(4, d_start + 8, d_start + 16, 2);
+    this->ChangeTune(0, d_start + 16, d_start + 24, -1);
+    this->ChangeTune(4, d_start + 16, d_start + 24, -1);
+    this->ChangeTune(0, d_start + 24, d_start + 32, 4);
+    this->ChangeTune(4, d_start + 24, d_start + 32, 4);
+    this->RepeatAllChannals(d_start, d_start + 16, d_start + 32);
+    this->addNote(4, d_start + 48, 9, G1, G2);
+    this->addNote(4, d_start + 49, new stop_spo());
+    this->addNote(4, d_start + 51, 9, G1, G2);
+    this->addNote(4, d_start + 54, 9, G1, G2);
+    this->addNote(4, d_start + 56, 9, C2, C3);
+
+    // 穿着 球鞋 （我的球鞋）
+    this->addNote(3, d_start, 5, D5S, D6S);
+    this->addNote(3, d_start + 4, 5, F5, F6);
+    this->addNote(3, d_start + 8, 5, G5, G6);
+    this->addNote(3, d_start + 12, 5, A5S, A6S);
+    this->addNote(1, d_start + 9, 6, A1S, A2S);
+    this->addNote(1, d_start + 10, 6, D2S, D3S);
+    this->addNote(1, d_start + 11, 6, G2, G3);
+    this->addNote(1, d_start + 12, 6, F2, F3);
+    this->addNote(1, d_start + 13, 6, D2S, D3S);
+    this->addNote(1, d_start + 14, 6, D2, D3);
+    this->addNote(1, d_start + 15, 6, D2S, D3S);
+    this->addNote(2, d_start + 10, 9, F4, F5);
+    this->addNote(2, d_start + 11, 9, D4S, D5S);
+    this->addNote(2, d_start + 13, 9, D4, D5);
+    this->addNote(2, d_start + 15, 9, D4S, D5S);
+
+    // 迎着 暴雪 （我的暴雪）
+    this->RepeatSingleChannal(3, d_start, d_start + 16, d_start + 16);
+    this->RepeatSingleChannal(3, d_start, d_start + 16, d_start + 16);
+    this->addNote(2, d_start + 16 + 10, 9, G4, G5);
+    this->addNote(2, d_start + 16 + 11, 9, F4, F5);
+    this->addNote(2, d_start + 16 + 13, 9, D4S, D5S);
+    this->addNote(2, d_start + 16 + 15, 9, D4S, D5S);
+
+    // 朝着 山野 （要去见）
+    this->RepeatSingleChannal(3, d_start, d_start + 16, d_start + 32);
+    this->RepeatSingleChannal(3, d_start, d_start + 16, d_start + 32);
+    this->addNote(2, d_start + 32 + 10, 9, F4, F5);
+    this->addNote(2, d_start + 32 + 11, 9, D4S, D5S);
+    this->addNote(2, d_start + 32 + 13, 9, D4, D5);
+
+    // 所有我喜欢的一切
+    this->addNote(2, d_start + 48 + 0, 10, F4, F5);
+    this->addNote(2, d_start + 48 + 1, 8, F4, F5);
+    this->addNote(2, d_start + 48 + 2, 9, F4, F5);
+    this->addNote(2, d_start + 48 + 3, 10, F4, F5);
+    this->addNote(2, d_start + 48 + 4, 9, G4S, G5S);
+    this->addNote(2, d_start + 48 + 5, 9, G4, G5);
+    this->addNote(2, d_start + 48 + 6, 9, F4, F5);
+    this->addNote(2, d_start + 48 + 7, 9, D4S, D5S);
+    this->CopyNote(2, d_start + 48 + 0, d_start + 48 + 8, 3, d_start + 48);
+    this->ChangeTune(3, d_start + 48, d_start + 56, 12);
+
+    // 就让我自己走吧
+    this->addNote(2, d_start + 57, 10, A4S, A5S);
+    this->addNote(2, d_start + 58, 9, D5S, D6S);
+    this->addNote(2, d_start + 59, 11, G5, G6);
+    this->addNote(2, d_start + 60, 10, F5, F6);
+    this->addNote(2, d_start + 61, 9, D5S, D6S);
+    this->addNote(2, d_start + 62, 10, D5, D6);
+    this->addNote(2, d_start + 63, 11, D5S, D6S);
+
+    // 那一代 什么浪 （别对我说）
+    this->RepeatSingleChannal(0, d_start, d_start + 32, d_start + 64);
+    this->RepeatSingleChannal(1, d_start, d_start + 32, d_start + 64);
+    this->RepeatSingleChannal(4, d_start, d_start + 32, d_start + 64);
+
+    this->addNote(3, d_start + 64 + 1, 6, G4, G5);
+    this->addNote(3, d_start + 64 + 2, 6, G4S, G5S);
+    this->addNote(3, d_start + 64 + 3, 6, A4S, A5S);
+    this->RepeatSingleChannal(3, d_start + 64, d_start + 68, d_start + 68)
+    
 }
