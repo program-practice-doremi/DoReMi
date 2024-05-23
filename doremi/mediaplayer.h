@@ -142,6 +142,11 @@ signals:
      * @brief send the current playing position.
      */
     void sendCurrentPlaying(int po);
+
+    /**
+     * @brief send the current playing note.
+     */
+    void sendCurrentNote(int channal, v_spo *note);
 };
 
 #endif // MEDIAPLAYER_H

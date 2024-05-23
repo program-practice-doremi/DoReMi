@@ -727,6 +727,9 @@ void MediaPlayer::PlayNext() {
     emit this->sendCurrentPlaying(this->currentPlaying);
     for (int i = 0; i < this->song->channal_num; ++i)
     {
+        if (!this->channal_closed[i]) {
+            emit this->sendCurrentNote(i, this->song->allChannals[i]->notes[currentPlaying]);
+        }
         if ((!this->channal_closed[i]) && this->song->allChannals[i]->notes[currentPlaying]->_v1 != _REST) {
             this->MakeSound(this->song->allChannals[i]->notes[currentPlaying], i, this->song->allChannals[i]->strength);
         }
@@ -754,6 +757,7 @@ void MediaPlayer::pause() {
     emit this->StopPlaying();
     if (this->song)
         for (int i = 0; i < song->channal_num; ++i) {
+            emit this->sendCurrentNote(i, new stop_spo());
             this->MakeSound(new stop_spo(), i);
         }
 }
