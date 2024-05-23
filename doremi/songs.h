@@ -26,4 +26,15 @@ public:
     explicit Ocean();
 };
 
+/**
+ * Test music 2: 打上花火 by Daoko，米津玄师
+ * Adapted by Animenzzz
+ * Converted to match current music structure.
+*/
+
+class FireWorks: public Music {
+public:
+    explicit FireWorks();
+};
+
 #endif // SONGS_H
