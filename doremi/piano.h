@@ -22,6 +22,7 @@ public:
     explicit piano(QWidget *parent = nullptr);
     ~piano();
     QButtonGroup *piano_keys;
+    void setInstrumentText(QString t);
 signals:
     void newnote(v_spo *note);
 protected:

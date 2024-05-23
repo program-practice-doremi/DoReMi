@@ -825,6 +825,16 @@ void MediaPlayer::changeLength(int length) {
     this->song->changeLength(length);
 }
 
+void MediaPlayer::changeAllTune(int tune) {
+    for (int i = 0; i < song->channal_num; ++i) {
+        this->song->ChangeTune(i, 0, this->song->length, tune);
+    }
+}
+
+void MediaPlayer::changeBPH(int speed) {
+    this->song->speed = speed;
+}
+
 MediaPlayer::~MediaPlayer() {
     delete t;
 }

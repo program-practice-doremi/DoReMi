@@ -123,6 +123,14 @@ public slots:
      */
     void changeLength(int length);
 
+
+    /**
+     * @brief change the tune of all channals.
+     */
+    void changeAllTune(int tune);
+
+    void changeBPH(int speed);
+
 private:
     void init();
     virtual void PlayNext();

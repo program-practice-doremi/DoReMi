@@ -1,6 +1,8 @@
 #ifndef INSTRUMENTS_H
 #define INSTRUMENTS_H
 
+#include <string>
+
 /**
  * General MIDI Level 1 旋律乐器对照表
  * @note: 只向某个MIDI通道发送Program Change命令设置乐器，是不能发音的，
@@ -151,5 +153,6 @@
 #define Helicopter 125 //直升机
 #define Applause 126 //拍手
 #define Gunshot 127 //枪声
+
 
 #endif // INSTRUMENTS_H

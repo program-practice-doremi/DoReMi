@@ -30,8 +30,6 @@ void menu::on_create_clicked()
 
 void menu::on_back_clicked()
 {   this->close();
-    MainWindow *pict=new MainWindow();
-    pict->show();
 }
 
 

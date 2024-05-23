@@ -28,6 +28,9 @@ CreatePage::CreatePage(QWidget *parent)
         connect(this->channelEdits[i], &ChannelEdit::CurrentEditing, this->player, &MediaPlayer::setCurrentEditing);
         connect(this->channelEdits[i], &ChannelEdit::DeliverNote, this->player, &MediaPlayer::receiveNote);
     }
+    this->ui->tune_box->setMaximum(12);
+    this->ui->tune_box->setMinimum(-12);
+    this->ui->speed_box->setMaximum(140);
 }
 
 CreatePage::~CreatePage()
@@ -40,6 +43,10 @@ void CreatePage::getmusic(Music *song){
     player->SetMusic(sang);
     QString k(sang->name.c_str());
     ui->musicNameEdit->setText(k);
+    ui->tune_box->setValue(0);
+    int speed=song->speed;
+    ui->speed_box->setValue(speed);
+
     for (int i = 0; i < song->channal_num; ++i) {
         this->channelEdits[i]->setStrength(song->allChannals[i]->strength);
         this->channelEdits[i]->setMusicType(song->allChannals[i]->type);
@@ -85,5 +92,17 @@ void CreatePage::on_checkBox_stateChanged(int arg1)
     else {
         player->openMetronome();
     }
+}
+
+
+void CreatePage::on_tune_box_valueChanged(int arg1)
+{
+    player->changeAllTune(arg1);
+}
+
+
+void CreatePage::on_speed_box_valueChanged(int arg1)
+{
+    player->changeBPH(arg1);
 }
 

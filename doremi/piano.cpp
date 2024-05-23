@@ -278,6 +278,10 @@ void piano::keyReleaseEvent(QKeyEvent *event) {
     emit newnote(note);
 }
 
+void piano::setInstrumentText(QString t){
+    this->ui->show_cur->setText(t);
+}
+
 piano::~piano()
 {
     delete ui;

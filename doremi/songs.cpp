@@ -409,6 +409,6 @@ Ocean::Ocean(): Music("我们都拥有海洋", 5, 70, 600) {
     this->addNote(3, d_start + 64 + 1, 6, G4, G5);
     this->addNote(3, d_start + 64 + 2, 6, G4S, G5S);
     this->addNote(3, d_start + 64 + 3, 6, A4S, A5S);
-    this->RepeatSingleChannal(3, d_start + 64, d_start + 68, d_start + 68)
+    this->RepeatSingleChannal(3, d_start + 64, d_start + 68, d_start + 68);
     
 }
