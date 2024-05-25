@@ -46,6 +46,6 @@ public:
 class FightSong: public Music {
 public:
     explicit FightSong();
-}
+};
 
 #endif // SONGS_H
