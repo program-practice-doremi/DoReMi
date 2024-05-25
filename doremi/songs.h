@@ -37,4 +37,15 @@ public:
     explicit FireWorks();
 };
 
+
+/**
+ * Test music 3: Fight Song & Amazing Grace
+ * Adapted by Cao Yu
+ */
+
+class FightSong: public Music {
+public:
+    explicit FightSong();
+}
+
 #endif // SONGS_H
