@@ -73,7 +73,7 @@ Twinkle::Twinkle(): Music("TwinkleTwinkleLittleStar", 2, 60, 102) {
     this->addNote(1, 92, 6, C3, E3, G3, C4);
 }
 
-Ocean::Ocean(): Music("我们都拥有海洋", 5, 70, 600) {
+Ocean::Ocean(): Music("我们都拥有海洋", 6, 70, 1150) {
 
     /**********************/
     /**** 我们都拥有海洋 ****/
@@ -85,6 +85,7 @@ Ocean::Ocean(): Music("我们都拥有海洋", 5, 70, 600) {
     this->setType(1, Acoustic_Grand_Piano);  // Middle
     this->setType(2, Acoustic_Grand_Piano);  // High
     this->setType(3, Music_Box); // simulate chores
+    this->setType(4, Drawbar_Organ);
 
     /**** Additional Strength ****/
     this->setAdditionalStrength(2, 2);
@@ -327,13 +328,14 @@ Ocean::Ocean(): Music("我们都拥有海洋", 5, 70, 600) {
 
     // Part D 352
     int d_start = c_start + 128;
-    
-    this->addNote(4, d_start, 8, G1S);
+     
+    this->addNote(0, d_start, 8, G1S);
     this->addNote(0, d_start + 1, 8, G2S);
     this->addNote(0, d_start + 2, 8, G2S);
     this->addNote(0, d_start + 3, 8, G3S);
     this->RepeatAllChannals(d_start, d_start + 4, d_start + 4);
     this->RepeatAllChannals(d_start, d_start + 8, d_start + 8);
+    this->addNote(4, d_start, 8, G1S);
     this->RepeatAllChannals(d_start, d_start + 16, d_start + 16);
     this->ChangeTune(0, d_start + 8, d_start + 16, 2);
     this->ChangeTune(4, d_start + 8, d_start + 16, 2);
@@ -373,6 +375,14 @@ Ocean::Ocean(): Music("我们都拥有海洋", 5, 70, 600) {
     this->addNote(2, d_start + 16 + 13, 9, D4S, D5S);
     this->addNote(2, d_start + 16 + 15, 9, D4S, D5S);
 
+    this->addNote(1, d_start + 16 + 9, 6, A1S, A2S);
+    this->addNote(1, d_start + 16 + 10, 6, D2S, D3S);
+    this->addNote(1, d_start + 16 + 11, 6, G2, G3);
+    this->addNote(1, d_start + 16 + 12, 6, F2, F3);
+    this->addNote(1, d_start + 16 + 13, 6, D2S, D3S);
+    this->addNote(1, d_start + 16 + 14, 6, D2, D3);
+    this->addNote(1, d_start + 16 + 15, 6, D2S, D3S);
+
     // 朝着 山野 （要去见）
     this->RepeatSingleChannal(3, d_start, d_start + 16, d_start + 32);
     this->RepeatSingleChannal(3, d_start, d_start + 16, d_start + 32);
@@ -409,7 +419,105 @@ Ocean::Ocean(): Music("我们都拥有海洋", 5, 70, 600) {
     this->addNote(3, d_start + 64 + 1, 6, G4, G5);
     this->addNote(3, d_start + 64 + 2, 6, G4S, G5S);
     this->addNote(3, d_start + 64 + 3, 6, A4S, A5S);
-    this->RepeatSingleChannal(3, d_start + 64, d_start + 68, d_start + 68);
+    this->RepeatSingleChannal(3, d_start + 64, d_start + 68, d_start + 72);
+
+    this->addNote(2, d_start + 64 + 6, 8, F4, F5);
+    this->addNote(2, d_start + 64 + 7, 8, D4S, D5S);
+    this->addNote(2, d_start + 64 + 9, 8, D4, D5);
+    this->addNote(2, d_start + 64 + 11, 8, F4, F5);
+
+    // 都不是 我的模样 （去成为谁的模样）
+    this->RepeatSingleChannal(3, d_start + 64, d_start + 68, d_start + 80);
+    this->addNote(2, d_start + 64 + 21, 8, D4, D5);
+    this->addNote(2, d_start + 64 + 22, 8, D4S, D5S);
+    this->addNote(2, d_start + 64 + 23, 8, F4, F5);
+    this->addNote(2, d_start + 64 + 24, 8, D4S, D5S);
+    this->addNote(2, d_start + 64 + 25, 8, F4, F5);
+    this->addNote(2, d_start + 64 + 26, 8, G4, G5);
+    this->addNote(2, d_start + 64 + 27, 8, G4, G5);
+
+    // 未来不在 （沙滩上）
+    this->addNote(4, d_start + 64 + 32, 4, G2S);
+    this->addNote(4, d_start + 64 + 34, new stop_spo());
+    this->addNote(4, d_start + 64 + 35, 4, G2S);
+    this->addNote(4, d_start + 64 + 38, 4, G2S);
+    this->addNote(4, d_start + 64 + 40, 4, A2S);
+
+    this->addNote(0, d_start + 64 + 32, 6, G1S, G2S);
+    this->addNote(0, d_start + 64 + 34, new stop_spo());
+    this->addNote(0, d_start + 64 + 35, 6, G1S, G2S);
+    this->addNote(0, d_start + 64 + 38, 6, G1S, G2S);
+    this->addNote(0, d_start + 64 + 40, 7, A1S, A2S);
+
+    this->addNote(2, d_start + 64 + 32, 9, D4S, D5S);
+    this->addNote(2, d_start + 64 + 33, 9, C4, C5);
+    this->addNote(2, d_start + 64 + 34, 9, D4, D5);
+    this->addNote(2, d_start + 64 + 35, 9, D4S, D5S);
+
+    this->addNote(3, d_start + 64 + 37, 7, D4S, G4, D5S, G5);
+    this->addNote(3, d_start + 64 + 38, 7, F4, G4S, F5, G5S);
+    this->addNote(3, d_start + 64 + 39, 7, G4, A4S, G5, A5S);
+
+    // 我们都拥有海洋
+    this->addNote(2, d_start + 64 + 41, 10, A4S, A5S);
+    this->addNote(2, d_start + 64 + 42, 9, D5S, D6S);
+    this->addNote(2, d_start + 64 + 43, 11, G5, G6);
+    this->addNote(2, d_start + 64 + 44, 10, F5, F6);
+    this->addNote(2, d_start + 64 + 45, 9, D5S, D6S);
+    this->addNote(2, d_start + 64 + 46, 10, D5, D6);
+    this->addNote(2, d_start + 64 + 47, 11, D5S, D6S);
+
+    // Part E 464
+    int e_start = d_start + 64 + 48;
+    // 孤岛极光 虚拟城邦 星球流浪
+    this->RepeatSingleChannal(0, d_start, d_start + 48, e_start);
+    this->RepeatSingleChannal(4, d_start, d_start + 48, e_start);
+
+    this->addNote(1, e_start + 16 + 9, 6, A1S, A2S);
+    this->addNote(1, e_start + 16 + 10, 6, D2S, D3S);
+    this->addNote(1, e_start + 16 + 11, 6, G2, G3);
+    this->addNote(1, e_start + 16 + 12, 6, F2, F3);
+    this->addNote(1, e_start + 16 + 13, 6, D2S, D3S);
+    this->addNote(1, e_start + 16 + 14, 6, D2, D3);
+    this->addNote(1, e_start + 16 + 15, 6, D2S, D3S);
+    this->RepeatSingleChannal(1, e_start, e_start + 16, e_start + 16);
+    this->RepeatSingleChannal(1, e_start, e_start + 16, e_start + 32);
+
+    this->addNote(3, e_start, 5, D5S, D6S);
+    this->addNote(3, e_start + 4, 5, F5, F6);
+    this->addNote(3, e_start + 8, 5, G5, G6);
+    this->addNote(3, e_start + 12, 5, A5S, A6S);
+    this->RepeatSingleChannal(3, e_start, e_start + 16, e_start + 16);
+    this->RepeatSingleChannal(3, e_start, e_start + 16, e_start + 32);
+
+    // hello hello hello
+    this->addNote(0, e_start + 48, 5, G1S, D2S);
+    this->addNote(1, e_start + 48, 5, G2S);
+    this->addNote(4, e_start + 48, 5, G2S);
+
+    this->addNote(2, e_start + 50, 5, C4, F4);
+    this->addNote(2, e_start + 51, 5, A3S, D4S);
+    this->addNote(1, e_start + 54, 5, F4, C5);
+    this->addNote(1, e_start + 55, 5, D4S, A4S);
+    this->addNote(2, e_start + 58, 5, C5, F5);
+    this->addNote(2, e_start + 59, 5, A3S, D4S);
+
+    this->addNote(4, e_start + 64, 5, A2S);
+    this->addnote(1, e_start + 65, 5, F3);
+    this->addnote(1, e_start + 66, 5, A3S);
+    this->addnote(1, e_start + 67, 5, D4S);
+    this->addnote(1, e_start + 72, 6, A3S, D4S);
+    this->addnote(0, e_start + 72, 6, A1S, A2S);
+
+    this->addNote(0, e_start + 79, new stop_spo());
+    this->addNote(1, e_start + 79, new stop_spo());
+    this->addNote(2, e_start + 79, new stop_spo());
+    this->addNote(3, e_start + 79, new stop_spo());
+    this->addNote(4, e_start + 79, new stop_spo());
+
+    // Part F Repetition 544
+    int f_start = e_start + 80;
+    this->RepeatAllChannals(36, f_start, f_start);
     
 }
 
@@ -1261,5 +1369,5 @@ FightSong::FightSong(): Music("Fight Song & Amazing Grace", 9, 90, 3000) {
     this->addNote(2, c_start + 110, 7, G5);
     this->addNote(2, c_start + 112, 7, A5);
     this->addNote(2, c_start + 115, 7, G5);
-    
+
 }
