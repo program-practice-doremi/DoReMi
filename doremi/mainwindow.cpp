@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "test.h"
+#include "filechoose.h"
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -24,7 +25,7 @@ void MainWindow::on_pushButton_clicked()
     Test *t = new Test();
     t->Test4();
     */
-    menu *pic=new menu();
+    FileChoose *pic=new FileChoose();
     pic->show();
 }
 

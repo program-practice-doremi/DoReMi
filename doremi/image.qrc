@@ -14,5 +14,8 @@
         <file>image/piano1.jpg</file>
         <file>image/piano2.jpg</file>
         <file>image/newmainimage.png</file>
+        <file>image/createimage.png</file>
+        <file>image/newstart.png</file>
+        <file>image/newpiano.png</file>
     </qresource>
 </RCC>

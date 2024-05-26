@@ -13,6 +13,7 @@ SOURCES += \
     channeledit.cpp \
     chooseinstruments.cpp \
     createpage.cpp \
+    filechoose.cpp \
     fileoperatingwidget.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -28,6 +29,7 @@ HEADERS += \
     channeledit.h \
     chooseinstruments.h \
     createpage.h \
+    filechoose.h \
     fileoperatingwidget.h \
     instruments.h \
     mainwindow.h \
@@ -43,6 +45,7 @@ FORMS += \
     channeledit.ui \
     chooseinstruments.ui \
     createpage.ui \
+    filechoose.ui \
     fileoperatingwidget.ui \
     mainwindow.ui \
     menu.ui \

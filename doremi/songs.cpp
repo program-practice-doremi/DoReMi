@@ -1225,7 +1225,7 @@ FightSong::FightSong(): Music("Fight Song & Amazing Grace", 9, 90, 3000) {
     this->setType(8, Synth_Drum);            // Drum
 
     /**** Additional Strength ****/
-
+    this->setAdditionalStrength(4, -1);
     /**** Music Start! ****/
 
     // part A
@@ -1277,6 +1277,8 @@ FightSong::FightSong(): Music("Fight Song & Amazing Grace", 9, 90, 3000) {
 
     this->RepeatSingleChannal(1, b_start + 0, b_start + 32, b_start + 32);
     this->addNote(0, b_start + 32, 9, E1, E2);
+    this->addNote(0, b_start + 48, 9, C1, C2);
+    this->addNote(0, b_start + 64, 9, G1, G2);
     this->addNote(4, b_start + 32, 6, B3);
     this->addNote(4, b_start + 60, 6, A3);
 
@@ -1398,8 +1400,8 @@ FightSong::FightSong(): Music("Fight Song & Amazing Grace", 9, 90, 3000) {
     this->addNote(4, d_start + 7, 7, G3);
     this->addNote(4, d_start + 10, new stop_spo());
 
-    this->addNote(0, d_start + 0, 6, A2S, D3, G3);
-    this->addNote(0, d_start + 4, 6, A2S, D3, G3);
+    this->addNote(0, d_start + 0, 6, B2, D3, G3);
+    this->addNote(0, d_start + 4, 6, B2, D3, G3);
     this->addNote(0, d_start + 8, 6, C3, E3, G3);
     this->addNote(0, d_start + 12, 6, C3, E3, G3);
 
@@ -1419,8 +1421,8 @@ FightSong::FightSong(): Music("Fight Song & Amazing Grace", 9, 90, 3000) {
     this->addNote(4, d_start + 26, new stop_spo());
 
     // I will scream them loud tonight
-    this->addNote(0, d_start + 32, 7, A2S, D3, G3);
-    this->addNote(0, d_start + 36, 7, A2S, D3, G3);
+    this->addNote(0, d_start + 32, 7, B2, D3, G3);
+    this->addNote(0, d_start + 36, 7, B2, D3, G3);
     this->addNote(0, d_start + 40, 8, C3, E3, G3);
     this->addNote(0, d_start + 44, 8, C3, E3, G3);
 
@@ -1511,6 +1513,7 @@ FightSong::FightSong(): Music("Fight Song & Amazing Grace", 9, 90, 3000) {
 
     this->addNote(4, e_start + 128, 4, B3);
     this->addNote(4, e_start + 136, 4, A3);
+    this->addNote(4, e_start + 144, new stop_spo());
 
     //TODO: ? this->ChangeTune(4, e_start, e_start + 144, 12);
 
@@ -1619,7 +1622,7 @@ FightSong::FightSong(): Music("Fight Song & Amazing Grace", 9, 90, 3000) {
     this->addNote(6, e_start + 32, 4, E2);
     this->addNote(6, e_start + 48, 4, C2);
     this->RepeatSingleChannal(6, e_start, e_start + 64, e_start + 64);
-    this->addNote(6, e_start + 144, 4, E2);
+    this->addNote(6, e_start + 144, 4, D2);
     this->addNote(6, e_start + 160, new stop_spo());
 
     // Part F
