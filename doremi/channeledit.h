@@ -14,6 +14,7 @@ class ChannelEdit : public QWidget
 
 public:
     int id;
+    bool channal_silence = false;
 
 public:
     explicit ChannelEdit(QWidget *parent = nullptr);
@@ -27,6 +28,8 @@ signals:
     void ChangeMusicType(int id, int type);
     void DeliverNote(v_spo *note);
     void CurrentEditing(int id);
+    void SetMute(int id);
+    void SetHearable(int id);
 
 public slots:
     void transform_note(v_spo *note);
@@ -37,6 +40,8 @@ private slots:
     void on_spinBox_valueChanged(int arg1);
 
     void on_createButton_clicked();
+
+    void on_pushButton_clicked();
 
 private:
     Ui::ChannelEdit *ui;

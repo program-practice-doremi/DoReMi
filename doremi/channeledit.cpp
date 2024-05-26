@@ -195,3 +195,15 @@ void ChannelEdit::on_createButton_clicked()
     new_piano->setInstrumentText(this->ui->lineEdit->text());
 }
 
+
+void ChannelEdit::on_pushButton_clicked()
+{
+    if (this->channal_silence) {
+        this->channal_silence = false;
+        emit this->SetHearable(id);
+    }
+    else {
+        this->channal_silence = true;
+        emit this->SetMute(id);
+    }
+}

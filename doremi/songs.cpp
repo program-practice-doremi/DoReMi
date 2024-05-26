@@ -413,6 +413,12 @@ Ocean::Ocean(): Music("我们都拥有海洋", 5, 70, 600) {
     
 }
 
+
+int R = _REST;
+int S = _STOP;
+int P = 0;
+int _V[30] = {};
+
 /**
  * The old version used to save music. 
  */
@@ -437,8 +443,6 @@ struct old_spo {
     }
 };
 
-int R = _REST;
-int S = _STOP;
 
 struct old_channal{
     old_spo c1;
@@ -1076,7 +1080,7 @@ old_channal music[] =   //完成进度 100%
 };
 
 
-FireWorks::FireWorks(): Music("打上花火", 5, 80, 2400) {
+FireWorks::FireWorks(): Music("打上花火", 5, 100, 2400) {
     int counting = 0;
     for (old_channal t : music)
     {

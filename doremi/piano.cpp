@@ -4,6 +4,7 @@
 #include "music.h"
 #include "channal.h"
 #include <map>
+#include "iostream"
 
 Pitch buttonidToTune[] =
     {A2, A2S, B2,
@@ -224,6 +225,7 @@ piano::piano(QWidget *parent)
                                     "}");
     this->ui->volume_button->setRange(0, 13);
     this->ui->volume_button->setValue(7);
+    this->ui->tuneEditBox->setRange(-2, 2);
 }
 
 void piano::change_color(int id){
@@ -257,8 +259,6 @@ void piano::change_color_back(int id){
 
 }
 
-
-
 void piano::keyPressEvent(QKeyEvent *event) {
     if (event->isAutoRepeat()) {
         return;
@@ -266,7 +266,9 @@ void piano::keyPressEvent(QKeyEvent *event) {
     int current_pressed = event->key();
     int id_button = keyIdToButton[current_pressed];
     change_color(id_button); // TODO: change color.
-    v_spo *note = new v_spo(buttonidToTune[id_button], _REST, _REST, _REST, this->ui->volume_button->value());     // TODO: fill up this.
+    v_spo *note = new v_spo(buttonidToTune[id_button], _REST, _REST, _REST, this->ui->volume_button->value());
+    note->_v1 += 12 * this->ui->tuneEditBox->value();
+    std::cout << note->_v1 << std::endl;
     emit newnote(note);
 }
 

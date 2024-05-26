@@ -27,6 +27,8 @@ CreatePage::CreatePage(QWidget *parent)
         connect(this->channelEdits[i], &ChannelEdit::ChangeMusicType, this->player, &MediaPlayer::changeMusicType);
         connect(this->channelEdits[i], &ChannelEdit::CurrentEditing, this->player, &MediaPlayer::setCurrentEditing);
         connect(this->channelEdits[i], &ChannelEdit::DeliverNote, this->player, &MediaPlayer::receiveNote);
+        connect(this->channelEdits[i], &ChannelEdit::SetHearable, this->player, &MediaPlayer::setHearable);
+        connect(this->channelEdits[i], &ChannelEdit::SetMute, this->player, &MediaPlayer::setMute);
     }
     this->ui->tune_box->setMaximum(12);
     this->ui->tune_box->setMinimum(-12);

@@ -27,6 +27,14 @@ private slots:
 
     void on_queren_clicked();
 
+    void on_chooseButton_clicked();
+
+    void on_twinkleButton_clicked();
+
+    void on_fireworksButton_clicked();
+
+    void on_oceanButton_clicked();
+
 private:
     Ui::menu *ui;
 };

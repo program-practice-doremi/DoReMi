@@ -8,9 +8,13 @@ menu::menu(QWidget *parent)
     , ui(new Ui::menu)
 {
     ui->setupUi(this);
-    ui->lineEdit->close();
-    ui->spinBox->close();
-    ui->queren->close();
+    ui->lineEdit->hide();
+    ui->spinBox->hide();
+    ui->queren->hide();
+    this->ui->anotherButton->hide();
+    this->ui->fireworksButton->hide();
+    this->ui->oceanButton->hide();
+    this->ui->twinkleButton->hide();
 }
 
 menu::~menu()
@@ -38,14 +42,54 @@ void menu::on_queren_clicked()
 {
     int channalNum = this->ui->spinBox->value();
     std::string name = this->ui->lineEdit->text().toStdString();
-    //把名字和音轨数传进music
-    // Music *song = new Music(name, channalNum);
-    Music *song = new Ocean();
+    Music *song = new Music(name, channalNum);
     CreatePage *c = new CreatePage();
     this->close();
     c->show();
     connect(this, &menu::songcopy,c,&CreatePage::getmusic);
     emit songcopy(song);
 
+}
+
+
+void menu::on_chooseButton_clicked()
+{
+    this->ui->anotherButton->show();
+    this->ui->fireworksButton->show();
+    this->ui->oceanButton->show();
+    this->ui->twinkleButton->show();
+}
+
+
+void menu::on_twinkleButton_clicked()
+{
+    Music *song = new Twinkle();
+    CreatePage *c = new CreatePage();
+    this->close();
+    c->show();
+    connect(this, &menu::songcopy,c,&CreatePage::getmusic);
+    emit songcopy(song);
+}
+
+
+void menu::on_fireworksButton_clicked()
+{
+    Music *song = new FireWorks();
+    CreatePage *c = new CreatePage();
+    this->close();
+    c->show();
+    connect(this, &menu::songcopy,c,&CreatePage::getmusic);
+    emit songcopy(song);
+}
+
+
+void menu::on_oceanButton_clicked()
+{
+    Music *song = new Ocean();
+    CreatePage *c = new CreatePage();
+    this->close();
+    c->show();
+    connect(this, &menu::songcopy,c,&CreatePage::getmusic);
+    emit songcopy(song);
 }
 
