@@ -1801,4 +1801,31 @@ FightSong::FightSong(): Music("Fight Song & Amazing Grace", 9, 90, 3000) {
 
     // Cello
     this->RepeatSingleChannal(4, d_start - 6, e_start - 6, g_start - 6);
+
+    // Part H
+    int h_start = g_start + 64;
+    this->RepeatAllChannals(e_start - 6, f_start, h_start - 6);
+
+    // Music Box
+    this->addNote(3, h_start + 12, 4, D6);
+    this->addNote(3, h_start + 13, 4, G6);
+    this->addNote(3, h_start + 14, 4, D6);
+    this->addNote(3, h_start + 15, 4, G5);
+
+    this->addNote(3, h_start + 28, 4, D6);
+    this->addNote(3, h_start + 29, 4, A6);
+    this->addNote(3, h_start + 30, 4, D6);
+    this->addNote(3, h_start + 31, 4, A5);
+
+    this->addNote(3, h_start + 44, 4, D6);
+    this->addNote(3, h_start + 45, 4, G6);
+    this->addNote(3, h_start + 46, 4, D6);
+    this->addNote(3, h_start + 47, 4, G5);
+
+    this->addNote(3, h_start + 60, 4, C6);
+    this->addNote(3, h_start + 61, 4, G6);
+    this->addNote(3, h_start + 62, 4, C6);
+    this->addNote(3, h_start + 63, 4, G5);
+
+    this->RepeatSingleChannal(3, h_start, h_start + 64, h_start + 64);
 }
