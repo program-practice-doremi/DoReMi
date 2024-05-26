@@ -1344,7 +1344,7 @@ FightSong::FightSong(): Music("Fight Song & Amazing Grace", 9, 90, 3000) {
     this->addNote(4, c_start + 80, 2, B4);
     this->addNote(4, c_start + 92, 2, A4);
     this->addNote(4, c_start + 96, 2, G4);
-    this->addNote(4, c_start + 112, 4, new stop_spo());
+    this->addNote(4, c_start + 112, new stop_spo());
 
     // can make a heart open
     this->addNote(2, c_start + 71, 7, G5);
@@ -1379,7 +1379,7 @@ FightSong::FightSong(): Music("Fight Song & Amazing Grace", 9, 90, 3000) {
     this->addNote(2, c_start + 115, 7, G5);
 
     // Part D
-    int d_start = 128;
+    int d_start = c_start + 128;
     this->addNote(7, d_start, 7, C4);
     this->addNote(7, d_start + 4, 7, C4);
     this->RepeatSingleChannal(7, d_start, d_start + 8, d_start + 8);
@@ -1389,11 +1389,11 @@ FightSong::FightSong(): Music("Fight Song & Amazing Grace", 9, 90, 3000) {
 
     // And all those things I didn't say
     this->addNote(4, c_start + 112 + 10, 7, G3);
-    this->addNote(4, c_start + 112 + 12, 7, A3S);
+    this->addNote(4, c_start + 112 + 12, 7, B3);
     this->addNote(4, c_start + 112 + 14, 7, A3);
     this->addNote(4, d_start + 0, 7, G3);
     this->addNote(4, d_start + 2, 7, G3);
-    this->addNote(4, d_start + 4, 7, A3S);
+    this->addNote(4, d_start + 4, 7, B3);
     this->addNote(4, d_start + 5, 7, A3);
     this->addNote(4, d_start + 7, 7, G3);
     this->addNote(4, d_start + 10, new stop_spo());
@@ -1667,8 +1667,8 @@ FightSong::FightSong(): Music("Fight Song & Amazing Grace", 9, 90, 3000) {
     this->addNote(4, f_start + 20, 7, D4);
     this->addNote(4, f_start + 23, 5, C4);
     this->addNote(4, f_start + 24, 7, D4);
-    this->addNote(4, f_start + 26, 5, C3);
-    this->addNote(4, f_start + 28, 6, C3);
+    this->addNote(4, f_start + 26, 5, C4);
+    this->addNote(4, f_start + 28, 6, C4);
     this->addNote(4, f_start + 31, new stop_spo());
 
     // In too deep say I'm in too deep

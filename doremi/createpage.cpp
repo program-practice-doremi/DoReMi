@@ -29,6 +29,7 @@ CreatePage::CreatePage(QWidget *parent)
         connect(this->channelEdits[i], &ChannelEdit::DeliverNote, this->player, &MediaPlayer::receiveNote);
         connect(this->channelEdits[i], &ChannelEdit::SetHearable, this->player, &MediaPlayer::setHearable);
         connect(this->channelEdits[i], &ChannelEdit::SetMute, this->player, &MediaPlayer::setMute);
+        connect(this->player, &MediaPlayer::sendCurrentNote, this->channelEdits[i], &ChannelEdit::ReceiveNote);
     }
     this->ui->tune_box->setMaximum(12);
     this->ui->tune_box->setMinimum(-12);
@@ -107,4 +108,3 @@ void CreatePage::on_speed_box_valueChanged(int arg1)
 {
     player->changeBPH(arg1);
 }
-

@@ -7,9 +7,7 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
-    ui->setupUi(this);
-    connect(ui->pushButton_2,SIGNAL(clicked(bool)),this,SLOT(on_pushButton_2_clicked()) );
-}
+    ui->setupUi(this);}
 
 void MainWindow::play() {
     player = new MediaPlayer();
@@ -30,9 +28,4 @@ void MainWindow::on_pushButton_clicked()
     pic->show();
 }
 
-
-void MainWindow::on_pushButton_2_clicked()
-{
-    this->close();
-}
 

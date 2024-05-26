@@ -35,6 +35,8 @@ private slots:
 
     void on_oceanButton_clicked();
 
+    void on_fightButton_clicked();
+
 private:
     Ui::menu *ui;
 };

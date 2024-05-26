@@ -207,3 +207,9 @@ void ChannelEdit::on_pushButton_clicked()
         emit this->SetMute(id);
     }
 }
+
+void ChannelEdit::ReceiveNote(int channalNum, v_spo *note) {
+    if (this->id == channalNum) {
+        emit this->SendBackNote(note);
+    }
+}

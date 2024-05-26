@@ -19,9 +19,9 @@ public:
     MediaPlayer *player;
     ChannelEdit *channelEdits[9];
 
-
 public slots:
     void getmusic(Music *song);
+
 public:
     explicit CreatePage(QWidget *parent = nullptr);
     ~CreatePage();

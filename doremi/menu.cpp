@@ -11,7 +11,7 @@ menu::menu(QWidget *parent)
     ui->lineEdit->hide();
     ui->spinBox->hide();
     ui->queren->hide();
-    this->ui->anotherButton->hide();
+    this->ui->fightButton->hide();
     this->ui->fireworksButton->hide();
     this->ui->oceanButton->hide();
     this->ui->twinkleButton->hide();
@@ -54,7 +54,7 @@ void menu::on_queren_clicked()
 
 void menu::on_chooseButton_clicked()
 {
-    this->ui->anotherButton->show();
+    this->ui->fightButton->show();
     this->ui->fireworksButton->show();
     this->ui->oceanButton->show();
     this->ui->twinkleButton->show();
@@ -86,6 +86,17 @@ void menu::on_fireworksButton_clicked()
 void menu::on_oceanButton_clicked()
 {
     Music *song = new Ocean();
+    CreatePage *c = new CreatePage();
+    this->close();
+    c->show();
+    connect(this, &menu::songcopy,c,&CreatePage::getmusic);
+    emit songcopy(song);
+}
+
+
+void menu::on_fightButton_clicked()
+{
+    Music *song = new FightSong();
     CreatePage *c = new CreatePage();
     this->close();
     c->show();

@@ -1,0 +1,18 @@
+<RCC>
+    <qresource prefix="/">
+        <file>image/go.png</file>
+        <file>image/mainimage.png</file>
+        <file>image/metronome.png</file>
+        <file>image/nosound.png</file>
+        <file>image/pause.png</file>
+        <file>image/record.png</file>
+        <file>image/recording.png</file>
+        <file>image/save.png</file>
+        <file>image/startimage.png</file>
+        <file>image/stop.png</file>
+        <file>image/doremi1.jpg</file>
+        <file>image/piano1.jpg</file>
+        <file>image/piano2.jpg</file>
+        <file>image/newmainimage.png</file>
+    </qresource>
+</RCC>
