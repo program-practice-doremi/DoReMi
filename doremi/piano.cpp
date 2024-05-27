@@ -284,6 +284,39 @@ void piano::setInstrumentText(QString t){
     this->ui->show_cur->setText(t);
 }
 
+void piano::recievenote(v_spo *note){
+    if (note->_v1 == _REST) {
+        return;
+    }
+    int v1 = note->_v1 - 12 * this->ui->tuneEditBox->value() - A2;
+    int v2 = note->_v2 - 12 * this->ui->tuneEditBox->value() - A2;
+    int v3 = note->_v3 - 12 * this->ui->tuneEditBox->value() - A2;
+    int v4 = note->_v4 - 12 * this->ui->tuneEditBox->value() - A2;
+
+    int change[37]={};
+    if(v1>=0&&v1<=36){
+        change[v1]=1;
+    }
+    if(v2>=0&&v2<=36){
+        change[v2]=1;
+    }
+    if(v3>=0&&v3<=36){
+        change[v3]=1;
+    }
+    if(v4>=0&&v4<=36){
+        change[v4]=1;
+    }
+    for(int i=0;i<37;i++){
+        if(change[i]){
+            change_color(i);
+            change[i]=0;
+        }
+        else{
+            change_color_back(i);
+        }
+    }
+}
+
 piano::~piano()
 {
     delete ui;

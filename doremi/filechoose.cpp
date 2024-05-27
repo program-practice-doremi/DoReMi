@@ -2,6 +2,7 @@
 #include "ui_filechoose.h"
 #include "createpage.h"
 #include "songs.h"
+#include <iostream>
 
 FileChoose::FileChoose(QWidget *parent)
     : QWidget(parent)
@@ -15,6 +16,10 @@ FileChoose::FileChoose(QWidget *parent)
     this->ui->fireworksButton->hide();
     this->ui->oceanButton->hide();
     this->ui->twinkleButton->hide();
+    this->ui->lineEdit_2->hide();
+    this->ui->lineEdit_4->hide();
+    this->ui->queren2->hide();
+    this->ui->lineEdit_3->hide();
 
 
     QPalette pa(this->palette());
@@ -35,6 +40,7 @@ FileChoose::~FileChoose()
 void FileChoose::on_create_clicked()
 {
     ui->lineEdit->show();
+    ui->lineEdit_3->show();
     ui->spinBox->show();
     ui->spinBox->setMaximum(9);
     ui->spinBox->setMinimum(1);
@@ -110,5 +116,30 @@ void FileChoose::on_fightButton_clicked()
     c->show();
     connect(this, &FileChoose::songcopy,c,&CreatePage::getmusic);
     emit songcopy(song);
+}
+
+
+void FileChoose::on_queren2_clicked()
+{
+    std::string name;
+    name = this->ui->lineEdit_2->text().toStdString();
+    Music *song = new Music(0, name);
+    std::cout << song->name << std::endl;
+    MediaPlayer *k = new MediaPlayer();
+    k->SetMusic(song);
+    k->PlayMusic();
+    // CreatePage *c = new CreatePage();
+    // this->close();
+    // c->show();
+    // connect(this, &FileChoose::songcopy,c,&CreatePage::getmusic);
+    // emit songcopy(song);
+}
+
+
+void FileChoose::on_open_clicked()
+{
+    this->ui->lineEdit_2->show();
+    this->ui->lineEdit_4->show();
+    this->ui->queren2->show();
 }
 

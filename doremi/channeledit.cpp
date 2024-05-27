@@ -191,6 +191,7 @@ void ChannelEdit::on_createButton_clicked()
     piano *new_piano = new piano();
     new_piano->show();
     connect(new_piano, &piano::newnote, this, &ChannelEdit::transform_note);
+    connect(this,&ChannelEdit::SendBackNote,new_piano,&piano::recievenote);
     emit CurrentEditing(id);
     new_piano->setInstrumentText(this->ui->lineEdit->text());
 }

@@ -22,7 +22,7 @@ public:
     int length = 0;
 
 public:
-    explicit Music(std::string _name = "", int _channal_num = 1, int _speed = 80, int _length = 32, QObject *parent = nullptr);
+    explicit Music(std::string _name = "", int _channal_num = 1, int _speed = 80, int _length = 640, QObject *parent = nullptr);
 
     /**
      * @brief Opening a music by reading files.

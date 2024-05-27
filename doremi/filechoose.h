@@ -36,6 +36,10 @@ private slots:
 
     void on_fightButton_clicked();
 
+    void on_queren2_clicked();
+
+    void on_open_clicked();
+
 private:
     Ui::FileChoose *ui;
 };

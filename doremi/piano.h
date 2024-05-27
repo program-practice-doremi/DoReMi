@@ -25,6 +25,9 @@ public:
     void setInstrumentText(QString t);
 signals:
     void newnote(v_spo *note);
+
+public slots:
+    void recievenote(v_spo *note);
 protected:
     void keyPressEvent(QKeyEvent *event);
     void keyReleaseEvent(QKeyEvent *event);

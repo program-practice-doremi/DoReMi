@@ -17,6 +17,9 @@ public:
     explicit FileOperatingWidget(Music *t, QWidget *parent = nullptr);
     ~FileOperatingWidget();
 
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::FileOperatingWidget *ui;
 };

@@ -122,6 +122,55 @@
     </rect>
    </property>
   </widget>
+  <widget class="QLineEdit" name="lineEdit_2">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>290</y>
+     <width>181</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_3">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>50</y>
+     <width>91</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>歌曲名</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_4">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>250</y>
+     <width>91</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>文件名</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="queren2">
+   <property name="geometry">
+    <rect>
+     <x>460</x>
+     <y>290</y>
+     <width>51</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>确认</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

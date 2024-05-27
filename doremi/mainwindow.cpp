@@ -27,6 +27,7 @@ void MainWindow::on_pushButton_clicked()
     */
     FileChoose *pic=new FileChoose();
     pic->show();
+    this->close();
 }
 
 
