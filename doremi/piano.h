@@ -14,6 +14,7 @@ class piano : public QMainWindow
 {
     Q_OBJECT
 public:
+    bool on_record = false;
     MediaPlayer *player = new MediaPlayer();
     void change_color(int id);
     void change_color_back(int id);
@@ -24,6 +25,8 @@ public:
     QButtonGroup *piano_keys;
     void setInstrumentText(QString t);
 signals:
+    void startrecord();
+    void stoprecord();
     void newnote(v_spo *note);
 
 public slots:
@@ -31,6 +34,9 @@ public slots:
 protected:
     void keyPressEvent(QKeyEvent *event);
     void keyReleaseEvent(QKeyEvent *event);
+
+private slots:
+    void on_record_button_clicked();
 
 private:
     Ui::piano *ui;

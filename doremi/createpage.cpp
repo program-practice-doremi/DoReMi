@@ -30,10 +30,15 @@ CreatePage::CreatePage(QWidget *parent)
         connect(this->channelEdits[i], &ChannelEdit::SetHearable, this->player, &MediaPlayer::setHearable);
         connect(this->channelEdits[i], &ChannelEdit::SetMute, this->player, &MediaPlayer::setMute);
         connect(this->player, &MediaPlayer::sendCurrentNote, this->channelEdits[i], &ChannelEdit::ReceiveNote);
+        connect(this->channelEdits[i],&ChannelEdit::sendCurrentEditing,this->player,&MediaPlayer::setCurrentEditing);
+        connect(this->channelEdits[i],&ChannelEdit::record_start,this->player,&MediaPlayer::startRecording);
+        connect(this->channelEdits[i],&ChannelEdit::record_stop,this->player,&MediaPlayer::stopRecording);
+
     }
     this->ui->tune_box->setMaximum(12);
     this->ui->tune_box->setMinimum(-12);
     this->ui->speed_box->setMaximum(140);
+    connect(this->player, &MediaPlayer::sendCurrentPlaying, this, &CreatePage::curplay);
 }
 
 CreatePage::~CreatePage()
@@ -107,4 +112,9 @@ void CreatePage::on_tune_box_valueChanged(int arg1)
 void CreatePage::on_speed_box_valueChanged(int arg1)
 {
     player->changeBPH(arg1);
+}
+
+void CreatePage::curplay(int place){
+    int po = place / 16 + 1;
+    this->ui->lcdNumber->display(po);
 }

@@ -26,7 +26,7 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true"/>
+   <string notr="true">#piano{background-image:url(:/image/piano.png)}</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QPushButton" name="pushButtona2">
@@ -55,14 +55,23 @@
    <widget class="QPushButton" name="record_button">
     <property name="geometry">
      <rect>
-      <x>430</x>
-      <y>20</y>
+      <x>390</x>
+      <y>30</y>
       <width>31</width>
       <height>31</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>18</pointsize>
+     </font>
+    </property>
     <property name="text">
      <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="image.qrc">
+      <normaloff>:/image/record.png</normaloff>:/image/record.png</iconset>
     </property>
    </widget>
    <widget class="QLineEdit" name="show_cur">
@@ -566,6 +575,8 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
+ <resources>
+  <include location="image.qrc"/>
+ </resources>
  <connections/>
 </ui>

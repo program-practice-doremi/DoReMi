@@ -31,10 +31,15 @@ signals:
     void SetMute(int id);
     void SetHearable(int id);
     void SendBackNote(v_spo *note);
+    void record_start();
+    void record_stop();
+    void sendCurrentEditing(int id);
 
 public slots:
     void transform_note(v_spo *note);
     void ReceiveNote(int channalNum, v_spo *note);
+    void start_record();
+    void stop_record();
 
 private slots:
     void on_horizontalSlider_valueChanged(int value);

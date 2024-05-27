@@ -1,6 +1,7 @@
 #include "mediaplayer.h"
 #include "pitch.h"
 #include "instruments.h"
+#include <iostream>
 
 enum Voice
 {
@@ -176,7 +177,9 @@ void MediaPlayer::stop() {
 }
 
 void MediaPlayer::startRecording() {
+    std::cout << "recording: " << this->current_editing << std::endl;
     this->recording_mode = true;
+    std::cout << "recording mode: " << recording_mode << std::endl;
 }
 
 void MediaPlayer::stopRecording() {
@@ -191,7 +194,10 @@ void MediaPlayer::receiveNote(v_spo *note) {
     if (note->_v1 != _REST) {
         this->MakeSound(note, current_editing, this->song->allChannals[current_editing]->strength);
     }
+    std::cout << " is recording? " << recording_mode << std::endl;
     if (recording_mode) {
+        std::cout << "note: " << note->_v1 << std::endl;
+        std::cout << "add to place: " << currentPlaying << std::endl;
         this->song->addNote(current_editing, currentPlaying, note);
     }
 }

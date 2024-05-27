@@ -21,6 +21,7 @@ public:
 
 public slots:
     void getmusic(Music *song);
+    void curplay(int place);
 
 public:
     explicit CreatePage(QWidget *parent = nullptr);

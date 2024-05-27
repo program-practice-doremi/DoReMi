@@ -1,5 +1,6 @@
 #include "test.h"
 #include "songs.h"
+#include <iostream>
 
 Test::Test(QObject *parent)
     : QObject{parent}
@@ -11,9 +12,11 @@ void Test::Test1() {
     DoReMi->addNote(0, 0, 5, C5);
     DoReMi->addNote(0, 2, 7, D5);
     DoReMi->addNote(0, 4, 9, E5);
+    DoReMi->save_file("doremi.txt");
 
     MediaPlayer *player = new MediaPlayer();
-    player->SetMusic(DoReMi);
+    Music *new_music = new Music(0, "doremi.txt");
+    player->SetMusic(new_music);
     player->PlayMusic();
 }
 
@@ -64,10 +67,17 @@ void Test::Test2() {
     TwinkleTwinkleLittleStar->addNote(1, 23, 6, E4);
 
     TwinkleTwinkleLittleStar->addNote(1, 28, 6, C3, E3, G3, C4);
+    TwinkleTwinkleLittleStar->save_file("twinkle.txt");
 
 
     MediaPlayer *player = new MediaPlayer();
-    player->SetMusic(TwinkleTwinkleLittleStar);
+    Music *t = new Music(0, "twinkle.txt");
+    std::cout << t->name << std::endl;
+    std::cout << t->channal_num << std::endl;
+    std::cout << t->length << std::endl;
+    std::cout << t->allChannals[0]->length << std::endl;
+    std::cout << t->allChannals[1]->length << std::endl;
+    player->SetMusic(t);
     player->PlayMusic();
 }
 

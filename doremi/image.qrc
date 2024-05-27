@@ -17,5 +17,6 @@
         <file>image/createimage.png</file>
         <file>image/newstart.png</file>
         <file>image/newpiano.png</file>
+        <file>image/piano.png</file>
     </qresource>
 </RCC>

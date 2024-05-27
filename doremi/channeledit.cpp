@@ -194,6 +194,8 @@ void ChannelEdit::on_createButton_clicked()
     connect(this,&ChannelEdit::SendBackNote,new_piano,&piano::recievenote);
     emit CurrentEditing(id);
     new_piano->setInstrumentText(this->ui->lineEdit->text());
+    connect(new_piano, &piano::startrecord, this, &ChannelEdit::start_record);
+    connect(new_piano, &piano::stoprecord, this, &ChannelEdit::stop_record);
 }
 
 
@@ -213,4 +215,14 @@ void ChannelEdit::ReceiveNote(int channalNum, v_spo *note) {
     if (this->id == channalNum) {
         emit this->SendBackNote(note);
     }
+}
+
+void ChannelEdit::start_record() {
+    emit sendCurrentEditing(id);
+    emit record_start();
+}
+
+void ChannelEdit::stop_record() {
+    emit sendCurrentEditing(id);
+    emit record_stop();
 }

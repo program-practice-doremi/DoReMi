@@ -31,3 +31,9 @@ void MainWindow::on_pushButton_clicked()
 }
 
 
+void MainWindow::on_pushButton_2_clicked()
+{
+    Test *t = new Test();
+    t->Test2();
+}
+

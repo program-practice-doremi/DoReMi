@@ -321,3 +321,22 @@ piano::~piano()
 {
     delete ui;
 }
+
+void piano::on_record_button_clicked()
+{
+    if(this->on_record==0){
+        QIcon ico(":/image/recording.png");
+        this->ui->record_button->setIcon(ico);
+        this->on_record=1;
+        emit this->startrecord();
+        std::cout << "record start!" << std::endl;
+    }
+    else if(this->on_record==1){
+        QIcon ico(":/image/record.png");
+        this->ui->record_button->setIcon(ico);
+        this->on_record=0;
+        emit this->stoprecord();
+        std::cout << "record stop!" << std::endl;
+    }
+}
+
