@@ -1211,7 +1211,9 @@ FightSong::FightSong(): Music("Fight Song & Amazing Grace", 9, 90, 3000) {
     /****************************************/
     /**** Fight Song Meets Amazing Grace ****/
     /****************************************/
-    // adapted by: Calvin Cao
+    // adapted by: Calvin Cao, undergraduate, School of EECS, Peking University
+    // 改编：曹彧，北京大学信息科学技术学院，大一年级本科生
+
 
     /**** Type ****/
     this->setType(0, Acoustic_Grand_Piano);  // Piano Low
@@ -1515,8 +1517,6 @@ FightSong::FightSong(): Music("Fight Song & Amazing Grace", 9, 90, 3000) {
     this->addNote(4, e_start + 136, 4, A3);
     this->addNote(4, e_start + 144, new stop_spo());
 
-    //TODO: ? this->ChangeTune(4, e_start, e_start + 144, 12);
-
     // Piano part
     // This is my fight song
     this->addNote(2, d_start + 58, 8, B4, B5);
@@ -1807,7 +1807,7 @@ FightSong::FightSong(): Music("Fight Song & Amazing Grace", 9, 90, 3000) {
 
     // Part H
     int h_start = g_start + 64;
-    this->RepeatAllChannals(e_start - 6, f_start, h_start - 6);
+    this->RepeatAllChannals(e_start - 6, e_start + 160, h_start - 6);
 
     // Music Box
     this->addNote(3, h_start + 12, 4, D6);
@@ -1831,4 +1831,280 @@ FightSong::FightSong(): Music("Fight Song & Amazing Grace", 9, 90, 3000) {
     this->addNote(3, h_start + 63, 4, G5);
 
     this->RepeatSingleChannal(3, h_start, h_start + 64, h_start + 64);
+
+    // Piano
+    // This is my fight song
+    this->addNote(2, h_start - 6, 12, B4, B5);
+    this->addNote(2, h_start - 4, 12, A4, A5);
+    this->addNote(2, h_start - 2, 12, G4, G5);
+    this->addNote(2, h_start, 12, G4, G5);
+    this->addNote(2, h_start + 4, 12, G4, B4, D5, G5);
+    
+    // Take back my life song
+    this->addNote(2, h_start + 10, 12, B4, B5);
+    this->addNote(2, h_start + 12, 12, A4, A5);
+    this->addNote(2, h_start + 14, 12, G4, G5);
+    this->addNote(2, h_start + 16, 12, A4, A5);
+    this->addNote(2, h_start + 20, 12, A4, D5, F5S, A5);
+
+    // Prove I'm alright song
+    this->addNote(2, h_start + 26, 12, C5, C6);
+    this->addNote(2, h_start + 28, 12, B4, B5);
+    this->addNote(2, h_start + 30, 12, A4, A5);
+    this->addNote(2, h_start + 32, 12, B4, B5);
+    this->addNote(2, h_start + 36, 12, B4, D5, G5, B5);
+
+    this->addNote(2, h_start + 46, 12, C5, C6);
+    this->addNote(2, h_start + 48, 12, C5, E5, G5, C6);
+
+    // My power's turned on
+    this->addNote(2, h_start + 58, 12, B4, B5);
+    this->addNote(2, h_start + 60, 12, A4, A5);
+    this->addNote(2, h_start + 62, 12, G4, G5);
+    this->addNote(2, h_start + 64, 12, G4, G5);
+    this->addNote(2, h_start + 68, 12, G4, G5);
+
+    // Starting right now I'll be strong
+    this->addNote(2, h_start + 72, 12, G4, G5);
+    this->addNote(2, h_start + 73, 12, A4, A5);
+    this->addNote(2, h_start + 74, 12, B4, B5);
+    this->addNote(2, h_start + 76, 12, A4, A5);
+    this->addNote(2, h_start + 78, 12, G4, G5);
+    this->addNote(2, h_start + 80, 12, A4, A5);
+    this->addNote(2, h_start + 84, 12, A4, D5, F5S, A5);
+
+    // I'll play my fight song
+    this->addNote(2, h_start + 90, 12, C5, C6);
+    this->addNote(2, h_start + 92, 12, B4, B5);
+    this->addNote(2, h_start + 94, 12, A4S, A5S);
+    this->addNote(2, h_start + 96, 12, B4, B5);
+    this->addNote(2, h_start + 100, 12, B4, E5, G5, B5);
+
+    // And I don't really care if nobody else believes
+    this->addNote(2, h_start + 110, 12, G4, G5);
+    this->addNote(2, h_start + 111, 12, G4, G5);
+    this->addNote(2, h_start + 112, 12, D5, D6);
+    this->addNote(2, h_start + 114, 12, D5, D6);
+    this->addNote(2, h_start + 115, 12, D5, D6);
+    this->addNote(2, h_start + 116, 12, B4, B5);
+    this->addNote(2, h_start + 118, 12, G4, G5);
+    this->addNote(2, h_start + 119, 12, D5, D6);
+    this->addNote(2, h_start + 121, 12, D5, D6);
+    this->addNote(2, h_start + 122, 12, D5, D6);
+    this->addNote(2, h_start + 124, 12, B4, B5);
+    this->addNote(2, h_start + 126, 12, G4, G5);
+
+    this->addNote(2, h_start + 128, 12, B4, D5, G5, B5);
+    this->addNote(2, h_start + 136, 12, A4, A5);
+
+    // Cause I've still got a lot of fight left in me
+    this->addNote(2, h_start + 143, 12, G4, G5);
+    this->addNote(2, h_start + 144, 12, A4, A5);
+    this->addNote(2, h_start + 146, 12, A4, A5);
+    this->addNote(2, h_start + 148, 12, A4, A5);
+    this->addNote(2, h_start + 151, 12, G4, G5);
+    this->addNote(2, h_start + 152, 12, A4, A5);
+    this->addNote(2, h_start + 153, 12, G4, G5);
+    this->addNote(2, h_start + 154, 12, B4, B5);
+    this->addNote(2, h_start + 156, 12, B4, B5);
+    this->addNote(2, h_start + 158, 12, G4, G5);
+
+    // Part I
+    int i_start = h_start + 160;
+    // Low Piano
+    this->addNote(0, i_start, 10, E2, B2, E3);
+    this->addNote(0, i_start + 16, 10, C2, G2, C3);
+    this->addNote(0, i_start + 32, 10, G2, D3, G3);
+    this->addNote(0, i_start + 48, 10, D2, A2, D3);
+    this->addNote(0, i_start + 64, 7, D2, A2, D3);
+    this->addNote(0, i_start + 66, 9, D2, A2, D3);
+    this->addNote(0, i_start + 68, 10, D2, A2, D3);
+    this->addNote(0, i_start + 70, 11, D2, A2, D3);
+    this->addNote(0, i_start + 72, 12, D2, A2, D3);
+
+    // High Piano
+    this->addNote(2, i_start, 12, G4, B4, E5, G5);
+    this->addNote(2, i_start + 14, 12, A4, A5);
+    this->addNote(2, i_start + 16, 12, A4, A5);
+
+    // A lot of fight left in me
+    this->addNote(2, i_start + 23, 12, G4, G5);
+    this->addNote(2, i_start + 24, 12, A4, A5);
+    this->addNote(2, i_start + 25, 12, G4, G5);
+    this->addNote(2, i_start + 26, 12, B4, B5);
+    this->addNote(2, i_start + 28, 12, B4, B5);
+    this->addNote(2, i_start + 30, 12, G4, G5);
+
+    this->addNote(2, i_start + 32, 12, G4, B4, D5, G5);
+    this->addNote(2, i_start + 46, 12, A4, A5);
+
+    this->addNote(2, i_start + 48, 12, A4, B4, F5S, A5);
+    this->addNote(2, i_start + 64, 4, A4, B4, F5S, A5);
+    this->addNote(2, i_start + 66, 6, A4, B4, F5S, A5);
+    this->addNote(2, i_start + 68, 8, A4, B4, F5S, A5);
+    this->addNote(2, i_start + 70, 10, A4, B4, F5S, A5);
+    this->addNote(2, i_start + 72, 12, A4, B4, F5S, A5);
+
+    // Cello
+    this->addNote(2, i_start, new stop_spo());
+
+    // Music Box
+    this->addNote(3, i_start + 23, 12, G5);
+    this->addNote(3, i_start + 24, 12, A5);
+    this->addNote(3, i_start + 25, 12, G5);
+    this->addNote(3, i_start + 26, 12, B5);
+    this->addNote(3, i_start + 28, 12, B5);
+    this->addNote(3, i_start + 30, 12, G5);
+    this->addNote(3, i_start + 32, 12, G5);
+    this->addNote(3, i_start + 46, 12, A5);
+    this->addNote(3, i_start + 48, 12, A5);
+
+    // Background
+    this->addNote(6, i_start, 10, E2, E3);
+    this->addNote(6, i_start + 16, 10, C2, C3);
+    this->addNote(6, i_start + 32, 10, G2, G3);
+    this->addNote(6, i_start + 48, 10, D2, D3);
+    this->addNote(6, i_start + 72, new stop_spo());
+
+    // Drum
+    this->RepeatSingleChannal(7, h_start, h_start + 32, i_start);
+    this->RepeatSingleChannal(8, h_start, h_start + 32, i_start);
+    this->RepeatSingleChannal(7, h_start, h_start + 32, i_start + 32);
+    this->RepeatSingleChannal(8, h_start, h_start + 32, i_start + 32);
+    this->addNote(7, i_start + 64, 3, D2);
+    this->addNote(7, i_start + 66, 4, D2);
+    this->addNote(7, i_start + 68, 5, D2);
+    this->addNote(7, i_start + 70, 6, D2);
+    this->addNote(7, i_start + 72, 7, D2);
+    
+    // Part J
+    int j_start = i_start + 80;
+    // Middle Piano
+    this->addNote(1, j_start, 4, G4, D5);
+    this->addNote(1, j_start + 32, 4, G4, D5, G4);
+    this->addNote(1, j_start + 60, 4, F4S, A4);
+    this->addNote(1, j_start + 64, 4, E4, B4);
+    this->addNote(1, j_start + 80, 4, C4, G4);
+    this->addNote(1, j_start + 96, 4, G4, D5, G4);
+
+    // High Piano
+    // Like a small boat
+    this->addNote(2, j_start - 6, 5, G5);
+    this->addNote(2, j_start - 5, 5, G5);
+    this->addNote(2, j_start - 4, 5, B5);
+    this->addNote(2, j_start - 2, 5, B5);
+
+    // On the ocean
+    this->addNote(2, j_start + 10, 5, A5);
+    this->addNote(2, j_start + 11, 5, G5);
+    this->addNote(2, j_start + 12, 5, A5);
+    this->addNote(2, j_start + 14, 5, G5);
+
+    // Sending big waves
+    this->addNote(2, j_start + 26, 5, G5);
+    this->addNote(2, j_start + 27, 5, G5);
+    this->addNote(2, j_start + 28, 5, C6);
+    this->addNote(2, j_start + 30, 5, B5);
+
+    // Into motion
+    this->addNote(2, j_start + 42, 5, A5);
+    this->addNote(2, j_start + 43, 5, G5);
+    this->addNote(2, j_start + 44, 5, A5);
+    this->addNote(2, j_start + 46, 5, G5, B5);
+
+    // Like how a single word
+    this->addNote(2, j_start + 56, 6, G5);
+    this->addNote(2, j_start + 57, 6, A5);
+    this->addNote(2, j_start + 59, 7, G5);
+    this->addNote(2, j_start + 60, 7, D6);
+    this->addNote(2, j_start + 61, 7, E6);
+    this->addNote(2, j_start + 63, 7, B5);
+
+    // Can make a heart open
+    this->addNote(2, j_start + 71, 7, G5);
+    this->addNote(2, j_start + 72, 7, G5);
+    this->addNote(2, j_start + 73, 7, A5);
+    this->addNote(2, j_start + 75, 7, G5);
+    this->addNote(2, j_start + 77, 7, C6);
+    this->addNote(2, j_start + 79, 7, E5);
+
+    // I might only have one match
+    this->addNote(2, j_start + 90, 7, G5);
+    this->addNote(2, j_start + 91, 7, G5);
+    this->addNote(2, j_start + 92, 7, G5);
+    this->addNote(2, j_start + 93, 7, A5);
+    this->addNote(2, j_start + 94, 7, G5);
+    this->addNote(2, j_start + 96, 7, C6);
+    this->addNote(2, j_start + 98, 7, B5);
+
+    // But I could make it an explosion
+    this->addNote(2, j_start + 16 + 106, 5, G5);
+    this->addNote(2, j_start + 16 + 107, 4, G5);
+    this->addNote(2, j_start + 16 + 108, 4, G5);
+    this->addNote(2, j_start + 16 + 109, 4, A5);
+    this->addNote(2, j_start + 16 + 110, 4, G5);
+    this->addNote(2, j_start + 16 + 112, 4, A5);
+    this->addNote(2, j_start + 16 + 115, 3, G5);
+
+    // Music Box
+    this->addNote(3, j_start, 3, G5);
+    this->addNote(3, j_start + 4, 3, G5);
+    this->addNote(3, j_start + 8, 3, G5);
+    this->addNote(3, j_start + 10, 3, G5);
+    this->addNote(3, j_start + 12, 3, F5S);
+    this->addNote(3, j_start + 14, 3, F5S);
+
+    this->addNote(3, j_start + 16, 3, G5);
+    this->addNote(3, j_start + 20, 2, G5);
+    this->addNote(3, j_start + 24, 1, G5);
+
+    this->RepeatSingleChannal(3, j_start, j_start + 32, j_start + 32);
+
+    this->addNote(3, j_start + 64, 2, G6);
+    this->addNote(3, j_start + 68, 2, G6);
+    this->addNote(3, j_start + 72, 2, G6);
+    this->addNote(3, j_start + 76, 2, G6);
+
+    this->addNote(3, j_start + 80, 2, A6);
+    this->addNote(3, j_start + 84, 2, A6);
+    this->addNote(3, j_start + 88, 2, B6);
+    this->addNote(3, j_start + 92, 2, B6);
+    this->addNote(3, j_start + 96, 3, G5);
+
+    this->addNote(3, j_start + 108, 2, A5);
+    this->addNote(3, j_start + 112, 2, F5S);
+
+    // Cello
+    this->addNote(4, j_start - 4, 3, D4);
+    this->addNote(4, j_start, 3, G4);
+
+    this->addNote(4, j_start + 12, 3, B4);
+    this->addNote(4, j_start + 14, 3, G4);
+    this->addNote(4, j_start + 16, 3, B4);
+
+    this->addNote(4, j_start + 28, 3, A4);
+    this->addNote(4, j_start + 32, 3, G4);
+
+    this->addNote(4, j_start + 44, 3, E4);
+    this->addNote(4, j_start + 48, 3, D4);
+    this->addNote(4, j_start + 60, 3, D4);
+    this->RepeatSingleChannal(4, j_start, j_start + 20, j_start + 64);
+    this->addNote(4, j_start + 92, 3, A4);
+    this->addNote(4, j_start + 94, 3, B4);
+    this->addNote(4, j_start + 95, 2, D5);
+    this->addNote(4, j_start + 100, 4, D5);
+    this->addNote(4, j_start + 112, new stop_spo());
+
+    // part k
+    int k_start = j_start + 144;
+    this->RepeatAllChannals(h_start - 6, h_start + 160, k_start - 6);
+    this->ChangeTune(0, k_start - 6, k_start + 160, -4);
+    this->ChangeTune(1, k_start - 6, k_start + 160, -4);
+    this->ChangeTune(2, k_start - 6, k_start + 160, -4);
+    this->ChangeTune(3, k_start - 6, k_start + 160, -4);
+    this->ChangeTune(4, k_start - 6, k_start + 160, -4);
+    this->ChangeTune(5, k_start - 6, k_start + 160, -4);
+    this->ChangeTune(6, k_start - 6, k_start + 160, -4);
+    
+    // Trumpet
 }
