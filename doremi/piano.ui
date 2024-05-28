@@ -561,6 +561,9 @@
       <height>25</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">#piano{background-image:url(:/image/piano.png)}</string>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

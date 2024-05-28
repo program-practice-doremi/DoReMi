@@ -45,7 +45,7 @@ Music::Music(int k, std::string file_path, QObject *parent) : QObject{parent} {
 
 void Music::save_file(std::string file_path) {
     FILE *f;
-    f = fopen(file_path.c_str(),"w");
+    f = fopen(file_path.c_str(),"wb");
     if(f){
         size_t name_length = name.size();
         fwrite(&name_length, sizeof(name_length), 1, f);

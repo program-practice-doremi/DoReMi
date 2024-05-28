@@ -19,5 +19,6 @@ void FileOperatingWidget::on_pushButton_clicked()
     std::string name;
     name = this->ui->lineEdit->text().toStdString();
     this->song->save_file(name);
+    this->close();
 }
 

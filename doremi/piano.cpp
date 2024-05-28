@@ -5,6 +5,8 @@
 #include "channal.h"
 #include <map>
 #include "iostream"
+#include <QString>
+#include <instrument1.h>
 
 Pitch buttonidToTune[] =
     {A2, A2S, B2,
@@ -13,6 +15,11 @@ Pitch buttonidToTune[] =
      C5, C5S, D5, D5S, E5, F5, F5S, G5, G5S, A5};
 
 std::map<int, int> keyIdToButton;
+
+QString picture_names[128] = {
+    ":/image/piano.png",
+    // ...
+};
 
 piano::piano(QWidget *parent)
     : QMainWindow(parent)
@@ -226,6 +233,14 @@ piano::piano(QWidget *parent)
     this->ui->volume_button->setRange(0, 13);
     this->ui->volume_button->setValue(7);
     this->ui->tuneEditBox->setRange(-2, 2);
+
+}
+
+void piano::setPicture(int type) {
+    std::cout << type << std::endl;
+
+    //this->ui->widget = new Instrument1(this);
+   // this->ui->widget->show();
 }
 
 void piano::change_color(int id){
