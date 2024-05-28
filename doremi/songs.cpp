@@ -2126,24 +2126,25 @@ FightSong::FightSong(): Music("Fight Song & Amazing Grace", 9, 90, 3000) {
     this->ChangeTune(6, k_start - 6, k_start + 160, -4);
     
     // Trumpet
-    this->addNote(5, k_start + 4, 6, A4S);
-    this->addNote(5, k_start + 8, 7, D5S);
-    this->addNote(5, k_start + 20, 7, G5);
-    this->addNote(5, k_start + 22, 7, F5);
-    this->addNote(5, k_start + 23, 7, D5S);
-    this->addNote(5, k_start + 24, 7, G5);
-    this->addNote(5, k_start + 36, 6, F5);
-    this->addNote(5, k_start + 40, 7, D5S);
-    this->addNote(5, k_start + 52, 7, C5);
-    this->addNote(5, k_start + 56, 7, A4S);
-    this->addNote(5, k_start + 68, 6, A4S);
-    this->addNote(5, k_start + 72, 7, D5S);
-    this->addNote(5, k_start + 84, 7, G5);
-    this->addNote(5, k_start + 86, 7, F5);
-    this->addNote(5, k_start + 87, 7, D5S);
-    this->addNote(5, k_start + 88, 7, G5);
-    this->addNote(5, k_start + 100, 6, F5);
-    this->addNote(5, k_start + 104, 6, A5S);
-    this->addNote(5, k_start + 128, 6, new stop_spo());
+    this->addNote(5, k_start + 4, 8, A4S);
+    this->addNote(5, k_start + 8, 9, D5S);
+    this->addNote(5, k_start + 20, 9, G5);
+    this->addNote(5, k_start + 22, 9, F5);
+    this->addNote(5, k_start + 23, 9, D5S);
+    this->addNote(5, k_start + 24, 9, G5);
+    this->addNote(5, k_start + 36, 8, F5);
+    this->addNote(5, k_start + 40, 9, D5S);
+    this->addNote(5, k_start + 52, 9, C5);
+    this->addNote(5, k_start + 56, 9, A4S);
+    this->addNote(5, k_start + 68, 8, A4S);
+    this->addNote(5, k_start + 72, 9, D5S);
+    this->addNote(5, k_start + 84, 9, G5);
+    this->addNote(5, k_start + 86, 9, F5);
+    this->addNote(5, k_start + 87, 9, D5S);
+    this->addNote(5, k_start + 88, 9, G5);
+    this->addNote(5, k_start + 100, 9, F5);
+    this->addNote(5, k_start + 104, 9, A5S);
+    this->addNote(5, k_start + 128, new stop_spo());
+
 
 }
