@@ -1254,6 +1254,25 @@ FightSong::FightSong(): Music("Fight Song & Amazing Grace", 9, 90, 3000) {
     this->addNote(7, a_start + 54, 5, C3);
     this->addNote(7, a_start + 56, 6, C3);
 
+    // Trumpet
+    this->addNote(5, a_start, 1, G4);
+    this->addNote(5, a_start + 8, 1, B4);
+    this->addNote(5, a_start + 10, 1, G4);
+    this->addNote(5, a_start + 12, 1, B4);
+    this->addNote(5, a_start + 14, 1, D5);
+    this->addNote(5, a_start + 16, 1, G5);
+    this->addNote(5, a_start + 26, 1, D5);
+    this->addNote(5, a_start + 28, 1, B4);
+    this->addNote(5, a_start + 30, 1, G4);
+    this->addNote(5, a_start + 32, 1, C5);
+    this->addNote(5, a_start + 36, 1, E5);
+    this->addNote(5, a_start + 40, 1, D5);
+    this->addNote(5, a_start + 44, 1, B4);
+    this->addNote(5, a_start + 46, 1, G4);
+    this->addNote(5, a_start + 48, 1, A4);
+    this->addNote(5, a_start + 56, 1, G4);
+    this->addNote(5, a_start + 60, new stop_spo());
+
     // part B
     int b_start = 64;
     this->RepeatSingleChannal(7, a_start, a_start + 48, b_start);
@@ -1279,8 +1298,8 @@ FightSong::FightSong(): Music("Fight Song & Amazing Grace", 9, 90, 3000) {
 
     this->RepeatSingleChannal(1, b_start + 0, b_start + 32, b_start + 32);
     this->addNote(0, b_start + 32, 9, E1, E2);
-    this->addNote(0, b_start + 48, 9, C1, C2);
-    this->addNote(0, b_start + 64, 9, G1, G2);
+    this->addNote(0, b_start + 64, 9, C1, C2);
+    this->addNote(0, b_start + 96, 9, G1, G2);
     this->addNote(4, b_start + 32, 6, B3);
     this->addNote(4, b_start + 60, 6, A3);
 
@@ -2107,4 +2126,24 @@ FightSong::FightSong(): Music("Fight Song & Amazing Grace", 9, 90, 3000) {
     this->ChangeTune(6, k_start - 6, k_start + 160, -4);
     
     // Trumpet
+    this->addNote(5, k_start + 4, 6, A4S);
+    this->addNote(5, k_start + 8, 7, D5S);
+    this->addNote(5, k_start + 20, 7, G5);
+    this->addNote(5, k_start + 22, 7, F5);
+    this->addNote(5, k_start + 23, 7, D5S);
+    this->addNote(5, k_start + 24, 7, G5);
+    this->addNote(5, k_start + 36, 6, F5);
+    this->addNote(5, k_start + 40, 7, D5S);
+    this->addNote(5, k_start + 52, 7, C5);
+    this->addNote(5, k_start + 56, 7, A4S);
+    this->addNote(5, k_start + 68, 6, A4S);
+    this->addNote(5, k_start + 72, 7, D5S);
+    this->addNote(5, k_start + 84, 7, G5);
+    this->addNote(5, k_start + 86, 7, F5);
+    this->addNote(5, k_start + 87, 7, D5S);
+    this->addNote(5, k_start + 88, 7, G5);
+    this->addNote(5, k_start + 100, 6, F5);
+    this->addNote(5, k_start + 104, 6, A5S);
+    this->addNote(5, k_start + 128, 6, new stop_spo());
+
 }
