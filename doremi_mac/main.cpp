@@ -110,13 +110,7 @@ void testLoadingFile()
  * When loading file, cin >> 1.
  */
 int main() {
-    int t;
-    std::cin >> t;
-    if (t == 0) {
-        testSavingFile();
-    }
-    else {
-        testLoadingFile();
-    }
+    testSavingFile();
+    testLoadingFile();
     return 0;
 }

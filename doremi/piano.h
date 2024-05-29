@@ -21,6 +21,7 @@ public:
 
 public:
     explicit piano(QWidget *parent = nullptr);
+    void setPicture(int id); //TODO
     ~piano();
     QButtonGroup *piano_keys;
     void setInstrumentText(QString t);

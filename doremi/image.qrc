@@ -18,5 +18,6 @@
         <file>image/newstart.png</file>
         <file>image/newpiano.png</file>
         <file>image/piano.png</file>
+        <file>image/instruments/113agogo.png</file>
     </qresource>
 </RCC>

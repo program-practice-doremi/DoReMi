@@ -190,6 +190,7 @@ void ChannelEdit::on_createButton_clicked()
 {
     piano *new_piano = new piano();
     new_piano->show();
+    new_piano->setPicture(this->ui->spinBox->value());
     connect(new_piano, &piano::newnote, this, &ChannelEdit::transform_note);
     connect(this,&ChannelEdit::SendBackNote,new_piano,&piano::recievenote);
     emit CurrentEditing(id);

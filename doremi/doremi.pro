@@ -15,6 +15,7 @@ SOURCES += \
     createpage.cpp \
     filechoose.cpp \
     fileoperatingwidget.cpp \
+    instrument1.cpp \
     main.cpp \
     mainwindow.cpp \
     mediaplayer.cpp \
@@ -31,6 +32,7 @@ HEADERS += \
     createpage.h \
     filechoose.h \
     fileoperatingwidget.h \
+    instrument1.h \
     instruments.h \
     mainwindow.h \
     mediaplayer.h \
@@ -47,6 +49,7 @@ FORMS += \
     createpage.ui \
     filechoose.ui \
     fileoperatingwidget.ui \
+    instrument1.ui \
     mainwindow.ui \
     menu.ui \
     piano.ui

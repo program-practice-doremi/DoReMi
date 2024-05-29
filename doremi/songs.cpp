@@ -2146,5 +2146,10 @@ FightSong::FightSong(): Music("Fight Song & Amazing Grace", 9, 90, 3000) {
     this->addNote(5, k_start + 104, 9, A5S);
     this->addNote(5, k_start + 128, new stop_spo());
 
-
+    this->addNote(0, k_start + 160, 7, C2, G2, C3, D3S);
+    this->addNote(2, k_start + 160, 7, D4S, D5S);
+    this->addNote(1, k_start + 160, new stop_spo());
+    this->addNote(3, k_start + 160, 7, D5S, D6S);
+    this->addNote(4, k_start + 160, new stop_spo());
+    
 }

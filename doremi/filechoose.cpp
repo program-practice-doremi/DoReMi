@@ -124,15 +124,11 @@ void FileChoose::on_queren2_clicked()
     std::string name;
     name = this->ui->lineEdit_2->text().toStdString();
     Music *song = new Music(0, name);
-    std::cout << song->name << std::endl;
-    MediaPlayer *k = new MediaPlayer();
-    k->SetMusic(song);
-    k->PlayMusic();
-    // CreatePage *c = new CreatePage();
-    // this->close();
-    // c->show();
-    // connect(this, &FileChoose::songcopy,c,&CreatePage::getmusic);
-    // emit songcopy(song);
+    CreatePage *c = new CreatePage();
+    this->close();
+    c->show();
+    connect(this, &FileChoose::songcopy,c,&CreatePage::getmusic);
+    emit songcopy(song);
 }
 
 
