@@ -238,10 +238,288 @@ piano::piano(QWidget *parent)
 
 void piano::setPicture(int type) {
     std::cout << type << std::endl;
-    this->ui->pushButton->setStyleSheet("#pushButton{"
-                                    "background-image: url(:/image/instruments/113agogo.png);" // 按钮背景
-                                    "background-position: center;"
-                                    "}");
+    if(type>=0&&type<=7){
+        this->ui->pushButton->setStyleSheet("#pushButton{"
+            "background-image: url(:/image/instruments/0-7钢琴类.png);" // 按钮背景
+            "background-position: center;"
+            "}");
+    }
+    else if(type==8){
+        this->ui->pushButton->setStyleSheet("#pushButton{"
+                                            "background-image: url(:/image/instruments/8钢片琴.png);" // 按钮背景
+                                            "background-position: center;"
+                                            "}");
+    }
+    else if(type==9){
+        this->ui->pushButton->setStyleSheet("#pushButton{"
+                                            "background-image: url(:/image/instruments/9钟琴.png);" // 按钮背景
+                                            "background-position: center;"
+                                            "}");
+    }
+    else if(type==10){
+        this->ui->pushButton->setStyleSheet("#pushButton{"
+                                            "background-image: url(:/image/instruments/10音乐盒.png);" // 按钮背景
+                                            "background-position: center;"
+                                            "}");
+    }
+    else if(type==11){
+        this->ui->pushButton->setStyleSheet("#pushButton{"
+                                            "background-image: url(:/image/instruments/11颤音琴.png);" // 按钮背景
+                                            "background-position: center;"
+                                            "}");
+    }
+    else if(type==12){
+        this->ui->pushButton->setStyleSheet("#pushButton{"
+                                            "background-image: url(:/image/instruments/12马林巴琴.png);" // 按钮背景
+                                            "background-position: center;"
+                                            "}");
+    }
+    else if(type==13){
+        this->ui->pushButton->setStyleSheet("#pushButton{"
+                                            "background-image: url(:/image/instruments/13木琴.png);" // 按钮背景
+                                            "background-position: center;"
+                                            "}");
+    }
+    else if(type==14){
+        this->ui->pushButton->setStyleSheet("#pushButton{"
+                                            "background-image: url(:/image/instruments/14管钟.png);" // 按钮背景
+                                            "background-position: center;"
+                                            "}");
+    }
+    else if(type==15){
+        this->ui->pushButton->setStyleSheet("#pushButton{"
+                                            "background-image: url(:/image/instruments/15大扬琴.png);" // 按钮背景
+                                            "background-position: center;"
+                                            "}");
+    }
+    else if(type>=16&&type<=20){
+        this->ui->pushButton->setStyleSheet("#pushButton{"
+                                            "background-image: url(:/image/instruments/16-20风琴类.png);" // 按钮背景
+                                            "background-position: center;"
+                                            "}");
+    }
+    else if(type==21||type==23){
+        this->ui->pushButton->setStyleSheet("#pushButton{"
+                                            "background-image: url(:/image/instruments/21，23手风琴类.png);" // 按钮背景
+                                            "background-position: center;"
+                                            "}");
+    }
+    else if(type==22){
+        this->ui->pushButton->setStyleSheet("#pushButton{"
+                                            "background-image: url(:/image/instruments/22口琴.png);" // 按钮背景
+                                            "background-position: center;"
+                                            "}");
+    }
+    else if(type>=24&&type<=31){
+        this->ui->pushButton->setStyleSheet("#pushButton{"
+                                            "background-image: url(:/image/instruments/24-31吉他类.png);" // 按钮背景
+                                            "background-position: center;"
+                                            "}");
+    }
+    else if(type>=32&&type<=39){
+        this->ui->pushButton->setStyleSheet("#pushButton{"
+                                            "background-image: url(:/image/instruments/32-39贝司.png);" // 按钮背景
+                                            "background-position: center;"
+                                            "}");
+    }
+    else if(type==40||type==44||type==45){
+        this->ui->pushButton->setStyleSheet("#pushButton{"
+                                            "background-image: url(:/image/instruments/40，44，45小提琴和弦乐类.png);" // 按钮背景
+                                            "background-position: center;"
+                                            "}");
+    }
+    else if(type==41){
+        this->ui->pushButton->setStyleSheet("#pushButton{"
+                                            "background-image: url(:/image/instruments/41中提琴.png);" // 按钮背景
+                                            "background-position: center;"
+                                            "}");
+    }
+    else if(type==42||type==43){
+        this->ui->pushButton->setStyleSheet("#pushButton{"
+                                            "background-image: url(:/image/instruments/42，43大提琴.png);" // 按钮背景
+                                            "background-position: center;"
+                                            "}");
+    }
+    else if(type==46){
+        this->ui->pushButton->setStyleSheet("#pushButton{"
+                                            "background-image: url(:/image/instruments/46竖琴.png);" // 按钮背景
+                                            "background-position: center;"
+                                            "}");
+    }
+    else if(type==47){
+        this->ui->pushButton->setStyleSheet("#pushButton{"
+                                            "background-image: url(:/image/instruments/47定音鼓.png);" // 按钮背景
+                                            "background-position: center;"
+                                            "}");
+    }
+    else if(type>=48&&type<=51){
+        this->ui->pushButton->setStyleSheet("#pushButton{"
+                                            "background-image: url(:/image/instruments/48-51弦乐合奏.png);" // 按钮背景
+                                            "background-position: center;"
+                                            "}");
+    }
+    else if(type>=52&&type<=54){
+        this->ui->pushButton->setStyleSheet("#pushButton{"
+                                            "background-image: url(:/image/instruments/52-54人声类.png);" // 按钮背景
+                                            "background-position: center;"
+                                            "}");
+    }
+    else if(type==55){
+        this->ui->pushButton->setStyleSheet("#pushButton{"
+                                            "background-image: url(:/image/instruments/55管弦乐合奏.png);" // 按钮背景
+                                            "background-position: center;"
+                                            "}");
+    }
+    else if(type==56||type==59){
+        this->ui->pushButton->setStyleSheet("#pushButton{"
+                                            "background-image: url(:/image/instruments/56，59小号.png);" // 按钮背景
+                                            "background-position: center;"
+                                            "}");
+    }
+    else if(type==57){
+        this->ui->pushButton->setStyleSheet("#pushButton{"
+                                            "background-image: url(:/image/instruments/57长号.png);" // 按钮背景
+                                            "background-position: center;"
+                                            "}");
+    }
+    else if(type==58){
+        this->ui->pushButton->setStyleSheet("#pushButton{"
+                                            "background-image: url(:/image/instruments/58大号.png);" // 按钮背景
+                                            "background-position: center;"
+                                            "}");
+    }
+    else if(type==59){
+        this->ui->pushButton->setStyleSheet("#pushButton{"
+                                            "background-image: url(:/image/instruments/59圆号.png);" // 按钮背景
+                                            "background-position: center;"
+                                            "}");
+    }
+    else if(type>=60&&type<=62){
+        this->ui->pushButton->setStyleSheet("#pushButton{"
+                                            "background-image: url(:/image/instruments/60-62铜管组.png);" // 按钮背景
+                                            "background-position: center;"
+                                            "}");
+    }
+    else if(type>=64&&type<=67){
+        this->ui->pushButton->setStyleSheet("#pushButton{"
+                                            "background-image: url(:/image/instruments/64-67萨克斯.png);" // 按钮背景
+                                            "background-position: center;"
+                                            "}");
+    }
+    else if(type>=68&&type<=71){
+        this->ui->pushButton->setStyleSheet("#pushButton{"
+                                            "background-image: url(:/image/instruments/68-71管类.png);" // 按钮背景
+                                            "background-position: center;"
+                                            "}");
+    }
+    else if((type>=72&&type<=77)||type==79){
+        this->ui->pushButton->setStyleSheet("#pushButton{"
+                                            "background-image: url(:/image/instruments/72-77，79笛子类.png);" // 按钮背景
+                                            "background-position: center;"
+                                            "}");
+    }
+    else if(type==78){
+        this->ui->pushButton->setStyleSheet("#pushButton{"
+                                            "background-image: url(:/image/instruments/78口哨.png);" // 按钮背景
+                                            "background-position: center;"
+                                            "}");
+    }
+    else if(type>=80&&type<=103){
+        this->ui->pushButton->setStyleSheet("#pushButton{"
+                                            "background-image: url(:/image/instruments/80-103合成类.png);" // 按钮背景
+                                            "background-position: center;"
+                                            "}");
+    }
+    else if(type==104){
+        this->ui->pushButton->setStyleSheet("#pushButton{"
+                                            "background-image: url(:/image/instruments/104西塔尔.png);" // 按钮背景
+                                            "background-position: center;"
+                                            "}");
+    }
+    else if(type==105){
+        this->ui->pushButton->setStyleSheet("#pushButton{"
+                                            "background-image: url(:/image/instruments/105班卓琴.png);" // 按钮背景
+                                            "background-position: center;"
+                                            "}");
+    }
+    else if(type==106){
+        this->ui->pushButton->setStyleSheet("#pushButton{"
+                                            "background-image: url(:/image/instruments/106三味线.png);" // 按钮背景
+                                            "background-position: center;"
+                                            "}");
+    }
+    else if(type==107){
+        this->ui->pushButton->setStyleSheet("#pushButton{"
+                                            "background-image: url(:/image/instruments/107十三弦筝.png);" // 按钮背景
+                                            "background-position: center;"
+                                            "}");
+    }
+    else if(type==108){
+        this->ui->pushButton->setStyleSheet("#pushButton{"
+                                            "background-image: url(:/image/instruments/108卡林巴.png);" // 按钮背景
+                                            "background-position: center;"
+                                            "}");
+    }
+    else if(type==109){
+        this->ui->pushButton->setStyleSheet("#pushButton{"
+                                            "background-image: url(:/image/instruments/109风笛.png);" // 按钮背景
+                                            "background-position: center;"
+                                            "}");
+    }
+    else if(type==110){
+        this->ui->pushButton->setStyleSheet("#pushButton{"
+                                            "background-image: url(:/image/instruments/110民族提琴.png);" // 按钮背景
+                                            "background-position: center;"
+                                            "}");
+    }
+    else if(type==111){
+        this->ui->pushButton->setStyleSheet("#pushButton{"
+                                            "background-image: url(:/image/instruments/111山奈.png);" // 按钮背景
+                                            "background-position: center;"
+                                            "}");
+    }
+    else if(type==112){
+        this->ui->pushButton->setStyleSheet("#pushButton{"
+                                            "background-image: url(:/image/instruments/112叮铛铃.png);" // 按钮背景
+                                            "background-position: center;"
+                                            "}");
+    }
+    else if(type==113){
+        this->ui->pushButton->setStyleSheet("#pushButton{"
+                                            "background-image: url(:/image/instruments/113agogo.png);" // 按钮背景
+                                            "background-position: center;"
+                                            "}");
+    }
+    else if(type==114){
+        this->ui->pushButton->setStyleSheet("#pushButton{"
+                                            "background-image: url(:/image/instruments/114钢鼓.png);" // 按钮背景
+                                            "background-position: center;"
+                                            "}");
+    }
+    else if(type==115){
+        this->ui->pushButton->setStyleSheet("#pushButton{"
+                                            "background-image: url(:/image/instruments/115木鱼.png);" // 按钮背景
+                                            "background-position: center;"
+                                            "}");
+    }
+    else if(type>=116&&type<=118){
+        this->ui->pushButton->setStyleSheet("#pushButton{"
+                                            "background-image: url(:/image/instruments/116-118鼓类.png);" // 按钮背景
+                                            "background-position: center;"
+                                            "}");
+    }
+    else if(type==119){
+        this->ui->pushButton->setStyleSheet("#pushButton{"
+                                            "background-image: url(:/image/instruments/119铜钹.png);" // 按钮背景
+                                            "background-position: center;"
+                                            "}");
+    }
+    else{
+        this->ui->pushButton->setStyleSheet("#pushButton{"
+                                            "background-image: url(:/image/instruments/120-127音效类.png);" // 按钮背景
+                                            "background-position: center;"
+                                            "}");
+    }
 
     //this->ui->widget = new Instrument1(this);
     // this->ui->widget->show();

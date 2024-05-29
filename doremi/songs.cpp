@@ -552,6 +552,7 @@ struct old_spo {
         result->_v1 = v1;
         result->_v2 = v2;
         result->_v3 = v3;
+        return result;//?
     }
 };
 
@@ -2175,5 +2176,5 @@ FightSong::FightSong(): Music("Fight Song & Amazing Grace", 9, 90, 3000) {
     this->addNote(2, k_start + 188, 5, D5S);
     this->addNote(2, k_start + 191, 5, G4S);
     this->addNote(2, k_start + 192, 5, G4S);
-    this->addNote(2, k_start + 200, 5, new stop_spo());
+    this->addNote(2, k_start + 200, new stop_spo());
 }

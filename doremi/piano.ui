@@ -23,7 +23,11 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>instrument</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="image.qrc">
+    <normaloff>:/image/aaa.png</normaloff>:/image/aaa.png</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">#piano{background-image:url(:/image/piano.png)}</string>
