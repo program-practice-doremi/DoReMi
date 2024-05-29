@@ -238,9 +238,13 @@ piano::piano(QWidget *parent)
 
 void piano::setPicture(int type) {
     std::cout << type << std::endl;
+    this->ui->pushButton->setStyleSheet("#pushButton{"
+                                    "background-image: url(:/image/instruments/113agogo.png);" // 按钮背景
+                                    "background-position: center;"
+                                    "}");
 
     //this->ui->widget = new Instrument1(this);
-   // this->ui->widget->show();
+    // this->ui->widget->show();
 }
 
 void piano::change_color(int id){
