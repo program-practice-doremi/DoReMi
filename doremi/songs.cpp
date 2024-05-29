@@ -2008,6 +2008,14 @@ FightSong::FightSong(): Music("Fight Song & Amazing Grace", 9, 90, 3000) {
 
     // High Piano
     // Like a small boat
+    this->addNote(0, j_start - 6, new stop_spo());
+    this->addNote(1, j_start - 6, new stop_spo());
+    this->addNote(3, j_start - 6, new stop_spo());
+    this->addNote(4, j_start - 6, new stop_spo());
+    this->addNote(5, j_start - 6, new stop_spo());
+    this->addNote(6, j_start - 6, new stop_spo());
+    this->addNote(7, j_start - 6, new stop_spo());
+    this->addNote(8, j_start - 6, new stop_spo());
     this->addNote(2, j_start - 6, 5, G5);
     this->addNote(2, j_start - 5, 5, G5);
     this->addNote(2, j_start - 4, 5, B5);
