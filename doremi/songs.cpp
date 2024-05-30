@@ -1320,7 +1320,7 @@ FightSong::FightSong(): Music("Fight Song & Amazing Grace", 9, 90, 3000) {
 
     // part C
     int c_start = b_start + 128;
-    this->addNote(8, c_start + 0, 6, C3);
+    this->addNote(7, c_start + 0, 1, C3);
     this->addNote(1, c_start + 0, 4, G4);
     this->addNote(1, c_start + 4, 4, D5);
 
@@ -1330,7 +1330,7 @@ FightSong::FightSong(): Music("Fight Song & Amazing Grace", 9, 90, 3000) {
     this->addNote(2, c_start + 12, 7, A5);
     this->addNote(2, c_start + 14, 7, G5);
 
-    this->addNote(7, c_start + 16, 4, C4);
+    this->addNote(7, c_start + 16, 1, C4);
     this->addNote(1, c_start + 16, 4, F5S);
     this->addNote(1, c_start + 20, 4, D5);
 
