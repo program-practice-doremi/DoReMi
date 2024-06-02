@@ -65,12 +65,6 @@ void CreatePage::getmusic(Music *song){
     }
 }
 
-void CreatePage::on_pushButton_clicked()
-{
-    FileOperatingWidget *t = new FileOperatingWidget(sang);
-    t->show();
-}
-
 void CreatePage::on_playButton_clicked()
 {
     this->player->PlayMusic();
@@ -118,3 +112,10 @@ void CreatePage::curplay(int place){
     int po = place / 16 + 1;
     this->ui->lcdNumber->display(po);
 }
+
+void CreatePage::on_fileButton_clicked()
+{
+    FileOperatingWidget *t = new FileOperatingWidget(sang);
+    t->show();
+}
+

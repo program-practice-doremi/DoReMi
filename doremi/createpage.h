@@ -31,8 +31,6 @@ private:
     bool paused = false;
 
 private slots:
-    void on_pushButton_clicked();
-
     void on_playButton_clicked();
 
     void on_pauseButton_clicked();
@@ -44,6 +42,8 @@ private slots:
     void on_tune_box_valueChanged(int arg1);
 
     void on_speed_box_valueChanged(int arg1);
+
+    void on_fileButton_clicked();
 
 private:
     Ui::CreatePage *ui;
