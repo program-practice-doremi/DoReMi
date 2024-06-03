@@ -2187,7 +2187,7 @@ TheSky::TheSky(): Music("天空没有极限", 9, 70, 1000) {
 
     /**** Type ****/
     this->setType(0, Acoustic_Grand_Piano);  // Piano Low
-    this->setType(1, Acoustic_Grand_Piano);  // Piano Middle (type?)
+    this->setType(1, Acoustic_Grand_Piano);  // Piano Middle
     this->setType(2, Acoustic_Grand_Piano);  // Piano High
     this->setType(3, Music_Box);             // simulate chores
     this->setType(4, Cello);                 // Violin
@@ -2197,8 +2197,10 @@ TheSky::TheSky(): Music("天空没有极限", 9, 70, 1000) {
     this->setType(8, Synth_Drum);            // Drum
 
     // extra voice
+    this->setAdditionalStrength(0, 2);
+    this->setAdditionalStrength(7, 2);
 
-    // Part A
+    // Part A | 1 3
     int a_start = 0;
     this->addNote(1, a_start, 2, C4, G4);
     this->addNote(1, a_start + 16, 2, A3, E4);
@@ -2227,7 +2229,7 @@ TheSky::TheSky(): Music("天空没有极限", 9, 70, 1000) {
 
     this->RepeatAllChannals(a_start, a_start + 64, a_start + 64);
 
-    // Part B
+    // Part B | 0 1 2 7
     int b_start = a_start + 128;
     this->addNote(2, b_start, 5, D4);
     this->addNote(2, b_start + 4, 5, D4);
@@ -2255,7 +2257,7 @@ TheSky::TheSky(): Music("天空没有极限", 9, 70, 1000) {
     this->addNote(1, b_start + 24, 3, G3);
     this->addNote(1, b_start + 28, 3, G3);
 
-    // part c
+    // part c | 0 1 2 3 7
     int c_start = b_start + 32;
     this->addNote(2, c_start, 5, D4);
     this->addNote(2, c_start + 4, 5, D4);
@@ -2362,6 +2364,14 @@ TheSky::TheSky(): Music("天空没有极限", 9, 70, 1000) {
 
     // Part E
     int e_start = d_start + 64;
+    this->addNote(0, d_start + 48 + 5, new stop_spo());
+    this->addNote(1, d_start + 48 + 5, new stop_spo());
+    this->addNote(2, d_start + 48 + 5, new stop_spo());
+    this->addNote(4, d_start + 48 + 5, new stop_spo());
+    this->addNote(5, d_start + 48 + 5, new stop_spo());
+    this->addNote(6, d_start + 48 + 5, new stop_spo());
+    this->addNote(7, d_start + 48 + 5, new stop_spo());
+    this->addNote(8, d_start + 48 + 5, new stop_spo());
     this->addNote(3, d_start + 48 + 6, 5, G5);
     this->addNote(3, d_start + 48 + 7, 5, G5);
     this->addNote(3, d_start + 48 + 8, 5, D6);
@@ -2393,19 +2403,42 @@ TheSky::TheSky(): Music("天空没有极限", 9, 70, 1000) {
 
     this->RepeatSingleChannal(3, e_start - 16, e_start + 48, e_start + 48);
     this->addNote(3, e_start + 64 + 14, 5, B5);
+    this->CopyNote(3, d_start + 48 + 6, e_start + 47, 4, d_start + 48 + 6);
+    this->ChangeTune(4, d_start + 48 + 6, e_start + 47, -24);
 
-    this->addNote(6, e_start, 5, C3);
-    this->addNote(6, e_start + 16, 5, B2);
-    this->addNote(6, e_start + 32, 5, A2);
-    this->addNote(6, e_start + 48, 5, F2);
+    this->addNote(6, e_start, 4, C3);
+    this->addNote(6, e_start + 16, 4, B2);
+    this->addNote(6, e_start + 32, 4, A2);
+    this->addNote(6, e_start + 48, 4, F2);
     this->addNote(6, e_start + 60, new stop_spo());
     this->RepeatSingleChannal(6, e_start, e_start + 64, e_start + 64);
+    this->CopyNote(6, e_start, e_start + 128, 7, e_start);
 
-    this->addNote(0, e_start, 6, C2, C3);
-    this->addNote(0, e_start + 16, 6, B2, B3);
-    this->addNote(0, e_start + 32, 6, A2, A3);
-    this->addNote(0, e_start + 48, 6, F2, F3);
+    this->addNote(0, e_start, 10, C2, C3);
+    this->addNote(0, e_start + 16, 10, B2, B3);
+    this->addNote(0, e_start + 32, 10, A2, A3);
+    this->addNote(0, e_start + 48, 10, F2, F3);
     this->RepeatSingleChannal(0, e_start, e_start + 64, e_start + 64);
+
+    this->RepeatSingleChannal(1, c_start, c_start + 128, e_start);
+    this->RepeatSingleChannal(2, c_start, c_start + 128, e_start);
+
+    this->addNote(5, e_start, C3, E3, G3, C4);
+    this->addNote(5, e_start + 16, B2, D3, G3, B3);
+    this->addNote(5, e_start + 32, A2, C3, E3, A3);
+    this->addNote(5, e_start + 48, F2, C3, F3, A3);
+    this->RepeatSingleChannal(5, e_start, e_start + 64, e_start + 64);
+
+    this->addNote(3, e_start + 122, 6, C5);
+    this->addNote(3, e_start + 123, 6, B4);
+    this->addNote(3, e_start + 124, 6, D5);
+    this->addNote(3, e_start + 126, 6, C5);
+
+    // stop part
+    int stopTime = e_start + 128;
+    for (int i = 0; i < 9; ++i) {
+        this->addNote(i, stopTime, new stop_spo());
+    }
 
     this->save_file("TheSky.bin");
 }
