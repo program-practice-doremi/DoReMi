@@ -2310,7 +2310,7 @@ TheSky::TheSky(): Music("天空没有极限", 9, 70, 1000) {
     this->CopyNote(3, c_start + 64 + 56, c_start + 128, 4, c_start + 64 + 56);
     this->ChangeTune(4, c_start + 64 + 56, c_start + 128, -24);
 
-    // Part D
+    // Part D   0 1 4 5 7
     int d_start = c_start + 128;
 
     this->addNote(4, d_start + 7, new stop_spo());
@@ -2343,6 +2343,11 @@ TheSky::TheSky(): Music("天空没有极限", 9, 70, 1000) {
 
     this->RepeatSingleChannal(1, d_start, d_start + 32, d_start + 32);
 
+    this->addNote(0, d_start, 3, D2);
+    this->addNote(0, d_start + 8, 3, C2);
+    this->addNote(0, d_start + 16, 3, B1);
+    this->RepeatSingleChannal(0, d_start, d_start + 32, d_start + 32);
+
     this->addNote(5, d_start, 4, D3, A3, D4);
     this->addNote(5, d_start + 8, 4, C3, G3, C4);
     this->addNote(5, d_start + 16, 4, B3, G3, B4);
@@ -2355,5 +2360,39 @@ TheSky::TheSky(): Music("天空没有极限", 9, 70, 1000) {
     this->addNote(7, d_start + 31, new stop_spo());
     this->RepeatSingleChannal(7, d_start, d_start + 32, d_start + 32);
 
-    this->save_file("thesky.bin");
+    // Part E
+    int e_start = d_start + 64;
+    this->addNote(3, d_start + 48 + 6, 5, G5);
+    this->addNote(3, d_start + 48 + 7, 5, G5);
+    this->addNote(3, d_start + 48 + 8, 5, D6);
+    this->addNote(3, d_start + 48 + 10, 5, C6);
+    this->addNote(3, d_start + 48 + 12, 5, E5);
+    this->addNote(3, d_start + 48 + 14, 5, G5);
+
+    this->addNote(3, e_start + 6, 5, G5);
+    this->addNote(3, e_start + 7, 5, G5);
+    this->addNote(3, e_start + 8, 5, D6);
+    this->addNote(3, e_start + 10, 5, C6);
+    this->addNote(3, e_start + 12, 5, E5);
+    this->addNote(3, e_start + 14, 5, G5);
+
+    this->addNote(3, e_start + 22, 5, G5);
+    this->addNote(3, e_start + 23, 5, G5);
+    this->addNote(3, e_start + 24, 5, D6);
+    this->addNote(3, e_start + 26, 5, C6);
+    this->addNote(3, e_start + 28, 5, D6);
+    this->addNote(3, e_start + 30, 5, E6);
+
+    this->addNote(3, e_start + 34, 5, C6);
+    this->addNote(3, e_start + 36, 5, C6);
+    this->addNote(3, e_start + 38, 5, B5);
+    this->addNote(3, e_start + 39, 5, C6);
+    this->addNote(3, e_start + 42, 5, B5);
+    this->addNote(3, e_start + 44, 5, E5);
+    this->addNote(3, e_start + 46, 5, A5);
+
+    this->RepeatSingleChannal(3, e_start - 16, e_start + 48, e_start + 48);
+    this->addNote(3, e_start + 64 + 14, 5, B5);
+
+    this->save_file("TheSky.bin");
 }
