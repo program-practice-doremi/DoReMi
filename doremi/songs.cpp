@@ -2394,5 +2394,18 @@ TheSky::TheSky(): Music("天空没有极限", 9, 70, 1000) {
     this->RepeatSingleChannal(3, e_start - 16, e_start + 48, e_start + 48);
     this->addNote(3, e_start + 64 + 14, 5, B5);
 
+    this->addNote(6, e_start, 5, C3);
+    this->addNote(6, e_start + 16, 5, B2);
+    this->addNote(6, e_start + 32, 5, A2);
+    this->addNote(6, e_start + 48, 5, F2);
+    this->addNote(6, e_start + 60, new stop_spo());
+    this->RepeatSingleChannal(6, e_start, e_start + 64, e_start + 64);
+
+    this->addNote(0, e_start, 6, C2, C3);
+    this->addNote(0, e_start + 16, 6, B2, B3);
+    this->addNote(0, e_start + 32, 6, A2, A3);
+    this->addNote(0, e_start + 48, 6, F2, F3);
+    this->RepeatSingleChannal(0, e_start, e_start + 64, e_start + 64);
+
     this->save_file("TheSky.bin");
 }
