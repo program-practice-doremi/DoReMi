@@ -2318,16 +2318,16 @@ TheSky::TheSky(): Music("天空没有极限", 9, 70, 1000) {
     this->addNote(4, d_start + 9, 2, F3);
     this->addNote(4, d_start + 11, 2, E3);
     this->addNote(4, d_start + 13, 2, D3);
-    this->addNote(4, d_start + 15, 2, F3);
+    this->addNote(4, d_start + 15, 2, D3);
 
     this->addNote(4, d_start + 7, new stop_spo());
     this->addNote(4, d_start + 16 + 8, 2, G3);
     this->addNote(4, d_start + 16 + 9, 2, F3);
     this->addNote(4, d_start + 16 + 11, 2, E3);
     this->addNote(4, d_start + 16 + 13, 2, D3);
-    this->addNote(4, d_start + 16 + 15, 2, D3);
+    this->addNote(4, d_start + 16 + 15, 2, F3);
 
-    this->RepeatSingleChannal(4, d_start, d_start + 32, d_start + 32);
+    this->RepeatSingleChannal(4, d_start, d_start + 16, d_start + 32);
 
     this->addNote(1, d_start, 5, D3);
     this->addNote(1, d_start + 2, 5, A3);
