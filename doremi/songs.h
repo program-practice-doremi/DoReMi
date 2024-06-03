@@ -55,6 +55,6 @@ public:
 class TheSky: public Music {
 public:
     explicit TheSky();
-}
+};
 
 #endif // SONGS_H
