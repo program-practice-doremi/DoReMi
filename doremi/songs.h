@@ -48,4 +48,13 @@ public:
     explicit FightSong();
 };
 
+/**
+ * Test music 4: The Sky 天空没有极限
+ * Adapted by Cao Yu
+ */
+class TheSky: public Music {
+public:
+    explicit TheSky();
+}
+
 #endif // SONGS_H

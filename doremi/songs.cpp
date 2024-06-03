@@ -2178,3 +2178,182 @@ FightSong::FightSong(): Music("Fight Song & Amazing Grace", 9, 90, 3000) {
     this->addNote(2, k_start + 192, 5, G4S);
     this->addNote(2, k_start + 200, new stop_spo());
 }
+
+TheSky::TheSky(): Music("天空没有极限", 9, 70, 1000) {
+    /********************/
+    /**** 天空没有极限 ****/
+    /********************/
+    // adapted by: Calvin Cao, undergraduate, School of EECS, Peking University
+
+    /**** Type ****/
+    this->setType(0, Acoustic_Grand_Piano);  // Piano Low
+    this->setType(1, Acoustic_Grand_Piano);  // Piano Middle (type?)
+    this->setType(2, Acoustic_Grand_Piano);  // Piano High
+    this->setType(3, Music_Box);             // simulate chores
+    this->setType(4, Cello);                 // Violin
+    this->setType(5, Electric_Guitar_jazz);  // Guitar
+    this->setType(6, Drawbar_Organ);         // Background 1
+    this->setType(7, Pad_2_warm);            // Background 2
+    this->setType(8, Synth_Drum);            // Drum
+
+    // extra voice
+
+    // Part A
+    int a_start = 0;
+    this->addNote(1, a_start, 2, C4, G4);
+    this->addNote(1, a_start + 16, 2, A3, E4);
+    this->addNote(1, a_start + 32, 2, F3, C4);
+    this->addNote(1, a_start + 48, 2, G3, D4);
+
+    this->addNote(3, a_start, 3, C5);
+    this->addNote(3, a_start + 2, 3, G5);
+    this->addNote(3, a_start + 4, 3, C6);
+    this->addNote(3, a_start + 6, 3, E6);
+
+    this->addNote(3, a_start + 16, 3, A4);
+    this->addNote(3, a_start + 18, 3, E5);
+    this->addNote(3, a_start + 20, 3, A5);
+    this->addNote(3, a_start + 22, 3, C6);
+
+    this->addNote(3, a_start + 32, 3, F4);
+    this->addNote(3, a_start + 34, 3, F5);
+    this->addNote(3, a_start + 36, 3, G5);
+    this->addNote(3, a_start + 38, 3, C6);
+
+    this->addNote(3, a_start + 48, 3, G4);
+    this->addNote(3, a_start + 50, 3, G5);
+    this->addNote(3, a_start + 52, 3, B5);
+    this->addNote(3, a_start + 54, 3, D6);
+
+    this->RepeatAllChannals(a_start, a_start + 64, a_start + 64);
+
+    // Part B
+    int b_start = a_start + 128;
+    this->addNote(2, b_start, 5, D4);
+    this->addNote(2, b_start + 4, 5, D4);
+    this->addNote(2, b_start + 8, 5, C4);
+    this->addNote(2, b_start + 12, 5, C4);
+    this->addNote(2, b_start + 16, 5, B4);
+    this->addNote(2, b_start + 20, 5, B4);
+    this->addNote(2, b_start + 24, 5, C4);
+    this->addNote(2, b_start + 28, 5, C4);
+
+    this->addNote(0, b_start, 6, C2, C3);
+    this->addNote(0, b_start + 15, 3, G2);
+    this->addNote(0, b_start + 16, 3, C2);
+
+
+    this->addNote(7, b_start, 2, C2);
+    this->addNote(7, b_start + 31, new stop_spo());
+
+    this->addNote(1, b_start, 3, G3);
+    this->addNote(1, b_start + 4, 3, G3);
+    this->addNote(1, b_start + 8, 3, G3);
+    this->addNote(1, b_start + 12, 3, G3);
+    this->addNote(1, b_start + 16, 3, G3);
+    this->addNote(1, b_start + 20, 3, G3);
+    this->addNote(1, b_start + 24, 3, G3);
+    this->addNote(1, b_start + 28, 3, G3);
+
+    // part c
+    int c_start = b_start + 32;
+    this->addNote(2, c_start, 5, D4);
+    this->addNote(2, c_start + 4, 5, D4);
+    this->addNote(2, c_start + 8, 5, C4);
+    this->addNote(2, c_start + 12, 5, C4);
+    this->addNote(2, c_start + 16, 5, D4);
+    this->addNote(2, c_start + 20, 5, D4);
+    this->addNote(2, c_start + 24, 5, B4);
+    this->addNote(2, c_start + 28, 5, B4);
+
+    this->addNote(2, c_start + 32, 5, C4);
+    this->addNote(2, c_start + 36, 5, C4);
+    this->addNote(2, c_start + 40, 5, C4);
+    this->addNote(2, c_start + 44, 5, C4);
+    this->addNote(2, c_start + 48, 5, C4);
+
+    this->RepeatSingleChannal(1, b_start, b_start + 32, c_start);
+    this->addNote(1, c_start + 32, 3, A3);
+    this->addNote(1, c_start + 36, 3, A3);
+    this->addNote(1, c_start + 40, 3, G3);
+    this->addNote(1, c_start + 44, 3, G3);
+    this->addNote(1, c_start + 48, 3, F3);
+
+    this->addNote(0, c_start, 5, C1, C2);
+    this->addNote(7, c_start, 2, C2);
+    this->addNote(0, c_start + 16, 2, E2);
+    this->addNote(0, c_start + 32, 2, A2);
+    this->addNote(0, c_start + 40, 2, G2);
+    this->addNote(0, c_start + 48, 2, F2);
+    this->addNote(0, c_start + 56, 2, F2);
+
+    this->addNote(7, c_start + 16, 2, E2);
+    this->addNote(7, c_start + 32, 2, A2);
+    this->addNote(7, c_start + 40, 2, G2);
+    this->addNote(7, c_start + 48, 2, F2);
+    this->addNote(7, c_start + 63, new stop_spo());
+
+    this->RepeatAllChannals(c_start, c_start + 64, c_start + 64);
+
+    this->addNote(3, c_start + 56, 2, G5);
+    this->addNote(3, c_start + 57, 2, F5);
+    this->addNote(3, c_start + 59, 2, C5);
+    this->addNote(3, c_start + 61, 2, D5);
+    this->addNote(3, c_start + 63, 2, E5);
+
+    this->addNote(3, c_start + 64 + 56, 2, G5);
+    this->addNote(3, c_start + 64 + 57, 2, F5);
+    this->addNote(3, c_start + 64 + 59, 2, E5);
+    this->addNote(3, c_start + 64 + 61, 2, D5);
+    this->addNote(3, c_start + 64 + 63, 2, F5);
+
+    this->CopyNote(3, c_start + 64 + 56, c_start + 128, 4, c_start + 64 + 56);
+    this->ChangeTune(4, c_start + 64 + 56, c_start + 128, -24);
+
+    // Part D
+    int d_start = c_start + 128;
+
+    this->addNote(4, c_start + 7, new stop_spo());
+    this->addNote(4, c_start + 8, 2, G3);
+    this->addNote(4, c_start + 9, 2, F3);
+    this->addNote(4, c_start + 11, 2, E3);
+    this->addNote(4, c_start + 13, 2, D3);
+    this->addNote(4, c_start + 15, 2, F3);
+
+    this->addNote(4, c_start + 7, new stop_spo());
+    this->addNote(4, c_start + 16 + 8, 2, G3);
+    this->addNote(4, c_start + 16 + 9, 2, F3);
+    this->addNote(4, c_start + 16 + 11, 2, E3);
+    this->addNote(4, c_start + 16 + 13, 2, D3);
+    this->addNote(4, c_start + 16 + 15, 2, D3);
+
+    this->RepeatSingleChannal(4, c_start, c_start + 32, c_start + 32);
+
+    this->addNote(1, c_start, 5, D3);
+    this->addNote(1, c_start + 2, 5, A3);
+    this->addNote(1, c_start + 4, 5, D4);
+
+    this->addNote(1, c_start + 8, 5, C3);
+    this->addNote(1, c_start + 10, 5, G3);
+    this->addNote(1, c_start + 12, 5, C4);
+
+    this->addNote(1, c_start + 16, 5, B2);
+    this->addNote(1, c_start + 18, 5, G3);
+    this->addNote(1, c_start + 20, 5, B3);
+
+    this->RepeatSingleChannal(1, c_start, c_start + 32, c_start + 32);
+
+    this->addNote(5, c_start, 4, D3, A3, D4);
+    this->addNote(5, c_start + 8, 4, C3, G3, C4);
+    this->addNote(5, c_start + 16, 4, B3, G3, B4);
+    this->addNote(5, c_start + 31, new stop_spo());
+    this->RepeatSingleChannal(5, c_start, c_start + 32, c_start + 32);
+
+    this->addNote(7, c_start, 3, D3);
+    this->addNote(7, c_start + 8, 3, C3);
+    this->addNote(7, c_start + 16, 3, G2);
+    this->addNote(7, c_start + 31, new stop_spo());
+    this->RepeatSingleChannal(7, c_start, c_start + 32, c_start + 32);
+
+    this->save_file("thesky.bin");
+}

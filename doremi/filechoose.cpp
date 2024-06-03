@@ -9,6 +9,7 @@ FileChoose::FileChoose(QWidget *parent)
     , ui(new Ui::FileChoose)
 {
     ui->setupUi(this);
+    Music *songtest = new TheSky();
     ui->lineEdit->hide();
     ui->spinBox->hide();
     ui->queren->hide();
