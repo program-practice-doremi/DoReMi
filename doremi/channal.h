@@ -19,6 +19,8 @@ public:
     v_spo(Pitch v1 = _REST, Pitch v2 = _REST, Pitch v3 = _REST, Pitch v4 = _REST, int volume = 0);
 
     void addTune(int tune);
+
+    bool realNote();
 };
 
 class rest_spo: public v_spo {

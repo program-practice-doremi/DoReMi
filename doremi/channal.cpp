@@ -38,6 +38,10 @@ void v_spo::addTune(int tune) {
     }
 }
 
+bool v_spo::realNote() {
+    return this->_v1 != _REST && this->_v1 != _STOP;
+}
+
 Channal::Channal(int _number, int _length, int musicType, int _strength, QObject *parent)
     : QObject{parent}
 {

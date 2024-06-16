@@ -219,3 +219,16 @@ void MediaPlayer::changeBPH(int speed) {
 MediaPlayer::~MediaPlayer() {
     delete t;
 }
+
+void GameMediaPlayer::setGameChannal(int t) {
+    this->GameChannal = t;
+}
+
+void GameMediaPlayer::PlayNext() {
+    if (this->song->channal[this->GameChannal]->notes[this->currentPlaying]->realNote()) {
+        emit this->stopPlaying();
+    }
+    else {
+        MediaPlayer::PlayNext();
+    }
+}

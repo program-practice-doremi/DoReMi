@@ -115,6 +115,7 @@ public slots:
 
     /**
      * @brief Receive a note and play it out. You should first declare the "currentEditing"!
+     * TODO: add new receive note method!
      */
     void receiveNote(v_spo *note);
 
@@ -147,6 +148,15 @@ signals:
      * @brief send the current playing note.
      */
     void sendCurrentNote(int channal, v_spo *note);
+};
+
+class GameMediaPlayer: public MediaPlayer
+{
+public:
+    int GameChannal = 0;
+public:
+    void setGameChannal(int t);
+    virtual void PlayNext();
 };
 
 #endif // MEDIAPLAYER_H
