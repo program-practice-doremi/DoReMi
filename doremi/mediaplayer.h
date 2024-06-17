@@ -153,10 +153,14 @@ signals:
 class GameMediaPlayer: public MediaPlayer
 {
 public:
+    // You can set what channal you are going to play.
     int GameChannal = 0;
+    bool waiting = false;
+
 public:
     void setGameChannal(int t);
-    virtual void PlayNext();
+    virtual void PlayNext(); // TODO: small change: add sendCurrentNote!
+    virtual void receiveNote(v_spo *note);
 };
 
 #endif // MEDIAPLAYER_H

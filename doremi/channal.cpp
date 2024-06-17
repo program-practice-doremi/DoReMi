@@ -42,6 +42,13 @@ bool v_spo::realNote() {
     return this->_v1 != _REST && this->_v1 != _STOP;
 }
 
+bool v_spo::operator==(const v_spo &k) {
+    if (k._v1 == _REST) {
+        return this->_v1 == _REST;
+    }
+    return k._v1 == this->_v1 || k._v1 == this->_v2 || k._v1 == this->_v3 || k._v1 == this->v4;
+}
+
 Channal::Channal(int _number, int _length, int musicType, int _strength, QObject *parent)
     : QObject{parent}
 {

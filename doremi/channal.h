@@ -21,6 +21,7 @@ public:
     void addTune(int tune);
 
     bool realNote();
+    bool operator==(const v_spo &k);
 };
 
 class rest_spo: public v_spo {

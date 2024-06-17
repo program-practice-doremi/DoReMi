@@ -226,9 +226,20 @@ void GameMediaPlayer::setGameChannal(int t) {
 
 void GameMediaPlayer::PlayNext() {
     if (this->song->allChannals[this->GameChannal]->notes[this->currentPlaying]->realNote()) {
+        this->waiting = true;
         emit this->stopPlaying();
     }
     else {
         MediaPlayer::PlayNext();
+    }
+}
+
+void GameMediaPlayer::receiveNote(v_spo *note) {
+    if (this->waiting && *note == this->song->allChannals[this->GameChannal]->notes[this->currentPlaying]) {
+        std::cout << "Right!" << std::endl;
+        this->restart();
+    }
+    else {
+        std::cout << "try again." << std::endl;
     }
 }
