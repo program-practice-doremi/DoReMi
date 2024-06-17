@@ -225,7 +225,7 @@ void GameMediaPlayer::setGameChannal(int t) {
 }
 
 void GameMediaPlayer::PlayNext() {
-    if (this->song->channal[this->GameChannal]->notes[this->currentPlaying]->realNote()) {
+    if (this->song->allChannals[this->GameChannal]->notes[this->currentPlaying]->realNote()) {
         emit this->stopPlaying();
     }
     else {

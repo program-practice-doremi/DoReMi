@@ -2197,8 +2197,8 @@ TheSky::TheSky(): Music("天空没有极限", 9, 70, 1000) {
     this->setType(8, Synth_Drum);            // Drum
 
     // extra voice
-    this->setAdditionalStrength(0, 2);
-    this->setAdditionalStrength(7, 2);
+    this->setAdditionalStrength(0, 3);
+    this->setAdditionalStrength(7, 4);
 
     // Part A | 1 3
     int a_start = 0;
@@ -2297,8 +2297,8 @@ TheSky::TheSky(): Music("天空没有极限", 9, 70, 1000) {
 
     this->RepeatAllChannals(c_start, c_start + 64, c_start + 64);
 
-    this->addNote(3, c_start + 56, 2, G5);
-    this->addNote(3, c_start + 57, 2, F5);
+    this->addNote(3, c_start + 56, 2, F5);
+    this->addNote(3, c_start + 57, 2, E5);
     this->addNote(3, c_start + 59, 2, C5);
     this->addNote(3, c_start + 61, 2, D5);
     this->addNote(3, c_start + 63, 2, E5);
@@ -2405,6 +2405,7 @@ TheSky::TheSky(): Music("天空没有极限", 9, 70, 1000) {
     this->addNote(3, e_start + 64 + 14, 5, B5);
     this->CopyNote(3, d_start + 48 + 6, e_start + 47, 4, d_start + 48 + 6);
     this->ChangeTune(4, d_start + 48 + 6, e_start + 47, -24);
+    this->RepeatSingleChannal(4, d_start + 48, e_start + 47, e_start + 48);
 
     this->addNote(6, e_start, 4, C3);
     this->addNote(6, e_start + 16, 4, B2);
@@ -2429,10 +2430,10 @@ TheSky::TheSky(): Music("天空没有极限", 9, 70, 1000) {
     this->addNote(5, e_start + 48, F2, C3, F3, A3);
     this->RepeatSingleChannal(5, e_start, e_start + 64, e_start + 64);
 
-    this->addNote(3, e_start + 122, 6, C5);
-    this->addNote(3, e_start + 123, 6, B4);
-    this->addNote(3, e_start + 124, 6, D5);
-    this->addNote(3, e_start + 126, 6, C5);
+    this->addNote(3, e_start + 122, 6, F5);
+    this->addNote(3, e_start + 123, 6, E5);
+    this->addNote(3, e_start + 124, 6, F5);
+    this->addNote(3, e_start + 126, 6, E5);
 
     // stop part
     int stopTime = e_start + 128;
