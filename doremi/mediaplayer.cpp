@@ -222,12 +222,19 @@ MediaPlayer::~MediaPlayer() {
 
 void GameMediaPlayer::setGameChannal(int t) {
     this->GameChannal = t;
+    this->setCurrentEditing(t);
 }
 
 void GameMediaPlayer::PlayNext() {
     if (this->song->allChannals[this->GameChannal]->notes[this->currentPlaying]->realNote()) {
         this->waiting = true;
         emit this->stopPlaying();
+        for (int i = 0; i < this->song->channal_num; ++i)
+        {
+            if (!this->channal_closed[i]) {
+                emit this->sendCurrentNote(i, this->song->allChannals[i]->notes[currentPlaying]);
+            }
+        }
     }
     else {
         MediaPlayer::PlayNext();

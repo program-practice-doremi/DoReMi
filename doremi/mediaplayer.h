@@ -160,6 +160,12 @@ public:
 public:
     void setGameChannal(int t);
     virtual void PlayNext(); // TODO: small change: add sendCurrentNote!
+
+    /**
+     * Receive a note.
+     * If the note is equal to the current waiting note, then continue to play the music.
+     * Otherwise, just do nothing.
+     */
     virtual void receiveNote(v_spo *note);
 };
 
