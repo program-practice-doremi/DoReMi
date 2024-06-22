@@ -132,7 +132,7 @@ public slots:
 
     void changeBPH(int speed);
 
-private:
+protected:
     void init();
     virtual void PlayNext();
 

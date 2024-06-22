@@ -228,7 +228,7 @@ void GameMediaPlayer::setGameChannal(int t) {
 void GameMediaPlayer::PlayNext() {
     if (this->song->allChannals[this->GameChannal]->notes[this->currentPlaying]->realNote()) {
         this->waiting = true;
-        emit this->stopPlaying();
+        emit this->StopPlaying();
         for (int i = 0; i < this->song->channal_num; ++i)
         {
             if (!this->channal_closed[i]) {
@@ -242,7 +242,7 @@ void GameMediaPlayer::PlayNext() {
 }
 
 void GameMediaPlayer::receiveNote(v_spo *note) {
-    if (this->waiting && *note == this->song->allChannals[this->GameChannal]->notes[this->currentPlaying]) {
+    if (this->waiting && *note == *this->song->allChannals[this->GameChannal]->notes[this->currentPlaying]) {
         std::cout << "Right!" << std::endl;
         this->restart();
     }
