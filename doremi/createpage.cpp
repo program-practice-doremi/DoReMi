@@ -5,12 +5,16 @@
 #include "string.h"
 #include "fileoperatingwidget.h"
 
-CreatePage::CreatePage(QWidget *parent)
+CreatePage::CreatePage(bool notGame, QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::CreatePage)
 {
     ui->setupUi(this);
-    player = new MediaPlayer();
+    if (notGame)
+        player = new MediaPlayer();
+    else {
+        player = new GameMediaPlayer();
+    }
     this->channelEdits[0] = this->ui->w0;
     this->channelEdits[1] = this->ui->w1;
     this->channelEdits[2] = this->ui->w2;
