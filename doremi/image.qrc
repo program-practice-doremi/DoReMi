@@ -1,4 +1,4 @@
-<RCC>
+﻿<RCC>
     <qresource prefix="/">
         <file>image/go.png</file>
         <file>image/mainimage.png</file>
@@ -19,52 +19,52 @@
         <file>image/newpiano.png</file>
         <file>image/piano.png</file>
         <file>image/instruments/113agogo.png</file>
-        <file>image/instruments/0-7钢琴类.png</file>
-        <file>image/instruments/8钢片琴.png</file>
-        <file>image/instruments/9钟琴.png</file>
-        <file>image/instruments/10音乐盒.png</file>
-        <file>image/instruments/11颤音琴.png</file>
-        <file>image/instruments/12马林巴琴.png</file>
-        <file>image/instruments/13木琴.png</file>
-        <file>image/instruments/14管钟.png</file>
-        <file>image/instruments/15大扬琴.png</file>
-        <file>image/instruments/16-20风琴类.png</file>
-        <file>image/instruments/21，23手风琴类.png</file>
-        <file>image/instruments/22口琴.png</file>
-        <file>image/instruments/24-31吉他类.png</file>
-        <file>image/instruments/32-39贝司.png</file>
-        <file>image/instruments/40，44，45小提琴和弦乐类.png</file>
-        <file>image/instruments/41中提琴.png</file>
-        <file>image/instruments/42，43大提琴.png</file>
-        <file>image/instruments/46竖琴.png</file>
-        <file>image/instruments/47定音鼓.png</file>
-        <file>image/instruments/48-51弦乐合奏.png</file>
-        <file>image/instruments/52-54人声类.png</file>
-        <file>image/instruments/55管弦乐合奏.png</file>
-        <file>image/instruments/56，59小号.png</file>
-        <file>image/instruments/57长号.png</file>
-        <file>image/instruments/58大号.png</file>
-        <file>image/instruments/59圆号.png</file>
-        <file>image/instruments/60-62铜管组.png</file>
-        <file>image/instruments/64-67萨克斯.png</file>
-        <file>image/instruments/68-71管类.png</file>
-        <file>image/instruments/72-77，79笛子类.png</file>
-        <file>image/instruments/78口哨.png</file>
-        <file>image/instruments/80-103合成类.png</file>
-        <file>image/instruments/104西塔尔.png</file>
-        <file>image/instruments/105班卓琴.png</file>
-        <file>image/instruments/106三味线.png</file>
-        <file>image/instruments/107十三弦筝.png</file>
-        <file>image/instruments/108卡林巴.png</file>
-        <file>image/instruments/109风笛.png</file>
-        <file>image/instruments/110民族提琴.png</file>
-        <file>image/instruments/111山奈.png</file>
-        <file>image/instruments/112叮铛铃.png</file>
-        <file>image/instruments/114钢鼓.png</file>
-        <file>image/instruments/115木鱼.png</file>
-        <file>image/instruments/116-118鼓类.png</file>
-        <file>image/instruments/119铜钹.png</file>
-        <file>image/instruments/120-127音效类.png</file>
+        <file>image/instruments/07.png</file>
+        <file>image/instruments/8.png</file>
+        <file>image/instruments/9.png</file>
+        <file>image/instruments/10.png</file>
+        <file>image/instruments/11.png</file>
+        <file>image/instruments/12.png</file>
+        <file>image/instruments/13.png</file>
+        <file>image/instruments/14.png</file>
+        <file>image/instruments/15.png</file>
+        <file>image/instruments/1620.png</file>
+        <file>image/instruments/2123.png</file>
+        <file>image/instruments/22.png</file>
+        <file>image/instruments/2431.png</file>
+        <file>image/instruments/3239.png</file>
+        <file>image/instruments/404445.png</file>
+        <file>image/instruments/41.png</file>
+        <file>image/instruments/4243.png</file>
+        <file>image/instruments/46.png</file>
+        <file>image/instruments/47.png</file>
+        <file>image/instruments/4851.png</file>
+        <file>image/instruments/5254.png</file>
+        <file>image/instruments/55.png</file>
+        <file>image/instruments/5659.png</file>
+        <file>image/instruments/57.png</file>
+        <file>image/instruments/58.png</file>
+        <file>image/instruments/59.png</file>
+        <file>image/instruments/6062.png</file>
+        <file>image/instruments/6467.png</file>
+        <file>image/instruments/6871.png</file>
+        <file>image/instruments/727779.png</file>
+        <file>image/instruments/78.png</file>
+        <file>image/instruments/80103.png</file>
+        <file>image/instruments/104.png</file>
+        <file>image/instruments/105.png</file>
+        <file>image/instruments/106.png</file>
+        <file>image/instruments/107.png</file>
+        <file>image/instruments/108.png</file>
+        <file>image/instruments/109.png</file>
+        <file>image/instruments/110.png</file>
+        <file>image/instruments/111.png</file>
+        <file>image/instruments/112.png</file>
+        <file>image/instruments/114.png</file>
+        <file>image/instruments/115.png</file>
+        <file>image/instruments/116118.png</file>
+        <file>image/instruments/119.png</file>
+        <file>image/instruments/120127.png</file>
         <file>image/aaa.png</file>
         <file>image/raise.png</file>
         <file>image/speed.png</file>

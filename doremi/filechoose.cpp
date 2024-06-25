@@ -2,6 +2,7 @@
 #include "ui_filechoose.h"
 #include "createpage.h"
 #include "songs.h"
+#include "mediaplayer.h"
 #include <iostream>
 
 FileChoose::FileChoose(QWidget *parent)
@@ -58,7 +59,18 @@ void FileChoose::on_queren_clicked()
     int channalNum = this->ui->spinBox->value();
     std::string name = this->ui->lineEdit->text().toStdString();
     Music *song = new Music(name, channalNum);
-    CreatePage *c = new CreatePage();
+    CreatePage *c;
+
+    /**
+     *  Added in tutoring mode.
+     */
+    if (this->ui->checkBox->isChecked()) {
+        c = new CreatePage(false);
+    }
+    else {
+        c = new CreatePage();
+    }
+
     this->close();
     c->show();
     connect(this, &FileChoose::songcopy,c,&CreatePage::getmusic);
@@ -79,7 +91,17 @@ void FileChoose::on_chooseButton_clicked()
 void FileChoose::on_twinkleButton_clicked()
 {
     Music *song = new Twinkle();
-    CreatePage *c = new CreatePage();
+    CreatePage *c;
+    /**
+     *  Added in tutoring mode.
+     */
+    if (this->ui->checkBox->isChecked()) {
+        c = new CreatePage(false);
+    }
+    else {
+        c = new CreatePage();
+    }
+
     this->close();
     c->show();
     connect(this, &FileChoose::songcopy,c,&CreatePage::getmusic);
@@ -90,7 +112,17 @@ void FileChoose::on_twinkleButton_clicked()
 void FileChoose::on_fireworksButton_clicked()
 {
     Music *song = new FireWorks();
-    CreatePage *c = new CreatePage();
+    CreatePage *c;
+    /**
+     *  Added in tutoring mode.
+     */
+    if (this->ui->checkBox->isChecked()) {
+        c = new CreatePage(false);
+    }
+    else {
+        c = new CreatePage();
+    }
+
     this->close();
     c->show();
     connect(this, &FileChoose::songcopy,c,&CreatePage::getmusic);
@@ -101,7 +133,18 @@ void FileChoose::on_fireworksButton_clicked()
 void FileChoose::on_oceanButton_clicked()
 {
     Music *song = new Ocean();
-    CreatePage *c = new CreatePage();
+    CreatePage *c;
+    /**
+     *  Added in tutoring mode.
+     */
+    if (this->ui->checkBox->isChecked()) {
+        c = new CreatePage(false);
+    }
+    else {
+        c = new CreatePage();
+    }
+
+
     this->close();
     c->show();
     connect(this, &FileChoose::songcopy,c,&CreatePage::getmusic);
@@ -112,7 +155,18 @@ void FileChoose::on_oceanButton_clicked()
 void FileChoose::on_fightButton_clicked()
 {
     Music *song = new FightSong();
-    CreatePage *c = new CreatePage();
+    CreatePage *c;
+    /**
+     *  Added in tutoring mode.
+     */
+    if (this->ui->checkBox->isChecked()) {
+        c = new CreatePage(false);
+    }
+    else {
+        c = new CreatePage();
+    }
+
+
     this->close();
     c->show();
     connect(this, &FileChoose::songcopy,c,&CreatePage::getmusic);
@@ -125,7 +179,18 @@ void FileChoose::on_queren2_clicked()
     std::string name;
     name = this->ui->lineEdit_2->text().toStdString();
     Music *song = new Music(0, name);
-    CreatePage *c = new CreatePage();
+    CreatePage *c;
+    /**
+     *  Added in tutoring mode.
+     */
+    if (this->ui->checkBox->isChecked()) {
+        c = new CreatePage(false);
+    }
+    else {
+        c = new CreatePage();
+    }
+
+
     this->close();
     c->show();
     connect(this, &FileChoose::songcopy,c,&CreatePage::getmusic);

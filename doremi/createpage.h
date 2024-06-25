@@ -24,7 +24,7 @@ public slots:
     void curplay(int place);
 
 public:
-    explicit CreatePage(QWidget *parent = nullptr);
+    explicit CreatePage(bool notGame = true, QWidget *parent = nullptr);
     ~CreatePage();
 
 private:

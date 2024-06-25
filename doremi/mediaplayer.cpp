@@ -167,6 +167,7 @@ int MediaPlayer::getCurrentPlaying() {
 void MediaPlayer::setCurrentPlaying(int po) {
     if (po >= 0 && po < this->song->length) {
         this->currentPlaying = po;
+        this->setGameChannal(po);
     }
 }
 
@@ -188,9 +189,38 @@ void MediaPlayer::stopRecording() {
 
 void MediaPlayer::setCurrentEditing(int channalNum) {
     this->current_editing = channalNum;
+    this->GameChannal = channalNum;
 }
 
 void MediaPlayer::receiveNote(v_spo *note) {
+    if (this->isGame && this->waiting) {
+        if (*note == *this->song->allChannals[this->GameChannal]->notes[this->currentPlaying]) {
+            std::cout << "Right!" << std::endl;
+            this->waiting = false;
+            if (currentPlaying == this->song->length) {
+                emit this->StopPlaying();
+                this->currentPlaying = 0;
+                midiOutClose (handle) ;
+                return;
+            }
+            emit this->sendCurrentPlaying(this->currentPlaying);
+            for (int i = 0; i < this->song->channal_num; ++i)
+            {
+                if (!this->channal_closed[i]) {
+                    emit this->sendCurrentNote(i, this->song->allChannals[i]->notes[currentPlaying]);
+                }
+                if ((!this->channal_closed[i]) && this->song->allChannals[i]->notes[currentPlaying]->_v1 != _REST) {
+                    this->MakeSound(this->song->allChannals[i]->notes[currentPlaying], i, this->song->allChannals[i]->strength);
+                }
+            }
+            this->currentPlaying += 1;
+            this->restart();
+        }
+        else {
+            std::cout << "try again." << std::endl;
+        }
+        return;
+    }
     if (note->_v1 != _REST) {
         this->MakeSound(note, current_editing, this->song->allChannals[current_editing]->strength);
     }
@@ -228,7 +258,7 @@ void GameMediaPlayer::setGameChannal(int t) {
 void GameMediaPlayer::PlayNext() {
     if (this->song->allChannals[this->GameChannal]->notes[this->currentPlaying]->realNote()) {
         this->waiting = true;
-        emit this->stopPlaying();
+        emit this->StopPlaying();
         for (int i = 0; i < this->song->channal_num; ++i)
         {
             if (!this->channal_closed[i]) {
@@ -242,11 +272,13 @@ void GameMediaPlayer::PlayNext() {
 }
 
 void GameMediaPlayer::receiveNote(v_spo *note) {
-    if (this->waiting && *note == this->song->allChannals[this->GameChannal]->notes[this->currentPlaying]) {
+    /*
+    if (this->waiting && *note == *this->song->allChannals[this->GameChannal]->notes[this->currentPlaying]) {
         std::cout << "Right!" << std::endl;
         this->restart();
     }
     else {
         std::cout << "try again." << std::endl;
     }
+*/
 }

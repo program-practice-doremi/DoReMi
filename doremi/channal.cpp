@@ -46,7 +46,7 @@ bool v_spo::operator==(const v_spo &k) {
     if (k._v1 == _REST) {
         return this->_v1 == _REST;
     }
-    return k._v1 == this->_v1 || k._v1 == this->_v2 || k._v1 == this->_v3 || k._v1 == this->v4;
+    return k._v1 == this->_v1 || k._v2 == this->_v1 || k._v3 == this->_v1 || k._v4 == this->_v1;
 }
 
 Channal::Channal(int _number, int _length, int musicType, int _strength, QObject *parent)

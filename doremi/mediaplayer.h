@@ -24,6 +24,7 @@ public:
     std::map <int,int> _mp;
     HMIDIOUT handle;
     int currentPlaying = 0; // current playing place
+    bool isGame = false;
 
     // Used when editing music
     bool metronome_playing = false;
@@ -32,6 +33,11 @@ public:
 
     bool recording_mode = false;
     int current_editing = 0; // current editing channal
+
+public:
+    // You can set what channal you are going to play.
+    int GameChannal = 0;
+    bool waiting = false;
 
 protected:
     QTimer *t = 0;
@@ -51,6 +57,11 @@ public:
      * @brief Get or set the current playing position.
      */
     int getCurrentPlaying();
+
+    /**
+     * @brief setGameChannal Only used in GameMediaPlayer.
+     */
+    virtual void setGameChannal(int t){ }
     
 
 public slots:
@@ -132,7 +143,7 @@ public slots:
 
     void changeBPH(int speed);
 
-private:
+protected:
     void init();
     virtual void PlayNext();
 
@@ -152,13 +163,10 @@ signals:
 
 class GameMediaPlayer: public MediaPlayer
 {
-public:
-    // You can set what channal you are going to play.
-    int GameChannal = 0;
-    bool waiting = false;
 
 public:
-    void setGameChannal(int t);
+    explicit GameMediaPlayer(){this->isGame = true;}
+    virtual void setGameChannal(int t);
     virtual void PlayNext(); // TODO: small change: add sendCurrentNote!
 
     /**
